@@ -47,8 +47,8 @@ export default function Home() {
             Unir les esprits, conquérir les sommets !
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <Button className="bg-accent hover:bg-accent/90 text-white px-8 py-7 text-lg rounded-xl shadow-xl shadow-black/20 transition-all hover:scale-105 font-bold border-2 border-transparent">
-              Rejoindre le Club
+            <Button asChild className="bg-accent hover:bg-accent/90 text-white px-8 py-7 text-lg rounded-xl shadow-xl shadow-black/20 transition-all hover:scale-105 font-bold border-2 border-transparent">
+              <Link href="/inscription">Rejoindre le Club</Link>
             </Button>
             <Button variant="outline" className="text-white bg-white/10 backdrop-blur-md border-white/60 hover:bg-white/20 px-8 py-7 text-lg rounded-xl font-semibold">
               Nos Horaires & Lieux
