@@ -6,6 +6,8 @@
   --calanques-orange: #FF6F61; /* Soleil / Terre */
   --calanques-lavande: #E6E6FA; /* Provence */
   --calanques-bg: #F8FAFC;     /* Fond Gris Très Clair */
+  --font-geist-sans: "Avenir Next", "Avenir", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-geist-mono: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   
   --background: var(--calanques-bg);
   --foreground: #1e293b;       /* Slate 800 */
