@@ -3,9 +3,11 @@ import {
   FFE_BASE_URL,
   FFE_TARGET_TEAMS,
   FFE_TEAMS_SOURCE_URL,
+  type FfeTargetTeamConfig,
   type FfeSelectedTeam,
   type FfeTeamsApiResponse,
   normalizeFfeTeamName,
+  toComparableFfeUrl,
 } from "@/lib/ffe-teams";
 
 interface ParsedFfeTeamRow {
@@ -116,6 +118,17 @@ function parseFfeTeamRows(html: string): ParsedFfeTeamRow[] {
   return parsedRows;
 }
 
+function rowMatchesTarget(row: ParsedFfeTeamRow, target: FfeTargetTeamConfig): boolean {
+  const rowName = normalizeFfeTeamName(row.name);
+  const expectedName = normalizeFfeTeamName(target.sourceName);
+  if (rowName !== expectedName) return false;
+
+  const candidateUrl = target.matchOn === "groupUrl" ? row.groupUrl : row.teamUrl;
+  if (!candidateUrl) return false;
+
+  return toComparableFfeUrl(candidateUrl) === toComparableFfeUrl(target.matchUrl);
+}
+
 export async function GET() {
   try {
     const response = await fetch(FFE_TEAMS_SOURCE_URL, {
@@ -136,26 +149,30 @@ export async function GET() {
     const allRows = parseFfeTeamRows(html);
 
     const byTargetId = new Map<string, ParsedFfeTeamRow>();
-    const targetByNormalizedName = new Map(
-      FFE_TARGET_TEAMS.map((team) => [normalizeFfeTeamName(team.label), team]),
-    );
-
-    for (const row of allRows) {
-      const normalizedRowName = normalizeFfeTeamName(row.name);
-      const matchingTarget = targetByNormalizedName.get(normalizedRowName);
-      if (!matchingTarget) continue;
-      if (byTargetId.has(matchingTarget.id)) continue;
-      byTargetId.set(matchingTarget.id, row);
+    for (const targetTeam of FFE_TARGET_TEAMS) {
+      const matchingRow = allRows.find((row) => rowMatchesTarget(row, targetTeam));
+      if (matchingRow) {
+        byTargetId.set(targetTeam.id, matchingRow);
+      }
     }
 
     const selectedTeams: FfeSelectedTeam[] = FFE_TARGET_TEAMS.flatMap((targetTeam) => {
       const row = byTargetId.get(targetTeam.id);
       if (!row) return [];
-      return [{ targetId: targetTeam.id, ...row }];
+      return [
+        {
+          targetId: targetTeam.id,
+          targetCategory: targetTeam.category,
+          targetLabel: targetTeam.label,
+          sourceName: targetTeam.sourceName,
+          sourceMatchUrl: targetTeam.matchUrl,
+          ...row,
+        },
+      ];
     });
 
-    const missingTeams = FFE_TARGET_TEAMS.filter((targetTeam) => !byTargetId.has(targetTeam.id)).map(
-      (targetTeam) => targetTeam.label,
+    const missingTeams = FFE_TARGET_TEAMS.filter((targetTeam) => !byTargetId.has(targetTeam.id)).map((targetTeam) =>
+      `${targetTeam.category} - ${targetTeam.label}`,
     );
 
     const payload: FfeTeamsApiResponse = {

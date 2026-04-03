@@ -172,7 +172,7 @@ export default function FFEPage() {
                                 <div className="rounded-xl border border-slate-200 bg-white p-5 mb-6">
                                     <h2 className="text-lg font-extrabold text-slate-800">Équipes sélectionnées</h2>
                                     <p className="text-sm text-slate-600 mt-1">
-                                        Affichage limité aux 4 équipes choisies : Cassis 1, Cassis Echecs, Cassis 2, Cassis 4.
+                                        Affichage limité aux équipes demandées (Interclub + Interclub Jeunes).
                                     </p>
 
                                     <div className="flex flex-wrap gap-2 mt-4">
@@ -194,7 +194,7 @@ export default function FFEPage() {
                                                     : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                                                     }`}
                                             >
-                                                {team.label}
+                                                {team.category} · {team.label}
                                             </button>
                                         ))}
                                     </div>
@@ -240,8 +240,13 @@ export default function FFEPage() {
                                             >
                                                 <div className="flex flex-wrap items-start justify-between gap-3">
                                                     <div>
-                                                        <h3 className="text-xl font-extrabold text-slate-800">{team.name}</h3>
-                                                        <p className="text-slate-600 mt-1">{team.competition}</p>
+                                                        <h3 className="text-xl font-extrabold text-slate-800">
+                                                            {team.targetCategory} · {team.targetLabel}
+                                                        </h3>
+                                                        <p className="text-sm text-slate-500 mt-1">
+                                                            Nom FFE: {team.name}
+                                                        </p>
+                                                        <p className="text-slate-600 mt-2">{team.competition}</p>
                                                     </div>
                                                     <span className="inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-sm font-bold text-green-700">
                                                         Place : {team.place || "-"}
