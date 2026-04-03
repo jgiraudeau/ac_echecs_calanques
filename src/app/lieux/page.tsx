@@ -2,46 +2,16 @@
 
 import { Navbar } from "@/components/layout/Navbar";
 import LocationsMap from "@/components/map/LocationsMap";
-import { MapPin, School, Building2 } from "lucide-react";
-import "leaflet/dist/leaflet.css"; // Important pour le style de la carte
+import { MapPin, School, Building2, ExternalLink } from "lucide-react";
+import { LOCATION_ENTRIES } from "@/lib/locations";
 
-const LOCATIONS_LIST = [
-    {
-        city: "Cassis",
-        places: [
-            { name: "Centre Culturel", type: "club", address: "20 Av. Dr Emmanuel Agostini, 13260 Cassis" },
-            { name: "École Saint Augustin", type: "ecole", address: "Cassis / Carnoux" } // Modulable
-        ]
-    },
-    {
-        city: "Carnoux",
-        places: [
-            { name: "Le Coq", type: "club", address: "Salle Polyvalente, Carnoux" },
-            { name: "École Saint Augustin", type: "ecole", address: "Carnoux-en-Provence" }
-        ]
-    },
-    {
-        city: "Marseille",
-        places: [
-            { name: "Sainte-Trinité", type: "club", address: "Club & École" },
-            { name: "École Sainte Claire", type: "ecole", address: "Marseille" }
-        ]
-    },
-    {
-        city: "La Ciotat",
-        places: [
-            { name: "CIQ Saint-Jean", type: "club", address: "Maison de Quartier" },
-            { name: "École Zebra", type: "ecole", address: "La Ciotat" }
-        ]
-    },
-    {
-        city: "Ceyreste",
-        places: [
-            { name: "Salle Polyvalente", type: "club", address: "Ceyreste" },
-            { name: "Salle de la Culture", type: "club", address: "Ceyreste" }
-        ]
-    }
-];
+const LOCATIONS_LIST = Object.entries(
+    LOCATION_ENTRIES.reduce<Record<string, typeof LOCATION_ENTRIES>>((acc, location) => {
+        const current = acc[location.city] ?? [];
+        acc[location.city] = [...current, location];
+        return acc;
+    }, {}),
+).map(([city, places]) => ({ city, places }));
 
 export default function LieuxPage() {
     return (
@@ -61,7 +31,7 @@ export default function LieuxPage() {
                 <div className="bg-white p-4 rounded-2xl shadow-xl border border-slate-200 mb-12">
                     <LocationsMap />
                     <div className="text-center text-sm text-slate-400 mt-4 italic">
-                        Cliquez sur les marqueurs pour voir le détail.
+                        Carte Google Maps avec sélection des lieux et itinéraires.
                     </div>
                 </div>
 
@@ -76,7 +46,7 @@ export default function LieuxPage() {
                             <div className="p-6 space-y-4">
                                 {loc.places.map((place, i) => (
                                     <div key={i} className="flex items-start gap-3">
-                                        {place.type === 'ecole' ? (
+                                        {place.type === "ecole" ? (
                                             <School className="w-5 h-5 text-blue-500 mt-1 shrink-0" />
                                         ) : (
                                             <Building2 className="w-5 h-5 text-orange-500 mt-1 shrink-0" />
@@ -84,8 +54,37 @@ export default function LieuxPage() {
                                         <div>
                                             <div className="font-bold text-slate-700">{place.name}</div>
                                             <div className="text-sm text-slate-500">{place.address}</div>
-                                            <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-1">
-                                                {place.type === 'ecole' ? 'SCOLAIRE' : 'CLUB'}
+                                            <div className="flex flex-wrap items-center gap-2 mt-2">
+                                                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                                                    {place.type === "ecole" ? "SCOLAIRE" : "CLUB"}
+                                                </span>
+                                                <span
+                                                    className={`text-[10px] font-bold uppercase tracking-wider ${place.verification === "verified" ? "text-emerald-600" : "text-amber-600"
+                                                        }`}
+                                                >
+                                                    {place.verification === "verified" ? "Adresse vérifiée" : "Adresse à confirmer"}
+                                                </span>
+                                            </div>
+                                            <div className="mt-2 flex flex-wrap items-center gap-3">
+                                                <a
+                                                    href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(place.address)}`}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="text-xs font-bold text-blue-600 hover:underline inline-flex items-center gap-1"
+                                                >
+                                                    Itinéraire <ExternalLink className="w-3 h-3" />
+                                                </a>
+                                                <a
+                                                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.address)}`}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="text-xs font-bold text-blue-600 hover:underline inline-flex items-center gap-1"
+                                                >
+                                                    Ouvrir la carte <ExternalLink className="w-3 h-3" />
+                                                </a>
+                                            </div>
+                                            <div className="text-[10px] text-slate-400 mt-1">
+                                                Source: {place.source}
                                             </div>
                                         </div>
                                     </div>
