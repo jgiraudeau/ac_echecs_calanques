@@ -11,11 +11,13 @@ import { useState } from "react";
 export function Navbar() {
     const pathname = usePathname();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const isLinkActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
     const navLinks = [
         { href: "/club", label: "Le Club" },
         { href: "/lieux", label: "Où jouer ?" },
         { href: "/activites", label: "Cours et Stages" },
+        { href: "/inscription", label: "Inscription" },
         { href: "/ffe", label: "Résultats FFE" },
         { href: "/partenaires", label: "Partenaires" },
         { href: "/agenda", label: "Agenda" },
@@ -48,19 +50,19 @@ export function Navbar() {
                             href={link.href}
                             className={cn(
                                 "text-sm font-medium transition-colors relative py-1",
-                                pathname === link.href
+                                isLinkActive(link.href)
                                     ? "text-primary font-bold"
                                     : "text-slate-600 hover:text-primary"
                             )}
                         >
                             {link.label}
-                            {pathname === link.href && (
+                            {isLinkActive(link.href) && (
                                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent rounded-full animate-in fade-in zoom-in duration-300" />
                             )}
                         </Link>
                     ))}
-                    <Button className="bg-accent hover:bg-accent/90 text-white font-semibold shadow-lg shadow-accent/20 hover:scale-105 transition-transform">
-                        S'inscrire
+                    <Button asChild className="bg-accent hover:bg-accent/90 text-white font-semibold shadow-lg shadow-accent/20 hover:scale-105 transition-transform">
+                        <Link href="/inscription">S&apos;inscrire</Link>
                     </Button>
                 </div>
 
@@ -83,7 +85,7 @@ export function Navbar() {
                                 href={link.href}
                                 className={cn(
                                     "text-base font-medium px-4 py-2 rounded-md transition-colors",
-                                    pathname === link.href
+                                    isLinkActive(link.href)
                                         ? "bg-primary/10 text-primary"
                                         : "text-slate-600 hover:bg-slate-50"
                                 )}
@@ -92,8 +94,10 @@ export function Navbar() {
                                 {link.label}
                             </Link>
                         ))}
-                        <Button className="w-full bg-accent hover:bg-accent/90 text-white">
-                            S'inscrire
+                        <Button asChild className="w-full bg-accent hover:bg-accent/90 text-white">
+                            <Link href="/inscription" onClick={() => setIsMobileMenuOpen(false)}>
+                                S&apos;inscrire
+                            </Link>
                         </Button>
                     </div>
                 </div>
