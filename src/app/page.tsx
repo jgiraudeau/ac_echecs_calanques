@@ -1,7 +1,11 @@
+"use client";
+
 import { Navbar } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Trophy, Users, GraduationCap, Calendar, Newspaper, PlayCircle, Crown } from "lucide-react";
+import { Trophy, GraduationCap, Newspaper, Crown, Info, Coffee } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { SocialHub } from "@/components/social/SocialHub";
 
 export default function Home() {
   return (
@@ -40,8 +44,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-white mb-10 max-w-3xl mx-auto font-medium leading-relaxed drop-shadow-md">
-            Stratégie et nature se rencontrent. Du loisir à la haute compétition,
-            rejoignez le club d'échecs le plus inspirant en Provence.
+            Unir les esprits, conquérir les sommets !
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <Button className="bg-accent hover:bg-accent/90 text-white px-8 py-7 text-lg rounded-xl shadow-xl shadow-black/20 transition-all hover:scale-105 font-bold border-2 border-transparent">
@@ -64,30 +67,30 @@ export default function Home() {
       {/* Quick Links Bar (Negative margin to overlap Hero) */}
       <section className="relative z-20 -mt-16 container mx-auto px-4 mb-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white rounded-2xl shadow-xl p-4 border border-slate-100">
-          <a href="#" className="flex flex-col items-center justify-center p-4 hover:bg-blue-50 rounded-xl transition-colors group text-center">
+          <Link href="/club" className="flex flex-col items-center justify-center p-4 hover:bg-blue-50 rounded-xl transition-colors group text-center">
             <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-              <Calendar className="w-5 h-5" />
+              <Info className="w-5 h-5" />
             </div>
-            <span className="font-bold text-slate-700">Agenda</span>
-          </a>
-          <a href="#" className="flex flex-col items-center justify-center p-4 hover:bg-orange-50 rounded-xl transition-colors group text-center">
+            <span className="font-bold text-slate-700">Infos du Club</span>
+          </Link>
+          <Link href="/activites" className="flex flex-col items-center justify-center p-4 hover:bg-orange-50 rounded-xl transition-colors group text-center">
             <div className="w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-              <Trophy className="w-5 h-5" />
-            </div>
-            <span className="font-bold text-slate-700">Tournois</span>
-          </a>
-          <a href="#" className="flex flex-col items-center justify-center p-4 hover:bg-green-50 rounded-xl transition-colors group text-center">
-            <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-              <Crown className="w-5 h-5" />
-            </div>
-            <span className="font-bold text-slate-700">Résultats</span>
-          </a>
-          <a href="#" className="flex flex-col items-center justify-center p-4 hover:bg-purple-50 rounded-xl transition-colors group text-center">
-            <div className="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
               <GraduationCap className="w-5 h-5" />
             </div>
-            <span className="font-bold text-slate-700">Cours</span>
-          </a>
+            <span className="font-bold text-slate-700">Stages</span>
+          </Link>
+          <Link href="/festival" className="flex flex-col items-center justify-center p-4 hover:bg-purple-50 rounded-xl transition-colors group text-center">
+            <div className="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+              <Trophy className="w-5 h-5" />
+            </div>
+            <span className="font-bold text-slate-700">Festival</span>
+          </Link>
+          <Link href="/cafes-echecs" className="flex flex-col items-center justify-center p-4 hover:bg-green-50 rounded-xl transition-colors group text-center">
+            <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+              <Coffee className="w-5 h-5" />
+            </div>
+            <span className="font-bold text-slate-700">Cafés Échecs</span>
+          </Link>
         </div>
       </section>
 
@@ -95,65 +98,23 @@ export default function Home() {
       <section className="py-10 container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-12">
 
-          {/* Colonne Actualités */}
+          {/* Colonne Actualités (Social Hub) */}
           <div className="lg:w-2/3">
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-bold text-slate-800 flex items-center gap-3">
-                <Newspaper className="text-primary w-8 h-8" />
-                À la Une
-              </h2>
-              <Button variant="ghost" className="text-primary">Tout voir</Button>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* Actu 1 */}
-              <div className="group rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all border border-slate-100">
-                <div className="h-48 bg-slate-200 relative overflow-hidden">
-                  {/* Placeholder image */}
-                  <div className="absolute inset-0 bg-blue-900/10 group-hover:scale-105 transition-transform duration-500"></div>
-                  <span className="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-blue-800">
-                    02 Mai 2026
-                  </span>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-primary transition-colors">
-                    Stage de Printemps : Inscrivez-vous !
-                  </h3>
-                  <p className="text-slate-600 line-clamp-2">
-                    Une semaine intensive pour progresser avec nos Grands Maîtres. Places limitées.
-                  </p>
-                </div>
-              </div>
-
-              {/* Actu 2 */}
-              <div className="group rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all border border-slate-100">
-                <div className="h-48 bg-slate-200 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-orange-900/10 group-hover:scale-105 transition-transform duration-500"></div>
-                  <span className="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-orange-800">
-                    28 Avril 2026
-                  </span>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-primary transition-colors">
-                    Victoire de l'équipe 1 en Nationale !
-                  </h3>
-                  <p className="text-slate-600 line-clamp-2">
-                    Un match décisif contre Lyon qui nous propulse en tête du classement.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <h2 className="text-3xl font-bold text-slate-800 flex items-center gap-3 mb-8">
+              <Newspaper className="text-primary w-8 h-8" />
+              Actualités en direct
+            </h2>
+            <SocialHub />
           </div>
 
           {/* Colonne Résultats / Live */}
           <div className="lg:w-1/3">
-            <div className="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-accent">
-              <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                <Trophy className="text-accent w-6 h-6" />
-                Derniers Résultats
-              </h2>
-
-              <div className="space-y-6">
+            <h2 className="text-3xl font-bold text-slate-800 flex items-center gap-3 mb-8">
+              <Trophy className="text-accent w-8 h-8" />
+              Derniers Résultats
+            </h2>
+            <div className="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-accent h-[500px] flex flex-col">
+              <div className="space-y-6 flex-1 overflow-y-auto">
                 <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                   <div>
                     <div className="font-bold text-slate-700">Open de Cassis</div>
@@ -187,45 +148,83 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Intermediate Action Banner (Video/Parties) */}
-      <section className="py-20 bg-slate-900 text-white relative overflow-hidden mt-10">
-        {/* Abstract background */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/30 to-transparent"></div>
+      {/* Sponsors Rolling Banner */}
+      <section className="py-16 bg-white border-y border-slate-100 overflow-hidden">
+        <div className="container mx-auto px-4 text-center mb-10">
+          <h2 className="text-2xl font-bold text-slate-800 uppercase tracking-widest">Ils nous soutiennent</h2>
+        </div>
 
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12 relative z-10">
-          <div className="md:w-1/2">
-            <span className="text-accent font-bold tracking-widest uppercase mb-2 block">Immersion</span>
-            <h2 className="text-4xl font-bold mb-6">Revivez les grands moments</h2>
-            <p className="text-slate-300 mb-8 text-lg">
-              Analyses de parties, interviews de nos champions et résumés des tournois.
-              Plongez au cœur de l'action échiquéenne.
-            </p>
-            <div className="flex gap-4">
-              <Button className="bg-white text-primary hover:bg-slate-100 px-6 py-4 rounded-lg font-bold flex items-center gap-2">
-                <PlayCircle className="w-5 h-5" />
-                Voir la vidéo
-              </Button>
-              <Button variant="ghost" className="text-white hover:bg-white/10 px-6 py-4 rounded-lg">
-                Accéder aux parties (PGN)
-              </Button>
-            </div>
-          </div>
+        {/* Marquee Container */}
+        <div className="relative w-full overflow-hidden">
+          {/* Gradient masks for smooth fade effect at edges */}
+          <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10"></div>
+          <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10"></div>
 
-          {/* Fake Video Player UI */}
-          <div className="md:w-1/2 w-full">
-            <div className="aspect-video bg-slate-800 rounded-2xl shadow-2xl border border-slate-700 flex items-center justify-center relative group cursor-pointer overflow-hidden">
-              {/* Placeholder Thumbnail content */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-800"></div>
-              <div className="w-20 h-20 bg-accent/90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform relative z-10 pl-1">
-                <PlayCircle className="w-10 h-10 text-white" />
+          {/* Rolling Track */}
+          <div className="flex gap-16 items-center animate-scroll whitespace-nowrap w-max">
+            {/* LOGOS REPEATED TWICE FOR SEAMLESS LOOP */}
+            {[...Array(2)].map((_, groupIndex) => (
+              <div key={groupIndex} className="flex gap-16 items-center">
+
+                {/* Ville de Cassis */}
+                <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                  <span className="text-3xl">🏰</span>
+                  <span className="font-bold text-slate-800 text-xl">Ville de Cassis</span>
+                </div>
+
+                {/* Département */}
+                <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                  <span className="text-xl font-bold bg-blue-600 text-white px-3 py-1 rounded">13</span>
+                  <span className="font-bold text-blue-900 text-xl mt-1">Département</span>
+                </div>
+
+                {/* Région Sud */}
+                <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                  <span className="text-3xl">☀️</span>
+                  <span className="font-bold text-orange-500 text-xl">Région Sud</span>
+                </div>
+
+                {/* FFE */}
+                <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                  <span className="text-3xl">♟️</span>
+                  <span className="font-bold text-slate-800 text-xl">F.F.Echecs</span>
+                </div>
+
+                {/* ANS */}
+                <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                  <span className="text-3xl">🇫🇷</span>
+                  <span className="font-bold text-blue-800 text-xl">Agence du Sport</span>
+                </div>
+
+                {/* Private Sponsors Placeholders */}
+                <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                  <span className="text-3xl">🏨</span>
+                  <span className="font-bold text-slate-600 text-xl">Hôtel Les Roches</span>
+                </div>
+
+                <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                  <span className="text-3xl">🛒</span>
+                  <span className="font-bold text-red-600 text-xl">Intermarché</span>
+                </div>
+
               </div>
-              <div className="absolute bottom-4 left-4 z-10">
-                <div className="text-sm font-bold">Résumé Open International 2025</div>
-                <div className="text-xs text-slate-400">Durée : 12:30</div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
+
+        {/* CSS Animation Injection */}
+        <style jsx>{`
+          @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-scroll {
+            animation: scroll 30s linear infinite;
+          }
+          .animate-scroll:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
       </section>
 
       {/* Footer */}
@@ -233,7 +232,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-1 md:col-span-2">
-              <h3 className="text-white text-2xl font-bold mb-6">AC Echecs Calanques</h3>
+              <h3 className="text-white text-2xl font-bold mb-6">Echecs Calanques</h3>
               <p className="max-w-xs mb-6">
                 Le club d'échecs de référence au cœur du Parc National.
                 Apprendre, jouer, progresser.
@@ -259,13 +258,13 @@ export default function Home() {
               <ul className="space-y-3">
                 <li>Maison des Associations</li>
                 <li>13260 Cassis</li>
-                <li>contact@ac-echecs.fr</li>
+                <li>contact@echecs-calanques.fr</li>
                 <li>06 12 34 56 78</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-slate-800 pt-8 text-center text-sm">
-            <p>© 2026 AC Echecs Calanques. Site réalisé avec passion.</p>
+            <p>© 2026 Echecs Calanques. Site réalisé avec passion.</p>
           </div>
         </div>
       </footer>
