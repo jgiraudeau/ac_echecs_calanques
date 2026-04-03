@@ -264,6 +264,30 @@ export default function FFEPage() {
                                                     </div>
                                                 </div>
 
+                                                <div className="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-3">
+                                                    <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Prochaines rondes</p>
+                                                    {team.upcomingRounds.length === 0 ? (
+                                                        <p className="text-sm text-slate-600 mt-2">
+                                                            Aucune ronde à venir détectée pour cette équipe sur FFE.
+                                                        </p>
+                                                    ) : (
+                                                        <div className="mt-2 space-y-2">
+                                                            {team.upcomingRounds.map((round, index) => (
+                                                                <div key={`${team.targetId}-round-${round.roundNumber ?? index}-${round.opponent}`} className="rounded-md border border-slate-200 bg-white p-3">
+                                                                    <p className="text-sm font-bold text-slate-800">
+                                                                        {round.roundLabel} · {round.venue === "Exterieur" ? "Extérieur" : "Domicile"}
+                                                                    </p>
+                                                                    <p className="text-sm text-slate-700 mt-1">Adversaire : {round.opponent}</p>
+                                                                    <p className="text-xs text-slate-500 mt-1">
+                                                                        {round.date || "Date en attente"}
+                                                                        {round.location ? ` · ${round.location}` : ""}
+                                                                    </p>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    )}
+                                                </div>
+
                                                 <div className="flex flex-wrap gap-3 mt-4">
                                                     {team.teamUrl && (
                                                         <a
@@ -283,6 +307,16 @@ export default function FFEPage() {
                                                             className="inline-flex items-center gap-1 text-sm font-bold text-blue-600 hover:underline"
                                                         >
                                                             Voir le groupe <ExternalLink className="w-3 h-3" />
+                                                        </a>
+                                                    )}
+                                                    {team.calendarUrl && (
+                                                        <a
+                                                            href={team.calendarUrl}
+                                                            target="_blank"
+                                                            rel="noreferrer"
+                                                            className="inline-flex items-center gap-1 text-sm font-bold text-blue-600 hover:underline"
+                                                        >
+                                                            Calendrier complet <ExternalLink className="w-3 h-3" />
                                                         </a>
                                                     )}
                                                 </div>

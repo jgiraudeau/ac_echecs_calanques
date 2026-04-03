@@ -82,6 +82,15 @@ export const FFE_TARGET_TEAMS = [
 
 export type FfeTargetTeamId = (typeof FFE_TARGET_TEAMS)[number]["id"];
 
+export interface FfeUpcomingRound {
+  roundLabel: string;
+  roundNumber: number | null;
+  opponent: string;
+  venue: "Domicile" | "Exterieur";
+  date: string | null;
+  location: string | null;
+}
+
 export interface FfeSelectedTeam {
   targetId: FfeTargetTeamId;
   targetCategory: FfeTeamCategory;
@@ -95,7 +104,9 @@ export interface FfeSelectedTeam {
   place: string;
   teamUrl: string | null;
   groupUrl: string | null;
+  calendarUrl: string | null;
   teamId: string | null;
+  upcomingRounds: FfeUpcomingRound[];
 }
 
 export interface FfeTeamsApiResponse {
