@@ -17,7 +17,6 @@ export function Navbar() {
         { href: "/club", label: "Le Club" },
         { href: "/lieux", label: "Où jouer ?" },
         { href: "/activites", label: "Cours et Stages" },
-        { href: "/inscription", label: "Inscription" },
         { href: "/ffe", label: "Résultats FFE" },
         { href: "/partenaires", label: "Partenaires" },
         { href: "/agenda", label: "Agenda" },
