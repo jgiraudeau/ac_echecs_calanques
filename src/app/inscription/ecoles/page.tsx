@@ -12,22 +12,22 @@ const SCHOOL_OPTIONS = [
     href: resolveHelloAssoLink(HELLO_ASSO_LINKS.schools.saintAugustinCarnoux),
   },
   {
-    key: "trinitairesMarseille",
-    name: "Les Trinitaires",
+    key: "sainteTriniteMarseille",
+    name: "Sainte Trinité",
     city: "Marseille",
-    href: resolveHelloAssoLink(HELLO_ASSO_LINKS.schools.trinitairesMarseille),
+    href: resolveHelloAssoLink(HELLO_ASSO_LINKS.schools.sainteTriniteMarseille),
   },
   {
-    key: "gorguetteCassis",
-    name: "La Gorguette",
+    key: "sainteClaireCassis",
+    name: "Sainte Claire",
     city: "Cassis",
-    href: resolveHelloAssoLink(HELLO_ASSO_LINKS.schools.gorguetteCassis),
+    href: resolveHelloAssoLink(HELLO_ASSO_LINKS.schools.sainteClaireCassis),
   },
   {
-    key: "donBoscoMarseille",
+    key: "donBoscoSaintCyrSurMer",
     name: "Don Bosco",
-    city: "Marseille",
-    href: resolveHelloAssoLink(HELLO_ASSO_LINKS.schools.donBoscoMarseille),
+    city: "Saint-Cyr-sur-Mer",
+    href: resolveHelloAssoLink(HELLO_ASSO_LINKS.schools.donBoscoSaintCyrSurMer),
   },
 ] as const;
 

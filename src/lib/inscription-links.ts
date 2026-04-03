@@ -2,9 +2,9 @@ export const HELLO_ASSO_LINKS = {
   club: "",
   schools: {
     saintAugustinCarnoux: "",
-    trinitairesMarseille: "",
-    gorguetteCassis: "",
-    donBoscoMarseille: "",
+    sainteTriniteMarseille: "",
+    sainteClaireCassis: "",
+    donBoscoSaintCyrSurMer: "",
   },
 } as const;
 
