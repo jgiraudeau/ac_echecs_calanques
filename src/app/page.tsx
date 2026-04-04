@@ -1,15 +1,176 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
-import { Trophy, GraduationCap, Newspaper, Crown, Info, Coffee } from "lucide-react";
+import { Trophy, GraduationCap, Newspaper, Crown, Info, Coffee, Loader2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { SocialHub } from "@/components/social/SocialHub";
 import { clubSponsors } from "@/lib/sponsors";
 import { cn } from "@/lib/utils";
+import { type FfeRecentResult, type FfeSelectedTeam, type FfeTeamsApiResponse } from "@/lib/ffe-teams";
+
+type HomeFfeResult = {
+  id: string;
+  teamTitle: string;
+  competition: string;
+  roundLabel: string;
+  opponent: string;
+  venue: "Domicile" | "Exterieur";
+  date: string | null;
+  location: string | null;
+  outcome: FfeRecentResult["outcome"];
+  teamScore: string;
+  opponentScore: string;
+  timestamp: number | null;
+  roundNumber: number | null;
+};
+
+function parseFfeDateToTimestamp(value: string | null): number | null {
+  if (!value) return null;
+  const match = value.match(/(\d{2})\/(\d{2})\/(\d{2,4})(?:\s+(\d{1,2})[:h](\d{2}))?/);
+  if (!match) return null;
+
+  const day = Number.parseInt(match[1], 10);
+  const month = Number.parseInt(match[2], 10);
+  const yearRaw = Number.parseInt(match[3], 10);
+  const hours = match[4] ? Number.parseInt(match[4], 10) : 0;
+  const minutes = match[5] ? Number.parseInt(match[5], 10) : 0;
+  const year = yearRaw < 100 ? 2000 + yearRaw : yearRaw;
+  const parsed = new Date(year, month - 1, day, hours, minutes, 0, 0).getTime();
+  return Number.isNaN(parsed) ? null : parsed;
+}
+
+function buildHomeFfeResults(teams: FfeSelectedTeam[]): HomeFfeResult[] {
+  const flattened = teams.flatMap((team) =>
+    team.recentResults.map((result, index) => ({
+      id: `${team.targetId}-${result.roundNumber ?? "x"}-${result.opponent}-${result.date ?? "nd"}-${index}`,
+      teamTitle: `${team.targetCategory} · ${team.targetLabel}`,
+      competition: team.competition || team.division || "Interclubs FFE",
+      roundLabel: result.roundLabel,
+      opponent: result.opponent,
+      venue: result.venue,
+      date: result.date,
+      location: result.location,
+      outcome: result.outcome,
+      teamScore: result.teamScore,
+      opponentScore: result.opponentScore,
+      timestamp: parseFfeDateToTimestamp(result.date),
+      roundNumber: result.roundNumber,
+    })),
+  );
+
+  flattened.sort((a, b) => {
+    const aDate = a.timestamp;
+    const bDate = b.timestamp;
+
+    if (aDate !== null && bDate !== null && aDate !== bDate) {
+      return bDate - aDate;
+    }
+    if (aDate !== null) return -1;
+    if (bDate !== null) return 1;
+    if (a.roundNumber !== null && b.roundNumber !== null) {
+      return b.roundNumber - a.roundNumber;
+    }
+    if (a.roundNumber !== null) return -1;
+    if (b.roundNumber !== null) return 1;
+    return 0;
+  });
+
+  return flattened;
+}
+
+function pickNextResultIndex(results: HomeFfeResult[], previousIndex: number): number {
+  if (results.length <= 1) return 0;
+
+  const latestPoolSize = Math.min(Math.max(3, Math.ceil(results.length * 0.65)), results.length);
+  const useOlderPool = results.length > latestPoolSize && Math.random() < 0.2;
+  const start = useOlderPool ? latestPoolSize : 0;
+  const end = useOlderPool ? results.length : latestPoolSize;
+
+  let next = previousIndex;
+  let attempts = 0;
+  while (attempts < 10 && next === previousIndex) {
+    next = start + Math.floor(Math.random() * (end - start));
+    attempts += 1;
+  }
+
+  if (next === previousIndex) {
+    return (previousIndex + 1) % results.length;
+  }
+
+  return next;
+}
+
+function outcomeBadgeClassname(outcome: FfeRecentResult["outcome"]): string {
+  if (outcome === "Victoire") return "bg-green-100 text-green-700";
+  if (outcome === "Défaite") return "bg-red-100 text-red-700";
+  if (outcome === "Nul") return "bg-amber-100 text-amber-700";
+  return "bg-slate-200 text-slate-700";
+}
 
 export default function Home() {
+  const [ffeResults, setFfeResults] = useState<HomeFfeResult[]>([]);
+  const [ffeResultsLoading, setFfeResultsLoading] = useState(true);
+  const [ffeResultsError, setFfeResultsError] = useState<string | null>(null);
+  const [activeFfeResultIndex, setActiveFfeResultIndex] = useState(0);
+
+  useEffect(() => {
+    const abortController = new AbortController();
+
+    const loadFfeResults = async () => {
+      try {
+        setFfeResultsLoading(true);
+        setFfeResultsError(null);
+
+        const response = await fetch("/api/ffe/teams", {
+          cache: "no-store",
+          signal: abortController.signal,
+        });
+
+        const payload = (await response.json()) as unknown;
+        if (!response.ok) {
+          const message =
+            typeof payload === "object" &&
+            payload !== null &&
+            "error" in payload &&
+            typeof (payload as { error?: unknown }).error === "string"
+              ? (payload as { error: string }).error
+              : `Erreur API (${response.status})`;
+          throw new Error(message);
+        }
+
+        const apiPayload = payload as FfeTeamsApiResponse;
+        const nextResults = buildHomeFfeResults(apiPayload.teams);
+        setFfeResults(nextResults);
+        setActiveFfeResultIndex(nextResults.length > 0 ? pickNextResultIndex(nextResults, -1) : 0);
+      } catch (error) {
+        if (error instanceof Error && error.name === "AbortError") return;
+        const message = error instanceof Error ? error.message : "Erreur inconnue";
+        setFfeResultsError(message);
+      } finally {
+        setFfeResultsLoading(false);
+      }
+    };
+
+    void loadFfeResults();
+    return () => abortController.abort();
+  }, []);
+
+  useEffect(() => {
+    if (ffeResults.length <= 1) return;
+
+    const intervalId = window.setInterval(() => {
+      setActiveFfeResultIndex((current) => pickNextResultIndex(ffeResults, current));
+    }, 8000);
+
+    return () => window.clearInterval(intervalId);
+  }, [ffeResults]);
+
+  const activeFfeResult = ffeResults[activeFfeResultIndex] ?? null;
+  const latestFfeResultsPreview = ffeResults.slice(0, 3);
+
   return (
     <div className="min-h-screen flex flex-col font-sans bg-slate-50">
       <Navbar />
@@ -116,35 +277,88 @@ export default function Home() {
               Derniers Résultats
             </h2>
             <div className="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-accent h-[500px] flex flex-col">
-              <div className="space-y-6 flex-1 overflow-y-auto">
-                <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                  <div>
-                    <div className="font-bold text-slate-700">Open de Cassis</div>
-                    <div className="text-sm text-slate-500">Rapide • 120 joueurs</div>
+              <div className="space-y-4 flex-1 overflow-y-auto">
+                {ffeResultsLoading ? (
+                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-slate-600 flex items-center gap-2">
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Chargement des résultats FFE...
                   </div>
-                  <div className="text-right">
-                    <span className="block font-bold text-green-600">J. Durand 1er</span>
-                    <span className="text-xs text-slate-400">Perf 2450</span>
+                ) : null}
+
+                {!ffeResultsLoading && activeFfeResult ? (
+                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-wide text-slate-500">
+                          {activeFfeResult.teamTitle}
+                        </p>
+                        <p className="font-bold text-slate-800 mt-1">{activeFfeResult.competition}</p>
+                        <p className="text-xs text-slate-500 mt-1">{activeFfeResult.roundLabel}</p>
+                      </div>
+                      <span
+                        className={cn(
+                          "inline-flex rounded-full px-2.5 py-1 text-xs font-bold",
+                          outcomeBadgeClassname(activeFfeResult.outcome),
+                        )}
+                      >
+                        {activeFfeResult.outcome}
+                      </span>
+                    </div>
+
+                    <p className="mt-4 text-sm font-semibold text-slate-700">
+                      {activeFfeResult.venue === "Exterieur" ? "à" : "vs"} {activeFfeResult.opponent}
+                    </p>
+                    <p className="text-2xl font-black text-slate-900 mt-1">
+                      {activeFfeResult.teamScore} - {activeFfeResult.opponentScore}
+                    </p>
+                    <p className="text-xs text-slate-500 mt-2">
+                      {activeFfeResult.date || "Date non précisée"}
+                      {activeFfeResult.location ? ` · ${activeFfeResult.location}` : ""}
+                    </p>
                   </div>
-                </div>
-                <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                  <div>
-                    <div className="font-bold text-slate-700">Interclubs N2</div>
-                    <div className="text-sm text-slate-500">AC Echecs vs Marseille</div>
+                ) : null}
+
+                {!ffeResultsLoading && !activeFfeResult ? (
+                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
+                    Aucun résultat d'équipe publié pour le moment.
                   </div>
-                  <div className="text-right">
-                    <span className="block font-bold text-blue-600">Gain 5-2</span>
-                    <span className="text-xs text-slate-400">Ronde 7</span>
+                ) : null}
+
+                {!ffeResultsLoading && latestFfeResultsPreview.length > 0 ? (
+                  <div className="rounded-xl border border-slate-200 bg-white p-3">
+                    <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Résultats récents</p>
+                    <div className="mt-2 space-y-2">
+                      {latestFfeResultsPreview.map((result, index) => (
+                        <div
+                          key={result.id}
+                          className={cn(
+                            "rounded-lg border border-slate-100 px-3 py-2",
+                            index === activeFfeResultIndex ? "bg-blue-50 border-blue-200" : "bg-slate-50",
+                          )}
+                        >
+                          <p className="text-sm font-semibold text-slate-700">{result.teamTitle}</p>
+                          <p className="text-xs text-slate-500">
+                            {result.venue === "Exterieur" ? "à" : "vs"} {result.opponent} · {result.teamScore} - {result.opponentScore}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                    {ffeResults.length > 1 ? (
+                      <p className="text-xs text-slate-400 mt-2">Affichage aléatoire, priorité aux résultats les plus récents.</p>
+                    ) : null}
                   </div>
-                </div>
-                <div className="bg-slate-50 p-4 rounded-xl text-center">
-                  <p className="text-sm text-slate-600 mb-3">Prochain match à domicile</p>
-                  <div className="font-bold text-lg text-primary">Dimanche 15 Mai</div>
-                  <div className="text-sm text-slate-500">vs Nice Alekhine</div>
-                </div>
+                ) : null}
+
+                {ffeResultsError ? (
+                  <p className="text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg p-2">
+                    Résultats FFE temporairement indisponibles: {ffeResultsError}
+                  </p>
+                ) : null}
               </div>
 
-              <Button variant="outline" className="w-full mt-6">Voir tous les classements</Button>
+              <Button asChild variant="outline" className="w-full mt-6">
+                <Link href="/ffe">Voir tous les classements</Link>
+              </Button>
             </div>
           </div>
         </div>

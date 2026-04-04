@@ -91,6 +91,18 @@ export interface FfeUpcomingRound {
   location: string | null;
 }
 
+export interface FfeRecentResult {
+  roundLabel: string;
+  roundNumber: number | null;
+  opponent: string;
+  venue: "Domicile" | "Exterieur";
+  date: string | null;
+  location: string | null;
+  teamScore: string;
+  opponentScore: string;
+  outcome: "Victoire" | "Nul" | "Défaite" | "Résultat";
+}
+
 export interface FfeSelectedTeam {
   targetId: FfeTargetTeamId;
   targetCategory: FfeTeamCategory;
@@ -107,6 +119,7 @@ export interface FfeSelectedTeam {
   calendarUrl: string | null;
   teamId: string | null;
   upcomingRounds: FfeUpcomingRound[];
+  recentResults: FfeRecentResult[];
 }
 
 export interface FfeTeamsApiResponse {

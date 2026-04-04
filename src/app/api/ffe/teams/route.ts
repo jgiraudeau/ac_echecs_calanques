@@ -4,6 +4,7 @@ import {
   FFE_TARGET_TEAMS,
   FFE_TEAMS_SOURCE_URL,
   type FfeTargetTeamConfig,
+  type FfeRecentResult,
   type FfeSelectedTeam,
   type FfeTeamsApiResponse,
   type FfeUpcomingRound,
@@ -132,6 +133,17 @@ function hasScoreValue(value: string): boolean {
   if (!normalized) return false;
   if (normalized === "-" || normalized === "?") return false;
   return true;
+}
+
+function parseFfeScore(value: string): number | null {
+  const normalized = value
+    .replace(/\s+/g, "")
+    .replace(",", ".")
+    .trim();
+
+  if (!normalized || normalized === "-" || normalized === "?") return null;
+  const parsed = Number.parseFloat(normalized);
+  return Number.isNaN(parsed) ? null : parsed;
 }
 
 function parseFfeTeamRows(html: string): ParsedFfeTeamRow[] {
@@ -304,6 +316,97 @@ function buildUpcomingRounds(team: FfeSelectedTeam, calendarMatches: ParsedCalen
   return deduped.slice(0, 4);
 }
 
+function buildRecentResults(team: FfeSelectedTeam, calendarMatches: ParsedCalendarMatch[]): FfeRecentResult[] {
+  const teamNames = new Set([
+    normalizeFfeTeamName(team.name),
+    normalizeFfeTeamName(team.sourceName),
+    normalizeFfeTeamName(team.targetLabel),
+  ]);
+
+  const recent = calendarMatches.flatMap((match) => {
+    if (!match.played) return [];
+
+    const normalizedHome = normalizeFfeTeamName(match.homeTeam);
+    const normalizedAway = normalizeFfeTeamName(match.awayTeam);
+
+    let opponent = "";
+    let venue: FfeRecentResult["venue"] | null = null;
+    let teamScore = "";
+    let opponentScore = "";
+
+    if (teamNames.has(normalizedHome)) {
+      opponent = match.awayTeam;
+      venue = "Domicile";
+      teamScore = match.homeScore;
+      opponentScore = match.awayScore;
+    } else if (teamNames.has(normalizedAway)) {
+      opponent = match.homeTeam;
+      venue = "Exterieur";
+      teamScore = match.awayScore;
+      opponentScore = match.homeScore;
+    } else {
+      return [];
+    }
+
+    const teamScoreNumber = parseFfeScore(teamScore);
+    const opponentScoreNumber = parseFfeScore(opponentScore);
+
+    let outcome: FfeRecentResult["outcome"] = "Résultat";
+    if (teamScoreNumber !== null && opponentScoreNumber !== null) {
+      if (teamScoreNumber > opponentScoreNumber) {
+        outcome = "Victoire";
+      } else if (teamScoreNumber < opponentScoreNumber) {
+        outcome = "Défaite";
+      } else {
+        outcome = "Nul";
+      }
+    }
+
+    return [
+      {
+        roundLabel: match.roundLabel,
+        roundNumber: match.roundNumber,
+        opponent,
+        venue,
+        date: match.date,
+        location: match.location,
+        teamScore,
+        opponentScore,
+        outcome,
+      } satisfies FfeRecentResult,
+    ];
+  });
+
+  recent.sort((a, b) => {
+    const aDate = parseFfeDate(a.date)?.getTime();
+    const bDate = parseFfeDate(b.date)?.getTime();
+
+    if (aDate !== undefined && bDate !== undefined) {
+      return bDate - aDate;
+    }
+    if (aDate !== undefined) return -1;
+    if (bDate !== undefined) return 1;
+
+    if (a.roundNumber !== null && b.roundNumber !== null) {
+      return b.roundNumber - a.roundNumber;
+    }
+    if (a.roundNumber !== null) return -1;
+    if (b.roundNumber !== null) return 1;
+    return 0;
+  });
+
+  const deduped: FfeRecentResult[] = [];
+  const seen = new Set<string>();
+  for (const item of recent) {
+    const key = `${item.roundLabel}|${item.opponent}|${item.date ?? ""}|${item.teamScore}-${item.opponentScore}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    deduped.push(item);
+  }
+
+  return deduped.slice(0, 8);
+}
+
 export async function GET() {
   try {
     const response = await fetch(FFE_TEAMS_SOURCE_URL, {
@@ -344,6 +447,7 @@ export async function GET() {
           ...row,
           calendarUrl: null,
           upcomingRounds: [],
+          recentResults: [],
         },
       ];
     });
@@ -406,6 +510,7 @@ export async function GET() {
         ...team,
         calendarUrl: groupCalendarData.calendarUrl,
         upcomingRounds: buildUpcomingRounds(team, groupCalendarData.matches),
+        recentResults: buildRecentResults(team, groupCalendarData.matches),
       };
     });
 
