@@ -6,6 +6,8 @@ import { Trophy, GraduationCap, Newspaper, Crown, Info, Coffee } from "lucide-re
 import Image from "next/image";
 import Link from "next/link";
 import { SocialHub } from "@/components/social/SocialHub";
+import { clubSponsors } from "@/lib/sponsors";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
@@ -152,76 +154,69 @@ export default function Home() {
       <section className="py-16 bg-white border-y border-slate-100 overflow-hidden">
         <div className="container mx-auto px-4 text-center mb-10">
           <h2 className="text-2xl font-bold text-slate-800 uppercase tracking-widest">Ils nous soutiennent</h2>
+          <p className="mt-3 text-slate-500">Nouveau sponsor 2026: Cultura Aubagne</p>
         </div>
 
-        {/* Marquee Container */}
         <div className="relative w-full overflow-hidden">
-          {/* Gradient masks for smooth fade effect at edges */}
-          <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10"></div>
-          <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10"></div>
+          <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-white to-transparent z-10"></div>
+          <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-white to-transparent z-10"></div>
 
-          {/* Rolling Track */}
-          <div className="flex gap-16 items-center animate-scroll whitespace-nowrap w-max">
-            {/* LOGOS REPEATED TWICE FOR SEAMLESS LOOP */}
+          <div className="flex gap-6 items-center animate-sponsors whitespace-nowrap w-max px-3">
             {[...Array(2)].map((_, groupIndex) => (
-              <div key={groupIndex} className="flex gap-16 items-center">
+              <div key={groupIndex} className="flex gap-6 items-center">
+                {clubSponsors.map((sponsor) => (
+                  <Link
+                    key={`${groupIndex}-${sponsor.id}`}
+                    href={sponsor.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cn(
+                      "group relative flex h-32 w-[240px] flex-col justify-between rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
+                      sponsor.cardClassName
+                    )}
+                  >
+                    {sponsor.isNew ? (
+                      <span className="absolute -top-2 right-3 rounded-full bg-[#00338d] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
+                        Nouveau
+                      </span>
+                    ) : null}
 
-                {/* Ville de Cassis */}
-                <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-                  <span className="text-3xl">🏰</span>
-                  <span className="font-bold text-slate-800 text-xl">Ville de Cassis</span>
-                </div>
+                    <div className="relative flex h-14 w-full items-center justify-center">
+                      <Image
+                        src={sponsor.logoSrc}
+                        alt={`Logo ${sponsor.name}`}
+                        width={170}
+                        height={70}
+                        className={cn("h-auto max-h-[56px] w-auto object-contain", sponsor.logoClassName)}
+                      />
+                    </div>
 
-                {/* Département */}
-                <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-                  <span className="text-xl font-bold bg-blue-600 text-white px-3 py-1 rounded">13</span>
-                  <span className="font-bold text-blue-900 text-xl mt-1">Département</span>
-                </div>
-
-                {/* Région Sud */}
-                <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-                  <span className="text-3xl">☀️</span>
-                  <span className="font-bold text-orange-500 text-xl">Région Sud</span>
-                </div>
-
-                {/* FFE */}
-                <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-                  <span className="text-3xl">♟️</span>
-                  <span className="font-bold text-slate-800 text-xl">F.F.Echecs</span>
-                </div>
-
-                {/* ANS */}
-                <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-                  <span className="text-3xl">🇫🇷</span>
-                  <span className="font-bold text-blue-800 text-xl">Agence du Sport</span>
-                </div>
-
-                {/* Private Sponsors Placeholders */}
-                <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-                  <span className="text-3xl">🏨</span>
-                  <span className="font-bold text-slate-600 text-xl">Hôtel Les Roches</span>
-                </div>
-
-                <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-                  <span className="text-3xl">🛒</span>
-                  <span className="font-bold text-red-600 text-xl">Intermarché</span>
-                </div>
-
+                    <div className="space-y-0.5 text-center leading-tight">
+                      <p className={cn("text-sm font-bold text-slate-800", sponsor.textClassName)}>{sponsor.name}</p>
+                      <p className={cn("text-xs text-slate-500", sponsor.textClassName ? "text-slate-300" : "")}>
+                        {sponsor.tagline}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
               </div>
             ))}
           </div>
         </div>
 
-        {/* CSS Animation Injection */}
         <style jsx>{`
-          @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+          @keyframes sponsors-scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
           }
-          .animate-scroll {
-            animation: scroll 30s linear infinite;
+          .animate-sponsors {
+            animation: sponsors-scroll 42s linear infinite;
           }
-          .animate-scroll:hover {
+          .animate-sponsors:hover {
             animation-play-state: paused;
           }
         `}</style>

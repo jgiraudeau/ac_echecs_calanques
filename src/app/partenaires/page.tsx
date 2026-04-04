@@ -1,6 +1,10 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Check, Star, Heart, TrendingUp, Users, Globe, Building } from "lucide-react";
+import { Check, Star, Heart, TrendingUp, Users, Globe, Building, ArrowUpRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import { institutionalSponsors, privateSponsors, sponsorCategoryLabel } from "@/lib/sponsors";
+import { cn } from "@/lib/utils";
 
 export default function PartenairesPage() {
     return (
@@ -51,6 +55,108 @@ export default function PartenairesPage() {
                         <p className="text-slate-600">
                             <strong>66% de votre don</strong> est déductible de vos impôts. Un don de 1000€ ne vous coûte réellement que 340€.
                         </p>
+                    </div>
+                </div>
+
+                {/* Sponsors mis en avant */}
+                <div className="mb-20">
+                    <div className="rounded-3xl border border-emerald-200 bg-gradient-to-r from-emerald-50 to-cyan-50 p-6 md:p-8 mb-8">
+                        <p className="inline-flex items-center rounded-full bg-white px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-700 border border-emerald-200">
+                            <Sparkles className="w-4 h-4 mr-2" />
+                            Nouveauté Partenaires
+                        </p>
+                        <h2 className="mt-4 text-2xl md:text-3xl font-extrabold text-slate-800">
+                            Bienvenue à notre nouveau sponsor: Cultura Aubagne
+                        </h2>
+                        <p className="mt-2 text-slate-600 max-w-3xl">
+                            Nous remercions l'ensemble de nos soutiens institutionnels et privés qui accompagnent la progression sportive et éducative du club.
+                        </p>
+                    </div>
+
+                    <div className="grid xl:grid-cols-2 gap-8">
+                        <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm">
+                            <h3 className="text-xl font-bold text-slate-800 mb-1">Partenaires institutionnels</h3>
+                            <p className="text-sm text-slate-500 mb-5">Collectivités et institutions qui soutiennent le projet club.</p>
+                            <div className="grid sm:grid-cols-2 gap-4">
+                                {institutionalSponsors.map((sponsor) => (
+                                    <Link
+                                        key={sponsor.id}
+                                        href={sponsor.website}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={cn(
+                                            "group rounded-2xl border border-slate-200 bg-white p-4 transition-all hover:-translate-y-0.5 hover:shadow-md",
+                                            sponsor.cardClassName
+                                        )}
+                                    >
+                                        <span className="inline-flex rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-slate-600">
+                                            {sponsorCategoryLabel[sponsor.category]}
+                                        </span>
+                                        <div className="mt-3 h-16 flex items-center justify-center">
+                                            <Image
+                                                src={sponsor.logoSrc}
+                                                alt={`Logo ${sponsor.name}`}
+                                                width={180}
+                                                height={80}
+                                                className={cn("h-auto max-h-[58px] w-auto object-contain", sponsor.logoClassName)}
+                                            />
+                                        </div>
+                                        <div className="mt-3 flex items-start justify-between gap-2">
+                                            <div>
+                                                <p className={cn("font-bold text-slate-800 text-sm", sponsor.textClassName)}>{sponsor.name}</p>
+                                                <p className={cn("text-xs text-slate-500", sponsor.textClassName ? "text-slate-300" : "")}>{sponsor.tagline}</p>
+                                            </div>
+                                            <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-slate-700 shrink-0 mt-0.5" />
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm">
+                            <h3 className="text-xl font-bold text-slate-800 mb-1">Sponsors privés</h3>
+                            <p className="text-sm text-slate-500 mb-5">Entreprises engagées auprès de nos actions et événements.</p>
+                            <div className="grid sm:grid-cols-2 gap-4">
+                                {privateSponsors.map((sponsor) => (
+                                    <Link
+                                        key={sponsor.id}
+                                        href={sponsor.website}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={cn(
+                                            "group relative rounded-2xl border border-slate-200 bg-white p-4 transition-all hover:-translate-y-0.5 hover:shadow-md",
+                                            sponsor.cardClassName
+                                        )}
+                                    >
+                                        {sponsor.isNew ? (
+                                            <span className="absolute -top-2 right-3 rounded-full bg-[#00338d] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
+                                                Nouveau
+                                            </span>
+                                        ) : null}
+
+                                        <span className="inline-flex rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-slate-600">
+                                            {sponsorCategoryLabel[sponsor.category]}
+                                        </span>
+                                        <div className="mt-3 h-16 flex items-center justify-center">
+                                            <Image
+                                                src={sponsor.logoSrc}
+                                                alt={`Logo ${sponsor.name}`}
+                                                width={180}
+                                                height={80}
+                                                className={cn("h-auto max-h-[58px] w-auto object-contain", sponsor.logoClassName)}
+                                            />
+                                        </div>
+                                        <div className="mt-3 flex items-start justify-between gap-2">
+                                            <div>
+                                                <p className={cn("font-bold text-slate-800 text-sm", sponsor.textClassName)}>{sponsor.name}</p>
+                                                <p className={cn("text-xs text-slate-500", sponsor.textClassName ? "text-slate-300" : "")}>{sponsor.tagline}</p>
+                                            </div>
+                                            <ArrowUpRight className={cn("w-4 h-4 text-slate-400 shrink-0 mt-0.5", sponsor.textClassName ? "text-slate-200" : "group-hover:text-slate-700")} />
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
 
