@@ -19,6 +19,7 @@ export function Navbar() {
         { href: "/activites", label: "Cours et Stages" },
         { href: "/ffe", label: "Résultats FFE" },
         { href: "/partenaires", label: "Partenaires" },
+        { href: "/produits-derives", label: "Produits dérivés" },
         { href: "/agenda", label: "Agenda" },
         { href: "/contact", label: "Contact" },
     ];
