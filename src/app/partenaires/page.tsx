@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Check, Star, Heart, Users, Globe, ArrowUpRight, Sparkles, Mail, Phone } from "lucide-react";
+import { Check, Star, Heart, Users, Globe, ArrowUpRight, Sparkles, Mail, Phone, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -258,9 +258,17 @@ export default function PartenairesPage() {
               Offre textile, accessoires, événementiel et mobilité: choisissez le support le plus adapté à votre objectif.
             </p>
           </div>
-          <Button asChild variant="outline" className="border-slate-300">
-            <Link href="/produits-derives">Voir la page Produits dérivés</Link>
-          </Button>
+          <div className="flex flex-wrap gap-3">
+            <Button asChild variant="outline" className="border-slate-300">
+              <Link href="/produits-derives">Voir la page Produits dérivés</Link>
+            </Button>
+            <Button asChild variant="outline" className="border-slate-300">
+              <a href="/documents/proposition-sponsoring-academie-calanques.pdf" download>
+                Télécharger le dossier PDF
+                <Download className="w-4 h-4" />
+              </a>
+            </Button>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">

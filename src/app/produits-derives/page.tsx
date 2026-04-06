@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Check, Sparkles, Star, Globe, Users } from "lucide-react";
+import { Check, Sparkles, Star, Globe, Users, Download, ExternalLink } from "lucide-react";
 
 const merchandiseLines = [
   {
@@ -112,6 +112,22 @@ export default function ProduitsDerivesPage() {
             faciliter la décision des entreprises.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
+            <Button asChild variant="outline" className="border-slate-300">
+              <a
+                href="/documents/proposition-sponsoring-academie-calanques.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ouvrir le dossier PDF
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </Button>
+            <Button asChild variant="outline" className="border-slate-300">
+              <a href="/documents/proposition-sponsoring-academie-calanques.pdf" download>
+                Télécharger le PDF
+                <Download className="w-4 h-4" />
+              </a>
+            </Button>
             <Button asChild className="bg-slate-900 hover:bg-slate-800 text-white font-semibold">
               <Link href="/partenaires">Voir les offres partenariat</Link>
             </Button>
