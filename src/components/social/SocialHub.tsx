@@ -64,22 +64,46 @@ export function SocialHub() {
 
                 {/* Mini Grid Simulation (Static for now, links to IG) */}
                 <div className="grid grid-cols-3 gap-2 h-1/3">
-                    {[1, 2, 3].map((i) => (
-                        <a
-                            key={i}
-                            href="https://www.instagram.com/cassisechecs/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="h-full bg-slate-100 rounded-lg overflow-hidden relative group"
-                        >
-                            <div className={`w-full h-full bg-slate-200 group-hover:opacity-80 transition-opacity ${i === 1 ? 'bg-blue-100' : i === 2 ? 'bg-orange-100' : 'bg-green-100'} bg-cover bg-center`}
-                                style={{ backgroundImage: `url('https://images.unsplash.com/photo-${i === 1 ? '1529699213344-8a8820621094' : i === 2 ? '1586165368502-1bad197a6461' : '1523875194681-bedd468c58bf'}?w=300&h=300&fit=crop')` }}
-                            />
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
-                                <Instagram className="w-6 h-6 text-white drop-shadow-md" />
-                            </div>
-                        </a>
-                    ))}
+                    {[1, 2, 3].map((i) => {
+                        if (i === 2) {
+                            return (
+                                <div
+                                    key={i}
+                                    className="h-full bg-white rounded-lg overflow-hidden relative border border-slate-200"
+                                >
+                                    <iframe
+                                        src="https://www.instagram.com/p/DRhQ349Dvp3/embed"
+                                        title="Publication Instagram @cassisechecs"
+                                        width="100%"
+                                        height="100%"
+                                        style={{ border: 0 }}
+                                        scrolling="yes"
+                                        className="absolute inset-0 w-full h-full"
+                                    ></iframe>
+                                </div>
+                            );
+                        }
+
+                        return (
+                            <a
+                                key={i}
+                                href="https://www.instagram.com/cassisechecs/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="h-full bg-slate-100 rounded-lg overflow-hidden relative group"
+                            >
+                                <div
+                                    className={`w-full h-full bg-slate-200 group-hover:opacity-80 transition-opacity ${i === 1 ? "bg-blue-100" : "bg-green-100"} bg-cover bg-center`}
+                                    style={{
+                                        backgroundImage: `url('https://images.unsplash.com/photo-${i === 1 ? "1529699213344-8a8820621094" : "1523875194681-bedd468c58bf"}?w=300&h=300&fit=crop')`,
+                                    }}
+                                />
+                                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
+                                    <Instagram className="w-6 h-6 text-white drop-shadow-md" />
+                                </div>
+                            </a>
+                        );
+                    })}
                 </div>
             </div>
         </div>
