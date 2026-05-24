@@ -95,6 +95,43 @@ export const clubSponsors: Sponsor[] = [
     cardClassName: "border-[#00338d]/35 bg-[#00338d]/5",
     logoClassName: "max-h-[50px]",
   },
+  {
+    id: "ville-de-carnoux",
+    name: "Ville de Carnoux-en-Provence",
+    tagline: "Collectivité territoriale",
+    website: "https://www.carnoux-en-provence.com/",
+    logoSrc: "/sponsors/ville-de-carnoux.svg",
+    category: "institutionnel",
+    logoClassName: "max-h-[64px]",
+  },
+  {
+    id: "ville-de-la-ciotat",
+    name: "Ville de La Ciotat",
+    tagline: "Collectivité territoriale",
+    website: "https://www.laciotat.com/",
+    logoSrc: "/sponsors/ville-de-la-ciotat.svg",
+    category: "institutionnel",
+    logoClassName: "max-h-[64px]",
+  },
+  {
+    id: "ville-de-ceyreste",
+    name: "Ville de Ceyreste",
+    tagline: "Collectivité territoriale",
+    website: "https://www.ceyreste.fr/",
+    logoSrc: "/sponsors/ville-de-ceyreste.svg",
+    category: "institutionnel",
+    logoClassName: "max-h-[64px]",
+  },
+  {
+    id: "appart-hotel-saint-esteve",
+    name: "Appart Hôtel Saint Estève",
+    tagline: "Partenaire hôtelier à La Ciotat",
+    website: "https://www.apparthotel-laciotat.com/fr",
+    logoSrc: "/sponsors/appart-hotel-saint-esteve.png",
+    category: "partenaire_prive",
+    cardClassName: "bg-slate-50 border-slate-200",
+    logoClassName: "max-h-[50px]",
+  },
 ];
 
 export const institutionalSponsors = clubSponsors.filter(
