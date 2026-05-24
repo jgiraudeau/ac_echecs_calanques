@@ -9,6 +9,7 @@ export interface LocationEntry {
   address: string;
   verification: LocationVerification;
   source: string;
+  note?: string;
 }
 
 export const LOCATION_ENTRIES: LocationEntry[] = [
@@ -47,15 +48,17 @@ export const LOCATION_ENTRIES: LocationEntry[] = [
     address: "55 avenue de Lattre de Tassigny, 13009 Marseille",
     verification: "verified",
     source: "Ministère de l'Éducation nationale",
+    note: "École mais aussi club ouvert à tous (le Mardi de 16h30 à 18h30)",
   },
   {
     id: "ceyreste-echecs-siege",
-    name: "Ceyreste Échecs (siège)",
+    name: "CIQ Saint Jean",
     type: "club",
     city: "La Ciotat",
-    address: "318 chemin de Roumagoua, 13600 La Ciotat",
+    address: "327 avenue de St Jean, 13600 La Ciotat",
     verification: "verified",
-    source: "Fédération Française des Échecs",
+    source: "Club Échecs",
+    note: "Club (le lundi de 16h30 à 18h30)",
   },
   {
     id: "salle-culture-ceyreste",

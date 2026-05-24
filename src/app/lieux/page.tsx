@@ -54,6 +54,11 @@ export default function LieuxPage() {
                                         <div>
                                             <div className="font-bold text-slate-700">{place.name}</div>
                                             <div className="text-sm text-slate-500">{place.address}</div>
+                                            {place.note && (
+                                                <div className="text-sm font-medium text-emerald-700 mt-2 bg-emerald-50 p-2 rounded-md border border-emerald-100">
+                                                    📅 {place.note}
+                                                </div>
+                                            )}
                                             <div className="flex flex-wrap items-center gap-2 mt-2">
                                                 <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
                                                     {place.type === "ecole" ? "SCOLAIRE" : "CLUB"}
