@@ -41,6 +41,16 @@ export const LOCATION_ENTRIES: LocationEntry[] = [
     source: "Ministère de l'Éducation nationale",
   },
   {
+    id: "club-coq-carnoux",
+    name: "Club au COQ",
+    type: "club",
+    city: "Carnoux-en-Provence",
+    address: "Av. Paul Cézanne, 13470 Carnoux-en-Provence",
+    verification: "verified",
+    source: "Club Échecs",
+    note: "Club (le jeudi de 16h30 à 18h30)",
+  },
+  {
     id: "institution-sainte-trinite-marseille",
     name: "Institution Sainte Trinité",
     type: "ecole",
