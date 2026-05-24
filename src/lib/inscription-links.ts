@@ -1,10 +1,10 @@
 export const HELLO_ASSO_LINKS = {
   club: "",
   schools: {
-    saintAugustinCarnoux: "",
-    sainteTriniteMarseille: "",
-    sainteClaireCassis: "",
-    donBoscoSaintCyrSurMer: "",
+    saintAugustinCarnoux: "https://www.helloasso.com/associations/echecs-cassis/evenements/club-d-echecs-saint-augustin",
+    sainteTriniteMarseille: "https://www.helloasso.com/associations/echecs-cassis/evenements/club-d-echecs-sainte-trinitie",
+    sainteClaireCassis: "https://www.helloasso.com/associations/echecs-cassis/evenements/club-d-echecs-sainte-claire",
+    donBoscoSaintCyrSurMer: "https://www.helloasso.com/associations/echecs-cassis/evenements/club-d-echecs-don-bosco",
   },
 } as const;
 
