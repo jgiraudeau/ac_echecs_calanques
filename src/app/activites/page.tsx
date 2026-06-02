@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Clock } from "lucide-react";
+import { Clock, MapPin } from "lucide-react";
+import Link from "next/link";
 
 export default function ActivitesPage() {
     return (
@@ -31,17 +32,61 @@ export default function ActivitesPage() {
                             <tbody className="divide-y divide-slate-100 text-slate-700">
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-4 font-semibold text-slate-900">Lundi</td>
-                                    <td className="p-4">CIQ Saint Jean, La Ciotat</td>
+                                    <td className="p-4">
+                                        <Link 
+                                            href="/lieux?id=ceyreste-echecs-siege"
+                                            className="text-blue-600 hover:text-accent font-semibold hover:underline inline-flex items-center gap-1"
+                                        >
+                                            CIQ Saint Jean, La Ciotat
+                                            <MapPin className="w-3.5 h-3.5" />
+                                        </Link>
+                                    </td>
                                     <td className="p-4 text-emerald-700 font-medium">16h30 à 18h30</td>
                                 </tr>
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-4 font-semibold text-slate-900">Mardi</td>
-                                    <td className="p-4">Sainte Trinité (Marseille) <br/><span className="text-sm text-slate-500">et</span> Ceyreste</td>
+                                    <td className="p-4">
+                                        <Link 
+                                            href="/lieux?id=institution-sainte-trinite-marseille"
+                                            className="text-blue-600 hover:text-accent font-semibold hover:underline inline-flex items-center gap-1"
+                                        >
+                                            Sainte Trinité (Marseille)
+                                            <MapPin className="w-3.5 h-3.5" />
+                                        </Link>
+                                        <br/>
+                                        <span className="text-sm text-slate-500">et</span>
+                                        <br/>
+                                        <Link 
+                                            href="/lieux?id=salle-culture-ceyreste"
+                                            className="text-blue-600 hover:text-accent font-semibold hover:underline inline-flex items-center gap-1 mt-1"
+                                        >
+                                            Ceyreste
+                                            <MapPin className="w-3.5 h-3.5" />
+                                        </Link>
+                                    </td>
                                     <td className="p-4 text-emerald-700 font-medium">16h30 à 18h30</td>
                                 </tr>
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-4 font-semibold text-slate-900">Mercredi</td>
-                                    <td className="p-4">Cassis <br/><span className="text-sm text-slate-500">et</span> Ceyreste</td>
+                                    <td className="p-4">
+                                        <Link 
+                                            href="/lieux?id=centre-culturel-cassis"
+                                            className="text-blue-600 hover:text-accent font-semibold hover:underline inline-flex items-center gap-1"
+                                        >
+                                            Cassis
+                                            <MapPin className="w-3.5 h-3.5" />
+                                        </Link>
+                                        <br/>
+                                        <span className="text-sm text-slate-500">et</span>
+                                        <br/>
+                                        <Link 
+                                            href="/lieux?id=salle-culture-ceyreste"
+                                            className="text-blue-600 hover:text-accent font-semibold hover:underline inline-flex items-center gap-1 mt-1"
+                                        >
+                                            Ceyreste
+                                            <MapPin className="w-3.5 h-3.5" />
+                                        </Link>
+                                    </td>
                                     <td className="p-4">
                                         <div className="text-emerald-700 font-medium">15h à 18h <span className="text-slate-500 text-sm font-normal">(Cassis)</span></div>
                                         <div className="text-emerald-700 font-medium">15h à 16h30 <span className="text-slate-500 text-sm font-normal">(Ceyreste)</span></div>
@@ -49,7 +94,25 @@ export default function ActivitesPage() {
                                 </tr>
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-4 font-semibold text-slate-900">Jeudi</td>
-                                    <td className="p-4">Cassis <br/><span className="text-sm text-slate-500">et</span> Carnoux</td>
+                                    <td className="p-4">
+                                        <Link 
+                                            href="/lieux?id=centre-culturel-cassis"
+                                            className="text-blue-600 hover:text-accent font-semibold hover:underline inline-flex items-center gap-1"
+                                        >
+                                            Cassis
+                                            <MapPin className="w-3.5 h-3.5" />
+                                        </Link>
+                                        <br/>
+                                        <span className="text-sm text-slate-500">et</span>
+                                        <br/>
+                                        <Link 
+                                            href="/lieux?id=club-coq-carnoux"
+                                            className="text-blue-600 hover:text-accent font-semibold hover:underline inline-flex items-center gap-1 mt-1"
+                                        >
+                                            Carnoux
+                                            <MapPin className="w-3.5 h-3.5" />
+                                        </Link>
+                                    </td>
                                     <td className="p-4">
                                         <div className="text-emerald-700 font-medium">16h30 à 18h30</div>
                                         <div className="text-blue-600 font-medium mt-1">19h à 20h <span className="text-slate-500 text-sm font-normal">(Cours Élite Cassis & Visio)</span></div>
@@ -57,7 +120,15 @@ export default function ActivitesPage() {
                                 </tr>
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-4 font-semibold text-slate-900">Vendredi</td>
-                                    <td className="p-4">Cassis</td>
+                                    <td className="p-4">
+                                        <Link 
+                                            href="/lieux?id=centre-culturel-cassis"
+                                            className="text-blue-600 hover:text-accent font-semibold hover:underline inline-flex items-center gap-1"
+                                        >
+                                            Cassis
+                                            <MapPin className="w-3.5 h-3.5" />
+                                        </Link>
+                                    </td>
                                     <td className="p-4">
                                         <div className="text-emerald-700 font-medium">16h30 à 18h30</div>
                                         <div className="text-blue-600 font-medium mt-1">19h à 20h <span className="text-slate-500 text-sm font-normal">(Cours Élite & En ligne)</span></div>

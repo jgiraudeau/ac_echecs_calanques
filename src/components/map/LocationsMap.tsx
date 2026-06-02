@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ExternalLink, Navigation, Route } from "lucide-react";
 import { LOCATION_ENTRIES } from "@/lib/locations";
 
@@ -22,6 +22,22 @@ export default function LocationsMap() {
   const [selectedLocationId, setSelectedLocationId] = useState<string>(
     LOCATION_ENTRIES[0]?.id ?? "",
   );
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const idParam = params.get("id");
+      if (idParam && LOCATION_ENTRIES.some((loc) => loc.id === idParam)) {
+        setSelectedLocationId(idParam);
+        return;
+      }
+
+      const hash = window.location.hash.replace("#", "");
+      if (hash && LOCATION_ENTRIES.some((loc) => loc.id === hash)) {
+        setSelectedLocationId(hash);
+      }
+    }
+  }, []);
 
   const selectedLocation = useMemo(
     () => LOCATION_ENTRIES.find((location) => location.id === selectedLocationId) ?? LOCATION_ENTRIES[0],
