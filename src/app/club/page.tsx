@@ -201,19 +201,19 @@ export default function ClubPage() {
                                 </div>
                             </div>
 
-                            {/* Alexandre Merrenciano */}
+                            {/* Alexandre Merenciano */}
                             <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100">
                                 <div className="bg-gradient-to-r from-blue-800 to-blue-700 p-5 text-white text-center">
                                     <div className="w-20 h-20 bg-white/20 rounded-full mx-auto mb-3 backdrop-blur flex items-center justify-center text-3xl">
                                         ♟️
                                     </div>
-                                    <h4 className="text-lg font-bold">Alexandre Merrenciano</h4>
-                                    <div className="text-blue-100 font-bold text-sm uppercase tracking-wider mb-2">Animateur • 2250 Elo</div>
-                                    <div className="inline-block bg-white/20 px-3 py-1 rounded-full text-xs">AFC • Arbitre de Club</div>
+                                    <h4 className="text-lg font-bold">Alexandre Merenciano</h4>
+                                    <div className="text-blue-100 font-bold text-sm uppercase tracking-wider mb-2">Entraîneur du Club • 2250 Elo</div>
+                                    <div className="inline-block bg-white/20 px-3 py-1 rounded-full text-xs">Candidat Maître (CM) • AFC • Arbitre</div>
                                 </div>
                                 <div className="p-5">
                                     <p className="text-slate-600 text-sm mb-4">
-                                        Encadrant expérimenté pour les cours club et le perfectionnement. Il propose également des cours particuliers.
+                                        Entraîneur expérimenté pour les cours club et le perfectionnement. Il propose également des cours particuliers.
                                     </p>
                                     <div className="flex flex-wrap gap-2">
                                         <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded font-medium">Cours Club</span>
