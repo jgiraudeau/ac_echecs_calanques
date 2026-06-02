@@ -213,8 +213,8 @@ export default function Home() {
             <Button asChild className="bg-accent hover:bg-accent/90 text-white px-8 py-7 text-lg rounded-xl shadow-xl shadow-black/20 transition-all hover:scale-105 font-bold border-2 border-transparent">
               <Link href="/inscription">Rejoindre le Club</Link>
             </Button>
-            <Button variant="outline" className="text-white bg-white/10 backdrop-blur-md border-white/60 hover:bg-white/20 px-8 py-7 text-lg rounded-xl font-semibold">
-              Nos Horaires & Lieux
+            <Button asChild variant="outline" className="text-white bg-white/10 backdrop-blur-md border-white/60 hover:bg-white/20 px-8 py-7 text-lg rounded-xl font-semibold hover:scale-105 transition-all">
+              <Link href="/activites">Nos Horaires & Lieux</Link>
             </Button>
           </div>
         </div>
