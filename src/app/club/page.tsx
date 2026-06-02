@@ -191,6 +191,7 @@ export default function ClubPage() {
                                         <div className="pt-2">
                                             <span className="block text-xs uppercase font-bold text-slate-400 mb-1">Services Proposés</span>
                                             <div className="flex flex-wrap gap-2">
+                                                <span className="bg-orange-50 text-orange-700 text-xs px-2 py-1 rounded font-medium">Cours Club</span>
                                                 <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded font-medium">Cours Particuliers</span>
                                                 <span className="bg-green-50 text-green-700 text-xs px-2 py-1 rounded font-medium">Stages</span>
                                                 <span className="bg-purple-50 text-purple-700 text-xs px-2 py-1 rounded font-medium">Préparation Mentale</span>
