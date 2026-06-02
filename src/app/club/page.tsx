@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Award, Users, MapPin, TrendingUp, Target, School } from "lucide-react";
+import Image from "next/image";
 
 export default function ClubPage() {
     return (
@@ -153,8 +154,13 @@ export default function ClubPage() {
                             {/* Quentin Massardo */}
                             <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
                                 <div className="bg-gradient-to-r from-slate-900 to-slate-800 p-6 text-white text-center">
-                                    <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 backdrop-blur flex items-center justify-center text-4xl">
-                                        👨‍🏫
+                                    <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 backdrop-blur overflow-hidden flex items-center justify-center relative">
+                                        <Image
+                                            src="/images/quentin_massardo.jpg"
+                                            alt="Quentin Massardo"
+                                            fill
+                                            className="object-cover"
+                                        />
                                     </div>
                                     <h4 className="text-xl font-bold">Quentin Massardo</h4>
                                     <div className="text-orange-400 font-bold text-sm uppercase tracking-wider mb-2">Président & Référent Club</div>
