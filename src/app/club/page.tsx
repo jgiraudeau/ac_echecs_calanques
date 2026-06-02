@@ -228,13 +228,18 @@ export default function ClubPage() {
                                 </div>
                             </div>
 
-                            {/* Bilel Belahcen */}
+                            {/* Bilel Bellahcene */}
                             <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100">
-                                <div className="bg-gradient-to-r from-purple-800 to-fuchsia-700 p-5 text-white text-center">
-                                    <div className="w-20 h-20 bg-white/20 rounded-full mx-auto mb-3 backdrop-blur flex items-center justify-center text-3xl">
-                                        👑
+                                <div className="bg-gradient-to-r from-purple-800 to-fuchsia-700 p-6 text-white text-center">
+                                    <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 backdrop-blur overflow-hidden flex items-center justify-center relative">
+                                        <Image
+                                            src="/images/bilel_bellahcene.jpg"
+                                            alt="Bilel Bellahcene"
+                                            fill
+                                            className="object-cover"
+                                        />
                                     </div>
-                                    <h4 className="text-lg font-bold">Bilel Belahcen</h4>
+                                    <h4 className="text-lg font-bold">Bilel Bellahcene</h4>
                                     <div className="text-purple-100 font-bold text-sm uppercase tracking-wider mb-2">Grand Maître International • +2500 Elo</div>
                                     <div className="inline-block bg-white/20 px-3 py-1 rounded-full text-xs">Champion d&apos;Afrique 2025</div>
                                 </div>
