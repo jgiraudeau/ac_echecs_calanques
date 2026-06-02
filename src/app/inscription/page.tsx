@@ -46,7 +46,7 @@ export default function InscriptionPage() {
             </div>
             <h2 className="text-2xl font-extrabold text-slate-800 mb-3">S&apos;inscrire dans une école</h2>
             <p className="text-slate-600 mb-6 flex-1">
-              Choisis un établissement puis accède à son lien d&apos;inscription.
+              Choisis un établissement puis accède à son lien d&apos;inscription via HelloAsso.
             </p>
             <Button asChild variant="outline" className="w-full font-bold border-primary text-primary hover:bg-blue-50">
               <Link href="/inscription/ecoles">Choisir une école</Link>
