@@ -203,9 +203,14 @@ export default function ClubPage() {
 
                             {/* Alexandre Merenciano */}
                             <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100">
-                                <div className="bg-gradient-to-r from-blue-800 to-blue-700 p-5 text-white text-center">
-                                    <div className="w-20 h-20 bg-white/20 rounded-full mx-auto mb-3 backdrop-blur flex items-center justify-center text-3xl">
-                                        ♟️
+                                <div className="bg-gradient-to-r from-blue-800 to-blue-700 p-6 text-white text-center">
+                                    <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 backdrop-blur overflow-hidden flex items-center justify-center relative">
+                                        <Image
+                                            src="/images/alexandre_merenciano.jpg"
+                                            alt="Alexandre Merenciano"
+                                            fill
+                                            className="object-cover"
+                                        />
                                     </div>
                                     <h4 className="text-lg font-bold">Alexandre Merenciano</h4>
                                     <div className="text-blue-100 font-bold text-sm uppercase tracking-wider mb-2">Entraîneur du Club • 2250 Elo</div>
