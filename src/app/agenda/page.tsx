@@ -145,7 +145,7 @@ export default function AgendaPage() {
                                 <span className="bg-white px-4 text-sm font-bold text-slate-400 uppercase tracking-widest border border-slate-100 rounded-full shadow-sm">Calendrier Interactif</span>
                             </div>
                             <iframe
-                                src="https://calendar.google.com/calendar/embed?src=c_131af009580aa86df100876b6cb622aaa54b3a95decc8dddf16ed2a3437ccb49%40group.calendar.google.com&src=fr.french%23holiday%40group.v.calendar.google.com&ctz=Europe%2FParis&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&showTz=1&wkst=2&bgcolor=%23ffffff"
+                                src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FParis&src=Y18xMzFhZjAwOTU4MGFhODZkZjEwMDg3NmI2Y2I2MjJhYWE1NGIzYTk1ZGVjYzhkZGRmMTZlZDJhMzQzN2NjYjQ5QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZnIuZnJlbmNoI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=bzRvamkwOHRqbnYxcXN0cDJkaG9ubmRvZjFsOWozYjZAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%237986cb&color=%230b8043&color=%23f09300&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&showTz=1&bgcolor=%23ffffff"
                                 style={{ border: 0 }}
                                 width="100%"
                                 height="100%"
