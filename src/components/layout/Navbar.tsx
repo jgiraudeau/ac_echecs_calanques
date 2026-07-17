@@ -20,7 +20,7 @@ export function Navbar() {
         { href: "/blitz-rapide", label: "Blitz & Rapide" },
         { href: "/ffe", label: "Résultats FFE" },
         { href: "/partenaires", label: "Partenaires" },
-        { href: "/produits-derives", label: "Produits dérivés" },
+        { href: "/produits-derives", label: "Boutique du club" },
         { href: "/agenda", label: "Agenda" },
         { href: "/contact", label: "Contact" },
     ];
