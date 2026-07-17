@@ -1,7 +1,8 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Trophy, MapPin, Clock, Euro, Phone, Mail, Globe, Users, Zap, Star, CalendarDays, ChevronRight } from "lucide-react";
+import { Trophy, MapPin, Clock, Euro, Phone, Mail, Globe, Users, Zap, Star, CalendarDays, ChevronRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -105,8 +106,16 @@ export default function BlitzRapidePage() {
                 <span className="text-orange-500">des Calanques</span>
               </h2>
               <p className="text-slate-600 leading-relaxed">
-                Un circuit de 4 tournois Blitz à travers les Calanques. Affrontez les meilleurs joueurs de la région en cadence ultra-rapide — idéal pour les amateurs de sensations fortes sur l&apos;échiquier !
+                Le Circuit Blitz propose 4 rendez-vous intenses et dynamiques dans une ambiance festive et sportive.
               </p>
+              <div className="mt-4 space-y-3 border-l-4 border-orange-500 pl-4">
+                <p className="text-slate-700 text-sm">
+                  ⚡ <strong>Pour les compétiteurs &amp; clubs :</strong> Tournoi homologué FFE (Elo Blitz). Une occasion parfaite de vous mesurer aux joueurs de la région, de soigner votre classement et d&apos;enchaîner des parties rapides de haut niveau.
+                </p>
+                <p className="text-slate-700 text-sm">
+                  🐣 <strong>Pour les enfants &amp; grands débutants :</strong> Ne craignez pas la pendule ! C&apos;est le format idéal pour apprendre à jouer sous le signe du jeu et de la réactivité, le tout sans la pression des parties longues. Les enfants jouent dans une ambiance chaleureuse et bienveillante et peuvent remporter des prix pour leur école grâce au <strong>Challenge Crevette</strong>.
+                </p>
+              </div>
             </div>
 
             {/* Caractéristiques */}
@@ -161,27 +170,29 @@ export default function BlitzRapidePage() {
             <div className="bg-slate-800 rounded-2xl p-5 text-white">
               <h3 className="font-bold text-orange-400 mb-3 flex items-center gap-2 uppercase text-sm tracking-wide">
                 <Users className="w-4 h-4" />
-                Inscriptions — Quentin MASSARDO
+                Inscriptions &amp; Renseignements
               </h3>
-              <div className="space-y-2 text-sm">
+              <div className="space-y-2 text-sm mb-4">
                 <p className="flex items-center gap-2 text-slate-300">
                   <Phone className="w-4 h-4 text-orange-400 flex-shrink-0" />
-                  06 37 60 22 53 · 04 42 01 89 71
+                  Quentin MASSARDO : 06 37 60 22 53 · 04 42 01 89 71
                 </p>
                 <p className="flex items-center gap-2 text-slate-300">
                   <Mail className="w-4 h-4 text-orange-400 flex-shrink-0" />
                   communication@echecs-calanques.fr
                 </p>
-                <p className="flex items-center gap-2 text-slate-300">
-                  <Globe className="w-4 h-4 text-orange-400 flex-shrink-0" />
-                  echecs-calanques.fr
-                </p>
               </div>
-              <div className="mt-4 pt-4 border-t border-slate-700">
-                <p className="text-slate-400 text-xs italic">
-                  Lien d&apos;inscription en ligne — disponible prochainement
-                </p>
-              </div>
+              <Button asChild className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-6 text-base rounded-xl shadow-lg transition-transform hover:scale-[1.02]">
+                <a 
+                  href="https://events.sharly-chess.com/fr/events/rapides-des-calanques" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2"
+                >
+                  S&apos;inscrire en ligne (Blitz)
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -208,8 +219,16 @@ export default function BlitzRapidePage() {
                 <span className="text-[#0F4C81]">des Calanques</span>
               </h2>
               <p className="text-slate-600 leading-relaxed">
-                Un circuit de 4 tournois Rapides homologués, tout au long de l&apos;année à Cassis. Une cadence plus posée pour des parties plus stratégiques, avec un <strong>1er prix de 50 €</strong> à la clé !
+                Les Rapides des Calanques offrent une cadence plus longue (10 min + 2s), idéale pour poser sa stratégie et prendre son temps.
               </p>
+              <div className="mt-4 space-y-3 border-l-4 border-[#0F4C81] pl-4">
+                <p className="text-slate-700 text-sm">
+                  🏆 <strong>Pour les joueurs de club :</strong> Un tournoi homologué FFE (Elo Rapide) relevé, composé de 9 rondes palpitantes. Un premier prix garanti de <strong>50 €</strong> pour récompenser la performance.
+                </p>
+                <p className="text-slate-700 text-sm">
+                  🌟 <strong>Pour les scolaires et ultra-débutants :</strong> C&apos;est la formule parfaite pour commencer ! La cadence permet de bien réfléchir sans se presser, avec un encadrement rassurant et bienveillant adapté aux premières compétitions. Tout le monde a sa chance de briller et de s&apos;amuser.
+                </p>
+              </div>
             </div>
 
             {/* Caractéristiques */}
@@ -280,27 +299,29 @@ export default function BlitzRapidePage() {
             <div className="bg-[#0F4C81] rounded-2xl p-5 text-white">
               <h3 className="font-bold text-orange-400 mb-3 flex items-center gap-2 uppercase text-sm tracking-wide">
                 <Users className="w-4 h-4" />
-                Inscriptions — Quentin MASSARDO
+                Inscriptions &amp; Renseignements
               </h3>
-              <div className="space-y-2 text-sm">
+              <div className="space-y-2 text-sm mb-4">
                 <p className="flex items-center gap-2 text-blue-200">
                   <Phone className="w-4 h-4 text-orange-400 flex-shrink-0" />
-                  06 37 60 22 53 · 04 42 01 89 71
+                  Quentin MASSARDO : 06 37 60 22 53 · 04 42 01 89 71
                 </p>
                 <p className="flex items-center gap-2 text-blue-200">
                   <Mail className="w-4 h-4 text-orange-400 flex-shrink-0" />
                   communication@echecs-calanques.fr
                 </p>
-                <p className="flex items-center gap-2 text-blue-200">
-                  <Globe className="w-4 h-4 text-orange-400 flex-shrink-0" />
-                  echecs-calanques.fr
-                </p>
               </div>
-              <div className="mt-4 pt-4 border-t border-blue-700">
-                <p className="text-blue-300 text-xs italic">
-                  Lien d&apos;inscription en ligne — disponible prochainement
-                </p>
-              </div>
+              <Button asChild className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-6 text-base rounded-xl shadow-lg transition-transform hover:scale-[1.02]">
+                <a 
+                  href="https://events.sharly-chess.com/fr/events/rapides-des-calanques" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2"
+                >
+                  S&apos;inscrire en ligne (Rapide)
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </Button>
             </div>
           </div>
 
