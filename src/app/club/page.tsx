@@ -145,133 +145,120 @@ export default function ClubPage() {
                     </div>
 
                     {/* Sidebar Content (Right) */}
-                    <div className="lg:col-span-4 space-y-8">
+                    <div className="lg:col-span-4 space-y-10">
+                        <h3 className="text-lg font-extrabold text-slate-800 uppercase tracking-wider">Équipe pédagogique</h3>
 
-                        {/* Équipe pédagogique */}
-                        <div className="space-y-6">
-                            <h3 className="text-lg font-extrabold text-slate-800 uppercase tracking-wider">Équipe pédagogique</h3>
-
-                            {/* Quentin Massardo */}
-                            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
-                                <div className="bg-gradient-to-r from-slate-900 to-slate-800 p-6 text-white text-center">
-                                    <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 backdrop-blur overflow-hidden flex items-center justify-center relative">
-                                        <Image
-                                            src="/images/quentin_massardo.jpg"
-                                            alt="Quentin Massardo"
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                    <h4 className="text-xl font-bold">Quentin Massardo</h4>
-                                    <div className="text-orange-400 font-bold text-sm uppercase tracking-wider mb-2">Directeur & Fondateur</div>
-                                    <div className="inline-block bg-white/20 px-3 py-1 rounded-full text-xs">Arbitre FIDE & Préparateur Mental</div>
+                        {/* Quentin Massardo */}
+                        <div className="relative pt-16">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
+                                <div className="w-32 h-32 rounded-full overflow-hidden ring-4 ring-orange-500 shadow-xl relative">
+                                    <Image
+                                        src="/images/quentin_massardo.jpg"
+                                        alt="Quentin Massardo"
+                                        fill
+                                        className="object-cover"
+                                    />
                                 </div>
-                                <div className="p-6">
-                                    <p className="text-slate-600 text-sm mb-4">
-                                        Directeur et fondateur de la structure, il donne les cours dans les écoles et au club, et s&apos;occupe de la préparation mentale pour les sportifs de club.
-                                    </p>
-                                    <div className="space-y-3 text-sm text-slate-500">
-                                        <div className="flex justify-between border-b border-slate-100 pb-2">
-                                            <span>Rôle</span>
-                                            <span className="font-bold text-slate-800">Directeur & Fondateur</span>
-                                        </div>
-                                        <div className="flex justify-between border-b border-slate-100 pb-2">
-                                            <span>Spécialité</span>
-                                            <span className="font-bold text-slate-800">Scolaires, Club & Prépa Mentale</span>
-                                        </div>
-                                        <div className="pt-2">
-                                            <span className="block text-xs uppercase font-bold text-slate-400 mb-1">Diplômes & Titres</span>
-                                            <div className="flex flex-wrap gap-1.5">
-                                                <span className="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded font-semibold border border-slate-200">DAFFE</span>
-                                                <span className="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded font-semibold border border-slate-200">AFO2</span>
-                                                <span className="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded font-semibold border border-slate-200">FIDE (arbitre)</span>
-                                                <span className="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded font-semibold border border-slate-200">APMS (préparateur mental)</span>
-                                            </div>
-                                        </div>
-                                        <div className="pt-2">
-                                            <span className="block text-xs uppercase font-bold text-slate-400 mb-1">Services Proposés</span>
-                                            <div className="flex flex-wrap gap-2">
-                                                <span className="bg-orange-50 text-orange-700 text-xs px-2 py-1 rounded font-medium">Cours Club</span>
-                                                <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded font-medium">Cours Particuliers</span>
-                                                <span className="bg-green-50 text-green-700 text-xs px-2 py-1 rounded font-medium">Stages</span>
-                                                <span className="bg-purple-50 text-purple-700 text-xs px-2 py-1 rounded font-medium">Préparation Mentale</span>
-                                            </div>
+                            </div>
+                            <div className="bg-white rounded-2xl shadow-lg border border-slate-100 pt-20 pb-6 px-6 text-center">
+                                <h4 className="text-xl font-bold text-slate-800">Quentin Massardo</h4>
+                                <div className="text-orange-600 font-bold text-sm uppercase tracking-wider mb-1">Directeur & Fondateur</div>
+                                <div className="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs mb-4">Arbitre FIDE & Préparateur Mental</div>
+                                <p className="text-slate-600 text-sm mb-4">
+                                    Directeur et fondateur de la structure, il donne les cours dans les écoles et au club, et s&apos;occupe de la préparation mentale pour les sportifs de club.
+                                </p>
+                                <div className="space-y-3 text-sm text-slate-500 text-left">
+                                    <div className="flex justify-between border-b border-slate-100 pb-2">
+                                        <span>Rôle</span>
+                                        <span className="font-bold text-slate-800">Directeur & Fondateur</span>
+                                    </div>
+                                    <div className="flex justify-between border-b border-slate-100 pb-2">
+                                        <span>Spécialité</span>
+                                        <span className="font-bold text-slate-800">Scolaires, Club & Prépa Mentale</span>
+                                    </div>
+                                    <div className="pt-2">
+                                        <span className="block text-xs uppercase font-bold text-slate-400 mb-1">Diplômes & Titres</span>
+                                        <div className="flex flex-wrap gap-1.5">
+                                            <span className="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded font-semibold border border-slate-200">DAFFE</span>
+                                            <span className="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded font-semibold border border-slate-200">AFO2</span>
+                                            <span className="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded font-semibold border border-slate-200">FIDE (arbitre)</span>
+                                            <span className="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded font-semibold border border-slate-200">APMS (préparateur mental)</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            {/* Alexandre Merenciano */}
-                            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100">
-                                <div className="bg-gradient-to-r from-blue-800 to-blue-700 p-6 text-white text-center">
-                                    <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 backdrop-blur overflow-hidden flex items-center justify-center relative">
-                                        <Image
-                                            src="/images/alexandre_merenciano.jpg"
-                                            alt="Alexandre Merenciano"
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                    <h4 className="text-lg font-bold">Alexandre Merenciano</h4>
-                                    <div className="text-blue-100 font-bold text-sm uppercase tracking-wider mb-2">Entraîneur du Club • 2250 Elo</div>
-                                    <div className="inline-block bg-white/20 px-3 py-1 rounded-full text-xs">Candidat Maître (CM) • AFC • Arbitre</div>
-                                </div>
-                                <div className="p-5">
-                                    <p className="text-slate-600 text-sm mb-4">
-                                        Entraîneur expérimenté pour les cours club et le perfectionnement. Il propose également des cours particuliers.
-                                    </p>
-                                    <div className="flex flex-wrap gap-2">
-                                        <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded font-medium">Cours Club</span>
-                                        <span className="bg-indigo-50 text-indigo-700 text-xs px-2 py-1 rounded font-medium">Cours Particuliers</span>
-                                        <span className="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded font-medium">Arbitrage AFC</span>
-                                    </div>
+                        {/* Alexandre Merenciano */}
+                        <div className="relative pt-16">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
+                                <div className="w-32 h-32 rounded-full overflow-hidden ring-4 ring-blue-500 shadow-xl relative">
+                                    <Image
+                                        src="/images/alexandre_merenciano.jpg"
+                                        alt="Alexandre Merenciano"
+                                        fill
+                                        className="object-cover"
+                                    />
                                 </div>
                             </div>
-
-                            {/* Bilel Bellahcene */}
-                            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100">
-                                <div className="bg-gradient-to-r from-purple-800 to-fuchsia-700 p-6 text-white text-center">
-                                    <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 backdrop-blur overflow-hidden flex items-center justify-center relative">
-                                        <Image
-                                            src="/images/bilel_bellahcene.jpg"
-                                            alt="Bilel Bellahcene"
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                    <h4 className="text-lg font-bold">Bilel Bellahcene</h4>
-                                    <div className="text-purple-100 font-bold text-sm uppercase tracking-wider mb-2">Grand Maître International • +2500 Elo</div>
-                                    <div className="inline-block bg-white/20 px-3 py-1 rounded-full text-xs">Champion d&apos;Afrique 2025</div>
-                                </div>
-                                <div className="p-5">
-                                    <p className="text-slate-600 text-sm mb-4">
-                                        Intervenant haut niveau pour les cours élite, préparation à la compétition et accompagnement des joueurs performants.
-                                    </p>
-                                    <div className="flex flex-wrap gap-2">
-                                        <span className="bg-purple-50 text-purple-700 text-xs px-2 py-1 rounded font-medium">Cours Élite</span>
-                                        <span className="bg-fuchsia-50 text-fuchsia-700 text-xs px-2 py-1 rounded font-medium">Prépa Tournois</span>
-                                    </div>
+                            <div className="bg-white rounded-2xl shadow-lg border border-slate-100 pt-20 pb-6 px-6 text-center">
+                                <h4 className="text-xl font-bold text-slate-800">Alexandre Merenciano</h4>
+                                <div className="text-blue-600 font-bold text-sm uppercase tracking-wider mb-1">Entraîneur du Club • 2250 Elo</div>
+                                <div className="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs mb-4">Candidat Maître (CM) • AFC • Arbitre</div>
+                                <p className="text-slate-600 text-sm mb-4">
+                                    Entraîneur expérimenté pour les cours club et le perfectionnement. Il propose également des cours particuliers.
+                                </p>
+                                <div className="flex flex-wrap gap-2 justify-center">
+                                    <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded font-medium">Cours Club</span>
+                                    <span className="bg-indigo-50 text-indigo-700 text-xs px-2 py-1 rounded font-medium">Cours Particuliers</span>
+                                    <span className="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded font-medium">Arbitrage AFC</span>
                                 </div>
                             </div>
+                        </div>
 
-                            {/* Verlingue Brewen */}
-                            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100">
-                                <div className="bg-gradient-to-r from-emerald-700 to-teal-700 p-5 text-white text-center">
-                                    <div className="w-20 h-20 bg-white/20 rounded-full mx-auto mb-3 backdrop-blur flex items-center justify-center text-3xl">
-                                        🎯
-                                    </div>
-                                    <h4 className="text-lg font-bold">Verlingue Brewen</h4>
-                                    <div className="text-emerald-100 font-bold text-sm uppercase tracking-wider mb-2">Animateur</div>
-                                    <div className="inline-block bg-white/20 px-3 py-1 rounded-full text-xs">AFC</div>
+                        {/* Bilel Bellahcene */}
+                        <div className="relative pt-16">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
+                                <div className="w-32 h-32 rounded-full overflow-hidden ring-4 ring-purple-500 shadow-xl relative">
+                                    <Image
+                                        src="/images/bilel_bellahcene.jpg"
+                                        alt="Bilel Bellahcene"
+                                        fill
+                                        className="object-cover"
+                                    />
                                 </div>
-                                <div className="p-5">
-                                    <p className="text-slate-600 text-sm mb-4">
-                                        Animateur pédagogique du club, il accompagne les joueurs débutants et intermédiaires dans leur progression.
-                                    </p>
-                                    <div className="flex flex-wrap gap-2">
-                                        <span className="bg-emerald-50 text-emerald-700 text-xs px-2 py-1 rounded font-medium">Initiation</span>
-                                        <span className="bg-teal-50 text-teal-700 text-xs px-2 py-1 rounded font-medium">Perfectionnement</span>
-                                    </div>
+                            </div>
+                            <div className="bg-white rounded-2xl shadow-lg border border-slate-100 pt-20 pb-6 px-6 text-center">
+                                <h4 className="text-xl font-bold text-slate-800">Bilel Bellahcene</h4>
+                                <div className="text-purple-600 font-bold text-sm uppercase tracking-wider mb-1">Grand Maître International • +2500 Elo</div>
+                                <div className="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs mb-4">Champion d&apos;Afrique 2025</div>
+                                <p className="text-slate-600 text-sm mb-4">
+                                    Intervenant haut niveau pour les cours élite, préparation à la compétition et accompagnement des joueurs performants.
+                                </p>
+                                <div className="flex flex-wrap gap-2 justify-center">
+                                    <span className="bg-purple-50 text-purple-700 text-xs px-2 py-1 rounded font-medium">Cours Élite</span>
+                                    <span className="bg-fuchsia-50 text-fuchsia-700 text-xs px-2 py-1 rounded font-medium">Prépa Tournois</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Verlingue Brewen */}
+                        <div className="relative pt-12">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
+                                <div className="w-24 h-24 rounded-full bg-emerald-100 ring-4 ring-emerald-500 shadow-xl flex items-center justify-center text-3xl">
+                                    🎯
+                                </div>
+                            </div>
+                            <div className="bg-white rounded-2xl shadow-lg border border-slate-100 pt-16 pb-6 px-6 text-center">
+                                <h4 className="text-xl font-bold text-slate-800">Verlingue Brewen</h4>
+                                <div className="text-emerald-600 font-bold text-sm uppercase tracking-wider mb-1">Animateur</div>
+                                <div className="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs mb-4">AFC</div>
+                                <p className="text-slate-600 text-sm mb-4">
+                                    Animateur pédagogique du club, il accompagne les joueurs débutants et intermédiaires dans leur progression.
+                                </p>
+                                <div className="flex flex-wrap gap-2 justify-center">
+                                    <span className="bg-emerald-50 text-emerald-700 text-xs px-2 py-1 rounded font-medium">Initiation</span>
+                                    <span className="bg-teal-50 text-teal-700 text-xs px-2 py-1 rounded font-medium">Perfectionnement</span>
                                 </div>
                             </div>
                         </div>

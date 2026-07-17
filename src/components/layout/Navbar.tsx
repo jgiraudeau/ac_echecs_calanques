@@ -17,6 +17,7 @@ export function Navbar() {
         { href: "/club", label: "Le Club" },
         { href: "/lieux", label: "Où jouer ?" },
         { href: "/activites", label: "Cours et Stages" },
+        { href: "/blitz-rapide", label: "Blitz & Rapide" },
         { href: "/ffe", label: "Résultats FFE" },
         { href: "/partenaires", label: "Partenaires" },
         { href: "/produits-derives", label: "Produits dérivés" },

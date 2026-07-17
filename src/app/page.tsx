@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
-import { Trophy, GraduationCap, Newspaper, Crown, Info, Coffee, Loader2 } from "lucide-react";
+import { Trophy, GraduationCap, Newspaper, Crown, Info, Zap, Loader2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { SocialHub } from "@/components/social/SocialHub";
@@ -248,11 +248,11 @@ export default function Home() {
             </div>
             <span className="font-bold text-slate-700">Festival</span>
           </Link>
-          <Link href="/cafes-echecs" className="flex flex-col items-center justify-center p-4 hover:bg-green-50 rounded-xl transition-colors group text-center">
-            <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-              <Coffee className="w-5 h-5" />
+          <Link href="/blitz-rapide" className="flex flex-col items-center justify-center p-4 hover:bg-orange-50 rounded-xl transition-colors group text-center">
+            <div className="w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+              <Zap className="w-5 h-5" />
             </div>
-            <span className="font-bold text-slate-700">Cafés Échecs</span>
+            <span className="font-bold text-slate-700">Blitz &amp; Rapide</span>
           </Link>
         </div>
       </section>
