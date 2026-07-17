@@ -16,11 +16,12 @@ export function Navbar() {
     const navLinks = [
         { href: "/club", label: "Le Club" },
         { href: "/lieux", label: "Où jouer ?" },
-        { href: "/activites", label: "Cours et Stages" },
+        { href: "/activites", label: "Cours" },
+        { href: "/stages", label: "Stages" },
         { href: "/blitz-rapide", label: "Blitz & Rapide" },
         { href: "/ffe", label: "Résultats FFE" },
         { href: "/partenaires", label: "Partenaires" },
-        { href: "/produits-derives", label: "Boutique du club" },
+        { href: "/produits-derives", label: "Boutique" },
         { href: "/agenda", label: "Agenda" },
         { href: "/contact", label: "Contact" },
     ];
@@ -29,28 +30,30 @@ export function Navbar() {
         <nav className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md transition-all duration-300">
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-3 group">
+                <Link href="/" className="flex items-center gap-2 group shrink-0">
                     <Image
                         src="/logo.png"
                         alt="Logo Académie d'Échecs des Calanques"
                         width={44}
                         height={44}
+                        priority
+                        unoptimized
                         className="object-contain"
                     />
-                    <span className="text-xl font-bold tracking-tight text-primary">
+                    <span className="text-sm sm:text-base lg:text-base xl:text-lg font-bold tracking-tight text-primary whitespace-nowrap">
                         Académie Echecs Calanques
                     </span>
                 </Link>
 
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-8">
+                <div className="hidden lg:flex items-center gap-3 xl:gap-5">
                     {navLinks.map((link) => (
                         <Link
                             key={link.href}
                             href={link.href}
                             className={cn(
-                                "text-sm font-medium transition-colors relative py-1",
+                                "text-xs xl:text-sm font-medium transition-colors relative py-1 whitespace-nowrap",
                                 isLinkActive(link.href)
                                     ? "text-primary font-bold"
                                     : "text-slate-600 hover:text-primary"
@@ -62,14 +65,14 @@ export function Navbar() {
                             )}
                         </Link>
                     ))}
-                    <Button asChild className="bg-accent hover:bg-accent/90 text-white font-semibold shadow-lg shadow-accent/20 hover:scale-105 transition-transform">
+                    <Button asChild size="sm" className="bg-accent hover:bg-accent/90 text-white font-semibold shadow-lg shadow-accent/20 hover:scale-105 transition-transform text-xs xl:text-sm px-3 py-1.5 h-8">
                         <Link href="/inscription">S&apos;inscrire</Link>
                     </Button>
                 </div>
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-md transition-colors"
+                    className="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-md transition-colors"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -78,7 +81,7 @@ export function Navbar() {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="md:hidden border-t bg-white absolute w-full left-0 shadow-lg animate-in slide-in-from-top-5 duration-200">
+                <div className="lg:hidden border-t bg-white absolute w-full left-0 shadow-lg animate-in slide-in-from-top-5 duration-200">
                     <div className="flex flex-col p-4 gap-4">
                         {navLinks.map((link) => (
                             <Link

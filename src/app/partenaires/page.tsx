@@ -260,7 +260,7 @@ export default function PartenairesPage() {
           </div>
           <div className="flex flex-wrap gap-3">
             <Button asChild variant="outline" className="border-slate-300">
-              <Link href="/produits-derives">Voir la page Produits dérivés</Link>
+              <Link href="/produits-derives">Voir la Boutique du club</Link>
             </Button>
             <Button asChild variant="outline" className="border-slate-300">
               <a href="/documents/proposition-sponsoring-academie-calanques.pdf" download>

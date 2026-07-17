@@ -64,26 +64,7 @@ export const clubSponsors: Sponsor[] = [
     category: "institutionnel",
     logoClassName: "max-h-[56px]",
   },
-  {
-    id: "roches-blanches",
-    name: "Les Roches Blanches",
-    tagline: "Partenaire hôtelier à Cassis",
-    website: "https://www.roches-blanches-cassis.com",
-    logoSrc: "/sponsors/roches-blanches.svg",
-    category: "partenaire_prive",
-    cardClassName: "bg-slate-900 border-slate-700",
-    textClassName: "text-slate-100",
-    logoClassName: "max-h-[46px]",
-  },
-  {
-    id: "intermarche",
-    name: "Intermarché",
-    tagline: "Partenaire commerce local",
-    website: "https://www.intermarche.com",
-    logoSrc: "/sponsors/intermarche.svg",
-    category: "partenaire_prive",
-    logoClassName: "max-h-[46px]",
-  },
+
   {
     id: "cultura-aubagne",
     name: "Cultura Aubagne",

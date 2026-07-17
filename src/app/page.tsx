@@ -236,7 +236,7 @@ export default function Home() {
             </div>
             <span className="font-bold text-slate-700">Infos du Club</span>
           </Link>
-          <Link href="/activites" className="flex flex-col items-center justify-center p-4 hover:bg-orange-50 rounded-xl transition-colors group text-center">
+          <Link href="/stages" className="flex flex-col items-center justify-center p-4 hover:bg-orange-50 rounded-xl transition-colors group text-center">
             <div className="w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
               <GraduationCap className="w-5 h-5" />
             </div>

@@ -5,11 +5,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
     "/activites",
+    "/stages",
     "/lieux",
     "/inscription",
     "/club",
     "/agenda",
-    "/cafes-echecs",
     "/festival",
     "/partenaires",
   ];
