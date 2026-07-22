@@ -195,9 +195,9 @@ export default function StagesPage() {
                     <Phone className="w-4 h-4 text-orange-500" />
                     06 37 60 22 53
                   </a>
-                  <a href="mailto:communication@echecs-calanques.fr" className="flex items-center gap-2 hover:text-[#0F4C81] transition-colors">
+                  <a href="mailto:communication@cassisechecs.fr" className="flex items-center gap-2 hover:text-[#0F4C81] transition-colors">
                     <Mail className="w-4 h-4 text-orange-500" />
-                    communication@echecs-calanques.fr
+                    communication@cassisechecs.fr
                   </a>
                 </div>
               </div>
@@ -219,7 +219,7 @@ export default function StagesPage() {
       </section>
 
       <footer className="bg-slate-950 text-slate-400 py-8 text-center text-sm">
-        <p>© 2026 Académie d&apos;échecs des calanques · <a href="mailto:communication@echecs-calanques.fr" className="hover:text-white transition-colors">communication@echecs-calanques.fr</a></p>
+        <p>© 2026 Académie d&apos;échecs des calanques · <a href="mailto:communication@cassisechecs.fr" className="hover:text-white transition-colors">communication@cassisechecs.fr</a></p>
       </footer>
     </div>
   );

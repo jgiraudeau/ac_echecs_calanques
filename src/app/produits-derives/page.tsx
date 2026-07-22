@@ -90,15 +90,15 @@ export default function BoutiqueClubPage() {
             HelloAsso
           </a>
           . Pour toute question, contactez-nous à{" "}
-          <a href="mailto:communication@echecs-calanques.fr" className="underline hover:text-slate-600">
-            communication@echecs-calanques.fr
+          <a href="mailto:communication@cassisechecs.fr" className="underline hover:text-slate-600">
+            communication@cassisechecs.fr
           </a>
           .
         </p>
       </section>
 
       <footer className="bg-slate-950 text-slate-400 py-8 text-center text-sm">
-        <p>© 2026 Académie d&apos;échecs des calanques · <a href="mailto:communication@echecs-calanques.fr" className="hover:text-white transition-colors">communication@echecs-calanques.fr</a></p>
+        <p>© 2026 Académie d&apos;échecs des calanques · <a href="mailto:communication@cassisechecs.fr" className="hover:text-white transition-colors">communication@cassisechecs.fr</a></p>
       </footer>
     </div>
   );
