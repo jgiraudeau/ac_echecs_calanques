@@ -23,7 +23,7 @@ export default function BoutiqueClubPage() {
             Boutique du Club
           </h1>
           <p className="max-w-2xl mx-auto text-lg text-blue-100 leading-relaxed">
-            Soutenez l&apos;Académie Échecs Calanques en arborant fièrement les couleurs du club.
+            Soutenez l&apos;Académie d&apos;échecs des calanques en arborant fièrement les couleurs du club.
             Chaque achat contribue directement au développement des activités et à la formation des jeunes joueurs.
           </p>
           <div className="mt-6 inline-flex items-center gap-2 bg-orange-500/20 border border-orange-400/40 text-orange-300 text-sm font-semibold px-4 py-2 rounded-full">
@@ -43,7 +43,7 @@ export default function BoutiqueClubPage() {
               </div>
               <div>
                 <p className="font-bold text-slate-800 text-sm">Objets du club</p>
-                <p className="text-xs text-slate-500">Académie Échecs Calanques · via HelloAsso</p>
+                <p className="text-xs text-slate-500">Académie d&apos;échecs des calanques · via HelloAsso</p>
               </div>
             </div>
             <a
@@ -98,7 +98,7 @@ export default function BoutiqueClubPage() {
       </section>
 
       <footer className="bg-slate-950 text-slate-400 py-8 text-center text-sm">
-        <p>© 2026 Académie Échecs Calanques · <a href="mailto:communication@echecs-calanques.fr" className="hover:text-white transition-colors">communication@echecs-calanques.fr</a></p>
+        <p>© 2026 Académie d&apos;échecs des calanques · <a href="mailto:communication@echecs-calanques.fr" className="hover:text-white transition-colors">communication@echecs-calanques.fr</a></p>
       </footer>
     </div>
   );

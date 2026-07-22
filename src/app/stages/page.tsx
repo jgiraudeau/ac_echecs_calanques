@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Stages Vacances Échecs | Académie Échecs Calanques",
+  title: "Stages Vacances Échecs | Académie d'échecs des calanques",
   description:
     "Inscrivez vos enfants aux stages d'échecs de l'Académie durant chaque vacances scolaires. Groupes initiation et préparation au championnat.",
 };
@@ -219,7 +219,7 @@ export default function StagesPage() {
       </section>
 
       <footer className="bg-slate-950 text-slate-400 py-8 text-center text-sm">
-        <p>© 2026 Académie Échecs Calanques · <a href="mailto:communication@echecs-calanques.fr" className="hover:text-white transition-colors">communication@echecs-calanques.fr</a></p>
+        <p>© 2026 Académie d&apos;échecs des calanques · <a href="mailto:communication@echecs-calanques.fr" className="hover:text-white transition-colors">communication@echecs-calanques.fr</a></p>
       </footer>
     </div>
   );

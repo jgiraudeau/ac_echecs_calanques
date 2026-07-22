@@ -74,7 +74,7 @@ export default function AgendaPage() {
                 <div className="container mx-auto px-4 relative z-10 text-center">
                     <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">Agenda du Club</h1>
                     <p className="text-xl text-blue-100 max-w-2xl mx-auto font-medium">
-                        Retrouvez tous les événements, tournois et cours de l'Académie Echecs Calanques.
+                        Retrouvez tous les événements, tournois et cours de l&apos;Académie d&apos;échecs des calanques.
                     </p>
                 </div>
             </section>
@@ -152,7 +152,7 @@ export default function AgendaPage() {
                                 frameBorder="0"
                                 scrolling="no"
                                 className="rounded-xl w-full h-full"
-                                title="Google Calendar Académie Echecs Calanques"
+                                title="Google Calendar Académie d'échecs des calanques"
                             ></iframe>
                         </div>
                     </div>

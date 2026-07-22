@@ -15,8 +15,7 @@ export function Navbar() {
 
     const navLinks = [
         { href: "/club", label: "Le Club" },
-        { href: "/lieux", label: "Où jouer ?" },
-        { href: "/activites", label: "Cours" },
+        { href: "/activites", label: "Cours & Lieux" },
         { href: "/stages", label: "Stages" },
         { href: "/blitz-rapide", label: "Blitz & Rapide" },
         { href: "/ffe", label: "Résultats FFE" },
@@ -33,7 +32,7 @@ export function Navbar() {
                 <Link href="/" className="flex items-center gap-2 group shrink-0">
                     <Image
                         src="/logo.png"
-                        alt="Logo Académie d'Échecs des Calanques"
+                        alt="Logo Académie d'échecs des calanques"
                         width={44}
                         height={44}
                         priority
@@ -41,7 +40,7 @@ export function Navbar() {
                         className="object-contain"
                     />
                     <span className="text-sm sm:text-base lg:text-base xl:text-lg font-bold tracking-tight text-primary whitespace-nowrap">
-                        Académie Echecs Calanques
+                        Académie d&apos;échecs des calanques
                     </span>
                 </Link>
 

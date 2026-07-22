@@ -201,9 +201,9 @@ export default function Home() {
 
         <div className="container relative z-10 px-4 text-center mt-10">
           <h1 className="text-5xl md:text-8xl font-extrabold tracking-tight mb-8 text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
-            Académie Echecs <br />
+            Académie d&apos;échecs <br />
             <span className="text-white">
-              Calanques
+              des calanques
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-white mb-10 max-w-3xl mx-auto font-medium leading-relaxed drop-shadow-md">
@@ -214,7 +214,7 @@ export default function Home() {
               <Link href="/inscription">Rejoindre le Club</Link>
             </Button>
             <Button asChild variant="outline" className="text-white bg-white/10 backdrop-blur-md border-white/60 hover:bg-white/20 px-8 py-7 text-lg rounded-xl font-semibold hover:scale-105 transition-all">
-              <Link href="/activites">Nos Horaires & Lieux</Link>
+              <Link href="/activites">Nos Cours &amp; Lieux</Link>
             </Button>
           </div>
         </div>
@@ -441,7 +441,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-1 md:col-span-2">
-              <h3 className="text-white text-2xl font-bold mb-6">Echecs Calanques</h3>
+              <h3 className="text-white text-2xl font-bold mb-6">Académie d&apos;échecs des calanques</h3>
               <p className="max-w-xs mb-6">
                 Le club d'échecs de référence au cœur du Parc National.
                 Apprendre, jouer, progresser.
@@ -468,12 +468,12 @@ export default function Home() {
                 <li>Maison des Associations</li>
                 <li>13260 Cassis</li>
                 <li>contact@echecs-calanques.fr</li>
-                <li>06 12 34 56 78</li>
+                <li>06 37 60 22 53</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-slate-800 pt-8 text-center text-sm">
-            <p>© 2026 Echecs Calanques. Site réalisé avec passion.</p>
+            <p>© 2026 Académie d&apos;échecs des calanques. Site réalisé avec passion.</p>
           </div>
         </div>
       </footer>

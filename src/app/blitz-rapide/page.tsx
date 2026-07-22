@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blitz & Rapide des Calanques | Académie Échecs Calanques",
+  title: "Blitz & Rapide des Calanques | Académie d'échecs des calanques",
   description:
     "Participez au Circuit Blitz et aux Rapides des Calanques. Tournois ouverts à tous niveaux, adultes et jeunes, avec le Challenge Crevette pour les écoles partenaires.",
 };
@@ -355,9 +355,8 @@ export default function BlitzRapidePage() {
         </div>
       </section>
 
-      {/* Footer minimal */}
       <footer className="bg-slate-950 text-slate-400 py-8 text-center text-sm">
-        <p>© 2026 Académie Échecs Calanques · <a href="mailto:communication@echecs-calanques.fr" className="hover:text-white transition-colors">communication@echecs-calanques.fr</a></p>
+        <p>© 2026 Académie d&apos;échecs des calanques · <a href="mailto:communication@echecs-calanques.fr" className="hover:text-white transition-colors">communication@echecs-calanques.fr</a></p>
       </footer>
     </div>
   );
