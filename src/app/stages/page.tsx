@@ -25,8 +25,8 @@ const trainers = [
 ];
 
 const holidayStages = [
-  { name: "Toussaint", period: "Octobre / Novembre" },
-  { name: "Noël", period: "Décembre" },
+  { name: "Toussaint", period: "Octobre / Novembre", link: "#haWidget", badge: "Inscriptions Ouvertes" },
+  { name: "Noël", period: "Pas de stage", badge: "Repos" },
   { name: "Hiver", period: "Février" },
   { name: "Printemps", period: "Avril" },
   { name: "Été", period: "Juillet / Août", badge: "Sport & Échecs" },
@@ -148,17 +148,29 @@ export default function StagesPage() {
             Calendrier général des stages
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
-            {holidayStages.map((stage) => (
-              <div key={stage.name} className="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center hover:border-[#0F4C81] transition-all relative">
-                {stage.badge && (
-                  <span className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
-                    {stage.badge}
-                  </span>
-                )}
-                <p className="font-extrabold text-slate-800 mt-1">{stage.name}</p>
-                <p className="text-xs text-slate-500 mt-1">{stage.period}</p>
-              </div>
-            ))}
+            {holidayStages.map((stage) => {
+              const CardContent = (
+                <>
+                  {stage.badge && (
+                    <span className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap">
+                      {stage.badge}
+                    </span>
+                  )}
+                  <p className="font-extrabold text-slate-800 mt-1">{stage.name}</p>
+                  <p className="text-xs text-slate-500 mt-1">{stage.period}</p>
+                </>
+              );
+
+              return stage.link ? (
+                <Link key={stage.name} href={stage.link} className="block bg-slate-50 border border-orange-300 rounded-2xl p-4 text-center hover:border-orange-500 hover:shadow-md transition-all relative">
+                  {CardContent}
+                </Link>
+              ) : (
+                <div key={stage.name} className="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center hover:border-[#0F4C81] transition-all relative">
+                  {CardContent}
+                </div>
+              );
+            })}
           </div>
         </div>
 

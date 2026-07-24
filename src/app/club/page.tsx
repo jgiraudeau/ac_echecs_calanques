@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Award, Users, MapPin, TrendingUp, Target, School } from "lucide-react";
+import { Award, Users, MapPin, TrendingUp, Target, School, Heart, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 export default function ClubPage() {
@@ -129,7 +129,7 @@ export default function ClubPage() {
                                     <School className="w-8 h-8 text-blue-500 mb-3" />
                                     <h4 className="font-bold text-lg mb-2">Dispositif Class'Échecs</h4>
                                     <p className="text-slate-600 text-sm">
-                                        Déploiement de classes d'échecs dans plusieurs écoles pour toucher des centaines d'élèves.
+                                        Déploiement de classes d'échecs dans plusieurs écoles pour toucher des centaines d'élèves, avec pour objectif de développer massivement la pratique sur le temps scolaire.
                                     </p>
                                 </div>
                                 <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
@@ -137,6 +137,33 @@ export default function ClubPage() {
                                     <h4 className="font-bold text-lg mb-2">Professionnalisation</h4>
                                     <p className="text-slate-600 text-sm">
                                         Création de postes (coordinateur pédagogique) pour un encadrement toujours plus qualitatif.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Interventions */}
+                        <section>
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600">
+                                    <Heart className="w-5 h-5" />
+                                </div>
+                                <h3 className="text-2xl font-extrabold text-slate-800">Nos Interventions & Actions Sociales</h3>
+                            </div>
+                            <div className="space-y-6">
+                                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-purple-200 transition-colors">
+                                    <h4 className="font-bold text-lg mb-2 text-slate-800">Soutien aux Jeunes Différents</h4>
+                                    <p className="text-slate-600 leading-relaxed mb-4">
+                                        L'Académie d'échecs des calanques s'engage activement auprès des jeunes aux profils différents. Depuis plus de 8 ans, nous intervenons notamment chez <strong>l'Association Zébra Alternative</strong> (à Marseille), une structure spécialisée dans l'accueil des enfants et adolescents à Haut Potentiel Intellectuel (HPI) en situation de déscolarisation ou en parcours hybride. Les échecs y sont un formidable outil de remobilisation intellectuelle et de confiance en soi.
+                                    </p>
+                                    <a href="https://www.associationzebra.fr" target="_blank" rel="noopener noreferrer" className="text-purple-600 font-bold text-sm hover:underline flex items-center gap-1">
+                                        Découvrir l'Association Zébra <ArrowRight className="w-4 h-4" />
+                                    </a>
+                                </div>
+                                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-blue-200 transition-colors">
+                                    <h4 className="font-bold text-lg mb-2 text-slate-800">Centres d'Accueil de Loisirs</h4>
+                                    <p className="text-slate-600 leading-relaxed">
+                                        Nous travaillons régulièrement avec les Centres d'Accueil de Loisirs Sans Hébergement (ALSH) pour mineurs. Convaincus des bienfaits ludiques et éducatifs de notre discipline, nous souhaitons fortement développer et augmenter notre temps de présence au sein de ces structures. Directeurs de centres, n'hésitez pas à nous contacter pour mettre en place des ateliers échecs !
                                     </p>
                                 </div>
                             </div>
