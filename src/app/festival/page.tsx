@@ -14,7 +14,7 @@ export default function FestivalPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-[#0F4C81] to-slate-800 py-24 md:py-32 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-slate-900 via-[#0F4C81] to-slate-800 pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-10 w-96 h-96 rounded-full bg-blue-400 blur-3xl" />
           <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-orange-400 blur-3xl" />
