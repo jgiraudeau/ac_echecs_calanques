@@ -166,6 +166,21 @@ export default function ClubPage() {
                                         Nous travaillons régulièrement avec les Centres d'Accueil de Loisirs Sans Hébergement (ALSH) pour mineurs. Convaincus des bienfaits ludiques et éducatifs de notre discipline, nous souhaitons fortement développer et augmenter notre temps de présence au sein de ces structures. Directeurs de centres, n'hésitez pas à nous contacter pour mettre en place des ateliers échecs !
                                     </p>
                                 </div>
+                                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-orange-200 transition-colors">
+                                    <h4 className="font-bold text-lg mb-2 text-slate-800">Sensibilisation aux Troubles DYS</h4>
+                                    <p className="text-slate-600 leading-relaxed mb-4">
+                                        Depuis plus de 10 ans, nous participons activement à la <strong>Journée Nationale des DYS</strong> organisée par les associations <strong>DFD 13</strong> et <strong>Neurodys PACA</strong>. Cet engagement de longue date témoigne de notre volonté de rendre la pratique échiquéenne accessible à tous les enfants, y compris ceux souffrant de troubles des apprentissages (dyslexie, dyspraxie, dysphasie, etc.), pour qui les échecs peuvent être particulièrement bénéfiques.
+                                    </p>
+                                    <div className="flex flex-col sm:flex-row gap-3">
+                                        <a href="https://www.neurodyspaca.org/Journee-Nationale-des-DYS-de-Marseille-et-des-Bouches-du-Rhone" target="_blank" rel="noopener noreferrer" className="text-orange-600 font-bold text-sm hover:underline flex items-center gap-1">
+                                            Neurodys PACA <ArrowRight className="w-4 h-4" />
+                                        </a>
+                                        <span className="hidden sm:inline text-slate-300">|</span>
+                                        <a href="https://www.dyspraxies.fr/tag/dfd13/" target="_blank" rel="noopener noreferrer" className="text-orange-600 font-bold text-sm hover:underline flex items-center gap-1">
+                                            DFD 13 <ArrowRight className="w-4 h-4" />
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </section>
 
