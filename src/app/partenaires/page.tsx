@@ -322,11 +322,11 @@ export default function PartenairesPage() {
                 06 37 60 22 53
               </a>
               <a
-                href="mailto:communication@cassisechecs.fr"
+                href="mailto:communication@echecs-calanques.fr"
                 className="mt-2 inline-flex items-center gap-2 text-slate-100 hover:text-white"
               >
                 <Mail className="w-4 h-4" />
-                communication@cassisechecs.fr
+                communication@echecs-calanques.fr
               </a>
             </div>
             <div className="rounded-2xl border border-white/15 bg-white/5 p-5">

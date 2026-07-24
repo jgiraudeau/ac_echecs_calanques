@@ -179,7 +179,7 @@ export default function BlitzRapidePage() {
                 </p>
                 <p className="flex items-center gap-2 text-slate-300">
                   <Mail className="w-4 h-4 text-orange-400 flex-shrink-0" />
-                  communication@cassisechecs.fr
+                  communication@echecs-calanques.fr
                 </p>
               </div>
               <Button asChild className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-6 text-base rounded-xl shadow-lg transition-transform hover:scale-[1.02]">
@@ -308,7 +308,7 @@ export default function BlitzRapidePage() {
                 </p>
                 <p className="flex items-center gap-2 text-blue-200">
                   <Mail className="w-4 h-4 text-orange-400 flex-shrink-0" />
-                  communication@cassisechecs.fr
+                  communication@echecs-calanques.fr
                 </p>
               </div>
               <Button asChild className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-6 text-base rounded-xl shadow-lg transition-transform hover:scale-[1.02]">
@@ -356,7 +356,7 @@ export default function BlitzRapidePage() {
       </section>
 
       <footer className="bg-slate-950 text-slate-400 py-8 text-center text-sm">
-        <p>© 2026 Académie d&apos;échecs des calanques · <a href="mailto:communication@cassisechecs.fr" className="hover:text-white transition-colors">communication@cassisechecs.fr</a></p>
+        <p>© 2026 Académie d&apos;échecs des calanques · <a href="mailto:communication@echecs-calanques.fr" className="hover:text-white transition-colors">communication@echecs-calanques.fr</a></p>
       </footer>
     </div>
   );

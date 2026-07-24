@@ -37,7 +37,7 @@ export default function ClubPage() {
                     </div>
                     <div className="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:-translate-y-1 transition-transform border-b-4 border-blue-500">
                         <MapPin className="w-10 h-10 text-blue-500 mx-auto mb-4" />
-                        <div className="text-4xl font-bold text-slate-800 mb-1">15</div>
+                        <div className="text-4xl font-bold text-slate-800 mb-1">6</div>
                         <div className="text-sm font-bold text-slate-500 uppercase tracking-wider">Communes</div>
                     </div>
                     <div className="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:-translate-y-1 transition-transform border-b-4 border-purple-500">
@@ -47,8 +47,8 @@ export default function ClubPage() {
                     </div>
                     <div className="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:-translate-y-1 transition-transform border-b-4 border-green-500">
                         <TrendingUp className="w-10 h-10 text-green-500 mx-auto mb-4" />
-                        <div className="text-4xl font-bold text-slate-800 mb-1">Top 110</div>
-                        <div className="text-sm font-bold text-slate-500 uppercase tracking-wider">Mondial (Jeunes)</div>
+                        <div className="text-2xl font-bold text-slate-800 mb-1 leading-tight py-1">Vice Champion</div>
+                        <div className="text-sm font-bold text-slate-500 uppercase tracking-wider">Écoles 23 &amp; 24</div>
                     </div>
                 </div>
 
@@ -100,7 +100,7 @@ export default function ClubPage() {
                                 </li>
                             </ul>
                             <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 text-blue-800 text-sm">
-                                🌟 <strong>Talent 2025 :</strong> L'un de nos jeunes (11 ans, 1996 Elo) s'est hissé dans le <strong>Top 110 mondial</strong> de sa catégorie.
+                                🌟 <strong>Excellence 2024 :</strong> L'académie est fière de ses titres de <strong>Vice-champion de France des écoles</strong> obtenus en 2023 et 2024.
                             </div>
                         </section>
 
@@ -129,7 +129,7 @@ export default function ClubPage() {
                                     <School className="w-8 h-8 text-blue-500 mb-3" />
                                     <h4 className="font-bold text-lg mb-2">Dispositif Class'Échecs</h4>
                                     <p className="text-slate-600 text-sm">
-                                        Déploiement de classes d'échecs dans plusieurs collèges pour toucher des centaines d'élèves.
+                                        Déploiement de classes d'échecs dans plusieurs écoles pour toucher des centaines d'élèves.
                                     </p>
                                 </div>
                                 <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">

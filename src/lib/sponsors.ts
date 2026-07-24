@@ -110,8 +110,9 @@ export const clubSponsors: Sponsor[] = [
     website: "https://www.apparthotel-laciotat.com/fr",
     logoSrc: "/sponsors/appart-hotel-saint-esteve.png",
     category: "partenaire_prive",
-    cardClassName: "bg-slate-50 border-slate-200",
-    logoClassName: "max-h-[50px]",
+    cardClassName: "bg-slate-900 border-slate-700",
+    logoClassName: "max-h-[50px] brightness-110",
+    textClassName: "text-white",
   },
 ];
 

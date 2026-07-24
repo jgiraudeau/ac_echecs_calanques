@@ -467,7 +467,7 @@ export default function Home() {
               <ul className="space-y-3">
                 <li>Maison des Associations</li>
                 <li>13260 Cassis</li>
-                <li>communication@cassisechecs.fr</li>
+                <li>communication@echecs-calanques.fr</li>
                 <li>06 37 60 22 53</li>
               </ul>
             </div>

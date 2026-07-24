@@ -162,7 +162,7 @@ export default function ActivitesPage() {
                     <div className="bg-gradient-to-r from-orange-500 to-amber-500 px-6 py-4 border-b border-slate-200">
                         <h2 className="text-xl font-bold text-white flex items-center gap-2">
                             <Euro className="w-5 h-5" />
-                            Tarifs &amp; Adhésions Saison 2025/2026
+                            Tarif et Adhésion Formule Club Saison 2026-2027
                         </h2>
                     </div>
                     <div className="p-6 md:p-8 space-y-6">
@@ -192,7 +192,7 @@ export default function ActivitesPage() {
                                     Cotisation Complète
                                 </span>
                                 <h3 className="text-xl font-bold text-slate-800">Formule Cotisation</h3>
-                                <p className="text-2xl font-black text-[#0F4C81] mt-1 mb-3">100 € à 230 € <span className="text-xs font-normal text-slate-500">/ an (hors licence)</span></p>
+                                <p className="text-2xl font-black text-[#0F4C81] mt-1 mb-3">230 € <span className="text-xs font-normal text-slate-500">/ an (hors licence)</span></p>
                                 <p className="text-sm text-slate-600 leading-relaxed font-semibold text-slate-800">
                                     ✓ Comprend la formule adhésion.
                                 </p>
@@ -214,9 +214,19 @@ export default function ActivitesPage() {
                             <p className="text-slate-600 leading-relaxed mb-3">
                                 Toute formule choisie (Adhésion ou Cotisation) doit obligatoirement être accompagnée d&apos;une licence de la Fédération Française des Échecs (FFE) :
                             </p>
-                            <ul className="space-y-1.5 text-slate-700 list-disc list-inside mb-3">
-                                <li><strong>Licence A (Compétition)</strong> : requise pour toutes les compétitions officielles de la FFE (parties rapides, blitz et lentes).</li>
-                                <li><strong>Licence B (Loisir)</strong> : réservée aux tournois de parties rapides et de blitz uniquement.</li>
+                            <ul className="space-y-1.5 text-slate-700 list-none mb-3 bg-white p-4 rounded-xl border border-slate-100">
+                                <li className="flex justify-between items-center py-1 border-b border-slate-100">
+                                    <span className="font-semibold">Né(e) avant 2006</span>
+                                    <span className="text-right">43€ <span className="text-xs text-slate-500 font-normal">Licence A</span> • 8€ <span className="text-xs text-slate-500 font-normal">Licence B</span></span>
+                                </li>
+                                <li className="flex justify-between items-center py-1 border-b border-slate-100">
+                                    <span className="font-semibold">Né(e) entre 2006 et 2009</span>
+                                    <span className="text-right">25€ <span className="text-xs text-slate-500 font-normal">Licence A</span></span>
+                                </li>
+                                <li className="flex justify-between items-center py-1">
+                                    <span className="font-semibold">Né(e) entre 2010 et 2022</span>
+                                    <span className="text-right">17€ <span className="text-xs text-slate-500 font-normal">Licence A</span></span>
+                                </li>
                             </ul>
                             <p className="text-xs text-slate-500 italic border-t border-slate-200 pt-2">
                                 ℹ️ Le club ne fait <strong>aucun bénéfice sur les licences</strong> : nous appliquons et reversons strictement le tarif fédéral officiel de la FFE.
@@ -329,7 +339,7 @@ export default function ActivitesPage() {
             </div>
 
             <footer className="bg-slate-950 text-slate-400 py-8 text-center text-sm mt-20">
-                <p>© 2026 Académie d&apos;échecs des calanques · <a href="mailto:communication@cassisechecs.fr" className="hover:text-white transition-colors">communication@cassisechecs.fr</a></p>
+                <p>© 2026 Académie d&apos;échecs des calanques · <a href="mailto:communication@echecs-calanques.fr" className="hover:text-white transition-colors">communication@echecs-calanques.fr</a></p>
             </footer>
         </div>
     );

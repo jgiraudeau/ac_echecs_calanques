@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Sparkles, CalendarDays, Users, GraduationCap, Compass, HelpCircle, Phone, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -58,6 +59,59 @@ export default function StagesPage() {
           <svg className="relative block w-[calc(100%+1.3px)] h-[60px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-slate-50" />
           </svg>
+        </div>
+      </section>
+
+      {/* Stage Actuel : Toussaint 2026 */}
+      <section className="container mx-auto px-4 pt-16 pb-8">
+        <div className="bg-white rounded-3xl p-6 md:p-10 shadow-xl border border-orange-200 max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 bg-orange-500 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-4">
+              À la Une
+            </span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-800">Stage de la Toussaint 2026</h2>
+            <p className="text-slate-600 mt-4 text-lg max-w-2xl mx-auto">
+              Les inscriptions sont ouvertes ! Découvrez les activités proposées et réservez la place de votre enfant directement en ligne.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            {/* Affiches */}
+            <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+              <div className="relative aspect-[1/1.4] w-full rounded-2xl overflow-hidden shadow-lg border border-slate-200 group">
+                <Image src="/images/stage-toussaint-2026-recto.png" alt="Affiche Stage Toussaint 2026" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="relative aspect-[1/1.4] w-full rounded-2xl overflow-hidden shadow-lg border border-slate-200 group">
+                <Image src="/images/stage-toussaint-2026-verso.png" alt="Informations Stage Toussaint 2026" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+            </div>
+
+            {/* Inscription Widget HelloAsso */}
+            <div className="lg:col-span-7 bg-slate-50 rounded-2xl p-4 md:p-6 shadow-inner border border-slate-200 sticky top-24">
+              <h3 className="text-xl font-bold text-[#0F4C81] mb-6 flex items-center justify-center gap-2">
+                <CalendarDays className="w-6 h-6" />
+                Formulaire d&apos;inscription
+              </h3>
+              <div className="w-full overflow-hidden rounded-xl bg-white shadow-sm">
+                <iframe 
+                  id="haWidget" 
+                  allowTransparency={true} 
+                  scrolling="auto" 
+                  src="https://www.helloasso.com/associations/echecs-cassis/evenements/stage-d-echecs-pour-enfant-toussaint-2026/widget" 
+                  style={{ width: "100%", height: "750px", border: "none" }} 
+                  onLoad={(e) => { 
+                    const iframe = e.target as HTMLIFrameElement; 
+                    window.addEventListener('message', function(event) { 
+                      const dataHeight = event.data.height; 
+                      if (dataHeight > parseFloat(iframe.style.height || '0')) { 
+                        iframe.style.height = dataHeight + 'px'; 
+                      }
+                    });
+                  }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -181,9 +235,9 @@ export default function StagesPage() {
             <HelpCircle className="w-8 h-8 text-orange-500" />
           </div>
           <div className="relative z-10">
-            <h3 className="text-2xl font-bold text-slate-800 mb-2">Inscriptions et Prochaines Dates</h3>
+            <h3 className="text-2xl font-bold text-slate-800 mb-2">Besoin de plus d&apos;informations ?</h3>
             <p className="text-slate-600 max-w-2xl leading-relaxed mb-8">
-              Les affiches, les dates détaillées et les formulaires d&apos;inscription en ligne pour les prochains stages de vacances scolaires seront mis en ligne très prochainement.
+              Si vous avez des questions concernant le fonctionnement des stages ou si vous souhaitez inscrire votre enfant pour les prochaines vacances, n&apos;hésitez pas à nous contacter.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 bg-slate-50 border border-slate-200 rounded-2xl p-6">
@@ -195,9 +249,9 @@ export default function StagesPage() {
                     <Phone className="w-4 h-4 text-orange-500" />
                     06 37 60 22 53
                   </a>
-                  <a href="mailto:communication@cassisechecs.fr" className="flex items-center gap-2 hover:text-[#0F4C81] transition-colors">
+                  <a href="mailto:communication@echecs-calanques.fr" className="flex items-center gap-2 hover:text-[#0F4C81] transition-colors">
                     <Mail className="w-4 h-4 text-orange-500" />
-                    communication@cassisechecs.fr
+                    communication@echecs-calanques.fr
                   </a>
                 </div>
               </div>
@@ -219,7 +273,7 @@ export default function StagesPage() {
       </section>
 
       <footer className="bg-slate-950 text-slate-400 py-8 text-center text-sm">
-        <p>© 2026 Académie d&apos;échecs des calanques · <a href="mailto:communication@cassisechecs.fr" className="hover:text-white transition-colors">communication@cassisechecs.fr</a></p>
+        <p>© 2026 Académie d&apos;échecs des calanques · <a href="mailto:communication@echecs-calanques.fr" className="hover:text-white transition-colors">communication@echecs-calanques.fr</a></p>
       </footer>
     </div>
   );
