@@ -38,7 +38,7 @@ export default function StagesPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#0F4C81] via-[#1a6bb5] to-[#0a3560] py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#0F4C81] via-[#1a6bb5] to-[#0a3560] pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-orange-400 blur-3xl" />
           <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-blue-300 blur-3xl" />
@@ -60,6 +60,46 @@ export default function StagesPage() {
           <svg className="relative block w-[calc(100%+1.3px)] h-[60px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-slate-50" />
           </svg>
+        </div>
+      </section>
+
+      {/* Groupes de niveau */}
+      <section className="container mx-auto px-4 pt-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800">Deux groupes de niveau adaptés</h2>
+          <p className="text-slate-600 mt-4 text-lg">
+            Pour permettre à chaque enfant de progresser à son rythme, nos stages accueillent les enfants selon leur niveau.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Groupe Initiation */}
+          <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-200 hover:shadow-2xl transition-all flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center text-orange-600 mb-6 font-bold text-xl">1</div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Groupe Initiation</h3>
+              <p className="text-slate-600 leading-relaxed">
+                Destiné aux enfants débutants ou ayant de légères notions. L&apos;accent est mis sur la découverte des règles fondamentales, l&apos;éthique du jeu, les premiers schémas de mat et la résolution d&apos;exercices amusants de manière ludique et interactive.
+              </p>
+            </div>
+            <div className="mt-6 pt-6 border-t border-slate-100">
+              <span className="text-xs font-bold uppercase tracking-wider text-orange-500">Idéal pour démarrer en douceur</span>
+            </div>
+          </div>
+
+          {/* Groupe Préparation au Championnat */}
+          <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-200 hover:shadow-2xl transition-all flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 mb-6 font-bold text-xl">2</div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Préparation au Championnat</h3>
+              <p className="text-slate-600 leading-relaxed">
+                Dédié aux jeunes compétiteurs ou joueurs confirmés. Ce groupe aborde les théories d&apos;ouvertures, les finales complexes, la préparation mentale pour appréhender la compétition, et l&apos;analyse approfondie des parties jouées au cours du stage.
+              </p>
+            </div>
+            <div className="mt-6 pt-6 border-t border-slate-100">
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-500">Pour franchir un cap compétitif</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -99,45 +139,8 @@ export default function StagesPage() {
         </div>
       </section>
 
-      {/* Le concept des stages */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800">Deux groupes de niveau adaptés</h2>
-          <p className="text-slate-600 mt-4 text-lg">
-            Pour permettre à chaque enfant de progresser à son rythme, nos stages accueillent les enfants selon leur niveau.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-20">
-          {/* Groupe Initiation */}
-          <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-200 hover:shadow-2xl transition-all flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center text-orange-600 mb-6 font-bold text-xl">1</div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">Groupe Initiation</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Destiné aux enfants débutants ou ayant de légères notions. L&apos;accent est mis sur la découverte des règles fondamentales, l&apos;éthique du jeu, les premiers schémas de mat et la résolution d&apos;exercices amusants de manière ludique et interactive.
-              </p>
-            </div>
-            <div className="mt-6 pt-6 border-t border-slate-100">
-              <span className="text-xs font-bold uppercase tracking-wider text-orange-500">Idéal pour démarrer en douceur</span>
-            </div>
-          </div>
-
-          {/* Groupe Préparation au Championnat */}
-          <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-200 hover:shadow-2xl transition-all flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 mb-6 font-bold text-xl">2</div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">Préparation au Championnat</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Dédié aux jeunes compétiteurs ou joueurs confirmés. Ce groupe aborde les théories d&apos;ouvertures, les finales complexes, la préparation mentale pour appréhender la compétition, et l&apos;analyse approfondie des parties jouées au cours du stage.
-              </p>
-            </div>
-            <div className="mt-6 pt-6 border-t border-slate-100">
-              <span className="text-xs font-bold uppercase tracking-wider text-blue-500">Pour franchir un cap compétitif</span>
-            </div>
-          </div>
-        </div>
-
+      {/* Le concept des stages (suite) */}
+      <section className="container mx-auto px-4 pb-16">
         {/* Rythme annuel */}
         <div className="bg-white rounded-3xl p-8 max-w-5xl mx-auto border border-slate-200 shadow-lg mb-24">
           <h3 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
