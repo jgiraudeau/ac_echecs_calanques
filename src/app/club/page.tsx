@@ -305,6 +305,68 @@ export default function ClubPage() {
                             </div>
                         </div>
 
+                        {/* Anaïs Demelas */}
+                        <div className="relative pt-12">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
+                                <div className="w-24 h-24 rounded-full bg-pink-100 ring-4 ring-pink-500 shadow-xl flex items-center justify-center text-3xl">
+                                    🌸
+                                </div>
+                            </div>
+                            <div className="bg-white rounded-2xl shadow-lg border border-slate-100 pt-16 pb-6 px-6 text-center">
+                                <h4 className="text-xl font-bold text-slate-800">Anaïs Demelas</h4>
+                                <div className="text-pink-600 font-bold text-sm uppercase tracking-wider mb-1">Initiatrice du club</div>
+                                <div className="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs mb-4">Psychomotricité</div>
+                                <p className="text-slate-600 text-sm mb-4">
+                                    Après un service civique et des études de psychomotricité, elle est l&apos;initiatrice préférée des petites filles et notre future référente pour les autres techniques d&apos;apprentissage.
+                                </p>
+                                <div className="flex flex-wrap gap-2 justify-center">
+                                    <span className="bg-pink-50 text-pink-700 text-xs px-2 py-1 rounded font-medium">Initiation</span>
+                                    <span className="bg-rose-50 text-rose-700 text-xs px-2 py-1 rounded font-medium">Pédagogie alternative</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Rémi Bochetti */}
+                        <div className="relative pt-12">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
+                                <div className="w-24 h-24 rounded-full bg-blue-100 ring-4 ring-blue-500 shadow-xl flex items-center justify-center text-3xl">
+                                    ♟️
+                                </div>
+                            </div>
+                            <div className="bg-white rounded-2xl shadow-lg border border-slate-100 pt-16 pb-6 px-6 text-center">
+                                <h4 className="text-xl font-bold text-slate-800">Rémi Bochetti</h4>
+                                <div className="text-blue-600 font-bold text-sm uppercase tracking-wider mb-1">Élève & Professeur</div>
+                                <div className="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs mb-4">Plus de 10 ans au club</div>
+                                <p className="text-slate-600 text-sm mb-4">
+                                    Présent sur presque tous les stages de l&apos;année, il connaît parfaitement le club. Il participe également activement aux publications et à la communication.
+                                </p>
+                                <div className="flex flex-wrap gap-2 justify-center">
+                                    <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded font-medium">Stages</span>
+                                    <span className="bg-indigo-50 text-indigo-700 text-xs px-2 py-1 rounded font-medium">Communication</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Achille Barbaresco */}
+                        <div className="relative pt-12">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
+                                <div className="w-24 h-24 rounded-full bg-yellow-100 ring-4 ring-yellow-500 shadow-xl flex items-center justify-center text-3xl">
+                                    🌱
+                                </div>
+                            </div>
+                            <div className="bg-white rounded-2xl shadow-lg border border-slate-100 pt-16 pb-6 px-6 text-center">
+                                <h4 className="text-xl font-bold text-slate-800">Achille Barbaresco</h4>
+                                <div className="text-yellow-600 font-bold text-sm uppercase tracking-wider mb-1">En cours de formation</div>
+                                <div className="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs mb-4">Futur Initiateur</div>
+                                <p className="text-slate-600 text-sm mb-4">
+                                    Bien qu&apos;en cours de formation, il apprend déjà les bases à de nombreux enfants et souhaite rejoindre très prochainement l&apos;équipe d&apos;initiation.
+                                </p>
+                                <div className="flex flex-wrap gap-2 justify-center">
+                                    <span className="bg-yellow-50 text-yellow-700 text-xs px-2 py-1 rounded font-medium">Apprentissage</span>
+                                </div>
+                            </div>
+                        </div>
+
                         {/* Call to Action Partenaires */}
                         <div className="bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl p-6 border border-orange-200">
                             <h3 className="font-bold text-orange-800 text-lg mb-2">Devenez Partenaire</h3>
