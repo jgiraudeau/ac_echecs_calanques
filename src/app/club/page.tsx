@@ -301,7 +301,7 @@ export default function ClubPage() {
                                 <div className="text-emerald-600 font-bold text-sm uppercase tracking-wider mb-1">Animateur</div>
                                 <div className="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs mb-4">AFC</div>
                                 <p className="text-slate-600 text-sm mb-4">
-                                    Animateur pédagogique du club, il accompagne les joueurs débutants et intermédiaires dans leur progression.
+                                    Fort de son service civique et de son expérience d'un an en tant que professeur dans les écoles et les différents clubs. Il est également arbitre de club.
                                 </p>
                                 <div className="flex flex-wrap gap-2 justify-center">
                                     <span className="bg-emerald-50 text-emerald-700 text-xs px-2 py-1 rounded font-medium">Initiation</span>
