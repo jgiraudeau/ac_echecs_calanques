@@ -308,8 +308,13 @@ export default function ClubPage() {
                         {/* Anaïs Demelas */}
                         <div className="relative pt-12">
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
-                                <div className="w-24 h-24 rounded-full bg-pink-100 ring-4 ring-pink-500 shadow-xl flex items-center justify-center text-3xl">
-                                    🌸
+                                <div className="w-24 h-24 rounded-full overflow-hidden ring-4 ring-pink-500 shadow-xl relative">
+                                    <Image
+                                        src="/images/Anais.jpg"
+                                        alt="Anaïs Demelas"
+                                        fill
+                                        className="object-cover"
+                                    />
                                 </div>
                             </div>
                             <div className="bg-white rounded-2xl shadow-lg border border-slate-100 pt-16 pb-6 px-6 text-center">
@@ -329,8 +334,13 @@ export default function ClubPage() {
                         {/* Rémi Bochetti */}
                         <div className="relative pt-12">
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
-                                <div className="w-24 h-24 rounded-full bg-blue-100 ring-4 ring-blue-500 shadow-xl flex items-center justify-center text-3xl">
-                                    ♟️
+                                <div className="w-24 h-24 rounded-full overflow-hidden ring-4 ring-blue-500 shadow-xl relative">
+                                    <Image
+                                        src="/images/Remi.jpg"
+                                        alt="Rémi Bochetti"
+                                        fill
+                                        className="object-cover"
+                                    />
                                 </div>
                             </div>
                             <div className="bg-white rounded-2xl shadow-lg border border-slate-100 pt-16 pb-6 px-6 text-center">
