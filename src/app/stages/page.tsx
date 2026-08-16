@@ -28,7 +28,7 @@ const trainers = [
 const holidayStages = [
   { name: "Toussaint", period: "Octobre / Novembre", link: "#haWidget", badge: "Inscriptions Ouvertes" },
   { name: "Noël", period: "Pas de stage", badge: "Repos" },
-  { name: "Hiver", period: "Février / Mars" },
+  { name: "Hiver", period: "Février / Mars", link: "/stages/hiver", badge: "Aperçu" },
   { name: "Printemps", period: "Avril" },
   { name: "Été", period: "Juillet / Août", badge: "Sport & Échecs" },
 ];
@@ -134,7 +134,7 @@ export default function StagesPage() {
                 <CalendarDays className="w-6 h-6" />
                 Formulaire d&apos;inscription
               </h3>
-              <HelloAssoWidget />
+              <HelloAssoWidget url="https://www.helloasso.com/associations/echecs-cassis/evenements/stage-d-echecs-pour-enfant-toussaint-2026/widget" />
             </div>
           </div>
         </div>

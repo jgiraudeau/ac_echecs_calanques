@@ -2,7 +2,11 @@
 
 import React, { useEffect, useRef } from "react";
 
-export function HelloAssoWidget() {
+interface HelloAssoWidgetProps {
+  url: string;
+}
+
+export function HelloAssoWidget({ url }: HelloAssoWidgetProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
@@ -34,7 +38,7 @@ export function HelloAssoWidget() {
         ref={iframeRef}
         allowTransparency={true}
         scrolling="auto"
-        src="https://www.helloasso.com/associations/echecs-cassis/evenements/stage-d-echecs-pour-enfant-toussaint-2026/widget"
+        src={url}
         style={{ width: "100%", height: "750px", border: "none" }}
       />
     </div>
