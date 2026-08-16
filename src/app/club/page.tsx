@@ -327,7 +327,7 @@ export default function ClubPage() {
                                 <div className="text-pink-600 font-bold text-sm uppercase tracking-wider mb-1">Initiatrice du club</div>
                                 <div className="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs mb-4">Psychomotricité</div>
                                 <p className="text-slate-600 text-sm mb-4">
-                                    Après un service civique et des études de psychomotricité, elle est l&apos;initiatrice préférée des petites filles et notre future référente pour les autres techniques d&apos;apprentissage.
+                                    Après un service civique et en cours de formation en psychomotricité, elle met ses compétences au service des plus jeunes et devient progressivement notre référente pour les différentes techniques d&apos;apprentissage.
                                 </p>
                                 <div className="flex flex-wrap gap-2 justify-center">
                                     <span className="bg-pink-50 text-pink-700 text-xs px-2 py-1 rounded font-medium">Initiation</span>
@@ -336,20 +336,20 @@ export default function ClubPage() {
                             </div>
                         </div>
 
-                        {/* Rémi Bochetti */}
+                        {/* Rémi Boschetti */}
                         <div className="relative pt-12">
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
                                 <div className="w-24 h-24 rounded-full overflow-hidden ring-4 ring-blue-500 shadow-xl relative">
                                     <Image
                                         src="/images/Remi.jpg"
-                                        alt="Rémi Bochetti"
+                                        alt="Rémi Boschetti"
                                         fill
                                         className="object-cover"
                                     />
                                 </div>
                             </div>
                             <div className="bg-white rounded-2xl shadow-lg border border-slate-100 pt-16 pb-6 px-6 text-center">
-                                <h4 className="text-xl font-bold text-slate-800">Rémi Bochetti</h4>
+                                <h4 className="text-xl font-bold text-slate-800">Rémi Boschetti</h4>
                                 <div className="text-blue-600 font-bold text-sm uppercase tracking-wider mb-1">Élève & Professeur</div>
                                 <div className="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs mb-4">Plus de 10 ans au club</div>
                                 <p className="text-slate-600 text-sm mb-4">

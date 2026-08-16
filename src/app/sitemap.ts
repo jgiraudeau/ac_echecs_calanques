@@ -6,12 +6,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/activites",
     "/stages",
-    "/lieux",
     "/inscription",
     "/club",
     "/agenda",
     "/festival",
     "/partenaires",
+    "/blitz-rapide",
+    "/cafes-echecs",
+    "/produits-derives",
   ];
 
   return routes.map((route) => ({

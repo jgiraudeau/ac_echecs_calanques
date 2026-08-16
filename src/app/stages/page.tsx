@@ -6,9 +6,10 @@ import { HelloAssoWidget } from "@/components/HelloAssoWidget";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Stages Vacances Échecs | Académie d'échecs des calanques",
+  title: "Stages Vacances Échecs | Activité pour enfants dès 6 ans | Académie des calanques",
   description:
-    "Inscrivez vos enfants aux stages d'échecs de l'Académie durant chaque vacances scolaires. Groupes initiation et préparation au championnat.",
+    "Inscrivez vos enfants aux stages d'échecs de l'Académie durant chaque vacances scolaires. Une activité idéale pour enfants dès 6 ans. Groupes initiation et préparation au championnat.",
+  keywords: ["stage pour enfants", "activité pour enfants dès 6 ans", "stage d'échecs", "vacances scolaires", "Bouches-du-Rhône"]
 };
 
 const trainers = [
