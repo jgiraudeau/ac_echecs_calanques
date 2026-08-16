@@ -11,7 +11,7 @@ export function SocialHub() {
                         <h3 className="font-bold">Actualités du Club</h3>
                     </div>
                     <a
-                        href="https://www.facebook.com/Cassisechecs"
+                        href="https://www.facebook.com/echecscalanques/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-white/80 hover:text-white text-sm flex items-center gap-1"
@@ -22,7 +22,7 @@ export function SocialHub() {
 
                 <div className="flex-1 bg-slate-50 relative">
                     <iframe
-                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCassisechecs&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fechecscalanques%2F&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
                         width="100%"
                         height="100%"
                         style={{ border: 'none', overflow: 'hidden' }}
@@ -43,7 +43,7 @@ export function SocialHub() {
                         <h3 className="font-bold">Instagram du Club</h3>
                     </div>
                     <a
-                        href="https://www.instagram.com/cassisechecs/"
+                        href="https://www.instagram.com/echecscalanques/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-white/80 hover:text-white text-sm flex items-center gap-1"

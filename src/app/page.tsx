@@ -466,10 +466,10 @@ export default function Home() {
               </p>
               <div className="flex gap-4">
                 {/* Social Icons */}
-                <a href="https://www.facebook.com/search/top/?q=cassis%20%c3%a9checs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 hover:bg-primary transition-colors flex items-center justify-center text-white">
+                <a href="https://www.facebook.com/echecscalanques/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 hover:bg-primary transition-colors flex items-center justify-center text-white">
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 hover:bg-primary transition-colors flex items-center justify-center text-white">
+                <a href="https://www.instagram.com/echecscalanques/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 hover:bg-primary transition-colors flex items-center justify-center text-white">
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 hover:bg-primary transition-colors flex items-center justify-center text-white">

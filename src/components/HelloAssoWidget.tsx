@@ -34,7 +34,7 @@ export function HelloAssoWidget() {
         ref={iframeRef}
         allowTransparency={true}
         scrolling="auto"
-        src="https://www.helloasso.com/associations/echecs-cassis/evenements/stage-d-echecs-pour-enfant-hivers-2027/widget"
+        src="https://www.helloasso.com/associations/echecs-cassis/evenements/stage-d-echecs-pour-enfant-toussaint-2026/widget"
         style={{ width: "100%", height: "750px", border: "none" }}
       />
     </div>

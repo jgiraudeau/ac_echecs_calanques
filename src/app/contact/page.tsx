@@ -135,8 +135,8 @@ export default function ContactPage() {
             <div className="bg-white rounded-2xl border border-slate-100 shadow-lg p-6">
               <h3 className="text-xl font-extrabold text-slate-800 mb-4">Réseaux sociaux</h3>
               <div className="grid sm:grid-cols-2 gap-3">
-                <a
-                  href="https://www.facebook.com/Cassisechecs"
+                <a 
+                  href="https://www.facebook.com/echecscalanques/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 flex items-center gap-2 font-semibold text-blue-800 hover:bg-blue-100 transition-colors"
@@ -144,8 +144,8 @@ export default function ContactPage() {
                   <Facebook className="w-5 h-5" />
                   Facebook
                 </a>
-                <a
-                  href="https://www.instagram.com/cassisechecs/"
+                <a 
+                  href="https://www.instagram.com/echecscalanques/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-xl border border-pink-200 bg-pink-50 px-4 py-3 flex items-center gap-2 font-semibold text-pink-800 hover:bg-pink-100 transition-colors"
