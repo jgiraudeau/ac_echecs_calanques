@@ -230,7 +230,7 @@ export default function ActivitesPage() {
                             <ul className="space-y-1.5 text-slate-700 list-none mb-3 bg-white p-4 rounded-xl border border-slate-100">
                                 <li className="flex justify-between items-center py-1 border-b border-slate-100">
                                     <span className="font-semibold">Adultes / Seniors</span>
-                                    <span className="text-right">43€ <span className="text-xs text-slate-500 font-normal">Licence A</span> • 8€ <span className="text-xs text-slate-500 font-normal">Licence B</span></span>
+                                    <span className="text-right">47€ <span className="text-xs text-slate-500 font-normal">Licence A</span> • 10€ <span className="text-xs text-slate-500 font-normal">Licence B</span></span>
                                 </li>
                                 <li className="flex justify-between items-center py-1 border-b border-slate-100">
                                     <span className="font-semibold">U20 et U18</span>
