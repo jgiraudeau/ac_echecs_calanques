@@ -207,8 +207,10 @@ export default function Home() {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-white mb-10 max-w-3xl mx-auto font-medium leading-relaxed drop-shadow-md">
-            Votre club de sport, activité pour enfants dès 6 ans et d'échecs proche de chez vous.<br />
+            Votre activité pour enfants dès 6 ans et d'échecs proche de chez vous.<br />
             <span className="text-lg opacity-90 block mt-2">Unir les esprits, conquérir les sommets !</span>
+            <span className="text-lg font-bold text-orange-400 block mt-4">Reprise des cours à partir du Lundi 7 septembre.</span>
+            <span className="text-sm opacity-90 block mt-1">Attention, les dates de rentrée varient selon les cours. Vérifiez le planning dans la rubrique Nos Cours & Lieux.</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <Button asChild className="bg-accent hover:bg-accent/90 text-white px-8 py-7 text-lg rounded-xl shadow-xl shadow-black/20 transition-all hover:scale-105 font-bold border-2 border-transparent">
@@ -267,7 +269,7 @@ export default function Home() {
           <div className="text-left">
             <h2 className="text-xl font-bold text-slate-800 mb-2">Vous cherchez un club de sport, un stage ou une activité pour enfants dès 6 ans proche de chez vous ?</h2>
             <p className="text-slate-600 leading-relaxed">
-              L&apos;Académie d&apos;Échecs des Calanques est un véritable <strong>club de sport</strong> dynamique proposant des <strong>stages pour enfants</strong> et des <strong>activités dès 6 ans</strong>. 
+              L&apos;Académie d&apos;Échecs des Calanques est un véritable <strong>club d&apos;échecs</strong> dynamique proposant des <strong>stages pour enfants</strong> et des <strong>activités dès 6 ans</strong>. 
               Que vous habitiez Marseille, Cassis, La Ciotat, Carnoux-en-Provence ou Ceyreste, rejoignez notre communauté 
               à quelques minutes de chez vous pour apprendre, jouer et participer à nos tournois.
             </p>

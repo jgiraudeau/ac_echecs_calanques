@@ -58,8 +58,21 @@ export default function ActivitesPage() {
                                             CIQ Saint Jean, La Ciotat
                                             <MapPin className="w-3.5 h-3.5" />
                                         </a>
+                                        <br/>
+                                        <span className="text-sm text-slate-500">et</span>
+                                        <br/>
+                                        <a 
+                                            href="#lieux-liste"
+                                            className="text-blue-600 hover:text-accent font-semibold hover:underline inline-flex items-center gap-1 mt-1"
+                                        >
+                                            Carnoux au COC
+                                            <MapPin className="w-3.5 h-3.5" />
+                                        </a>
                                     </td>
-                                    <td className="p-4 text-emerald-700 font-medium">16h30 à 18h30</td>
+                                    <td className="p-4">
+                                        <div className="text-emerald-700 font-medium">16h30 à 18h30 <span className="text-slate-500 text-sm font-normal">La Ciotat</span></div>
+                                        <div className="text-emerald-700 font-medium">16h30 à 18h30 <span className="text-slate-500 text-sm font-normal">Carnoux</span></div>
+                                    </td>
                                 </tr>
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-4 font-semibold text-slate-900">Mardi</td>
@@ -106,8 +119,8 @@ export default function ActivitesPage() {
                                         </a>
                                     </td>
                                     <td className="p-4">
-                                        <div className="text-emerald-700 font-medium">15h à 18h <span className="text-slate-500 text-sm font-normal">(Cassis)</span></div>
-                                        <div className="text-emerald-700 font-medium">15h à 16h30 <span className="text-slate-500 text-sm font-normal">(Ceyreste)</span></div>
+                                        <div className="text-emerald-700 font-medium">15h à 18h <span className="text-slate-500 text-sm font-normal">Cassis</span></div>
+                                        <div className="text-emerald-700 font-medium">15h à 16h30 <span className="text-slate-500 text-sm font-normal">Ceyreste</span></div>
                                     </td>
                                 </tr>
                                 <tr className="hover:bg-slate-50">
@@ -216,16 +229,16 @@ export default function ActivitesPage() {
                             </p>
                             <ul className="space-y-1.5 text-slate-700 list-none mb-3 bg-white p-4 rounded-xl border border-slate-100">
                                 <li className="flex justify-between items-center py-1 border-b border-slate-100">
-                                    <span className="font-semibold">Né(e) avant 2006</span>
+                                    <span className="font-semibold">Adultes / Seniors</span>
                                     <span className="text-right">43€ <span className="text-xs text-slate-500 font-normal">Licence A</span> • 8€ <span className="text-xs text-slate-500 font-normal">Licence B</span></span>
                                 </li>
                                 <li className="flex justify-between items-center py-1 border-b border-slate-100">
-                                    <span className="font-semibold">Né(e) entre 2006 et 2009</span>
-                                    <span className="text-right">25€ <span className="text-xs text-slate-500 font-normal">Licence A</span></span>
+                                    <span className="font-semibold">U20 et U18</span>
+                                    <span className="text-right">27€ <span className="text-xs text-slate-500 font-normal">Licence A</span></span>
                                 </li>
                                 <li className="flex justify-between items-center py-1">
-                                    <span className="font-semibold">Né(e) entre 2010 et 2022</span>
-                                    <span className="text-right">17€ <span className="text-xs text-slate-500 font-normal">Licence A</span></span>
+                                    <span className="font-semibold">U8 à U16</span>
+                                    <span className="text-right">21€ <span className="text-xs text-slate-500 font-normal">Licence A</span></span>
                                 </li>
                             </ul>
                             <p className="text-xs text-slate-500 italic border-t border-slate-200 pt-2">
