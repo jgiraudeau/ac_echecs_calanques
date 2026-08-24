@@ -207,10 +207,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-white mb-10 max-w-3xl mx-auto font-medium leading-relaxed drop-shadow-md">
-            Votre activité pour enfants dès 6 ans et d'échecs proche de chez vous.<br />
-            <span className="text-lg opacity-90 block mt-2">Unir les esprits, conquérir les sommets !</span>
-            <span className="text-lg font-bold text-orange-400 block mt-4">Reprise des cours à partir du Lundi 7 septembre.</span>
-            <span className="text-sm opacity-90 block mt-1">Attention, les dates de rentrée varient selon les cours. Vérifiez le planning dans la rubrique Nos Cours & Lieux.</span>
+            Unir les esprits, conquérir les sommets !
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <Button asChild className="bg-accent hover:bg-accent/90 text-white px-8 py-7 text-lg rounded-xl shadow-xl shadow-black/20 transition-all hover:scale-105 font-bold border-2 border-transparent">
@@ -257,6 +254,24 @@ export default function Home() {
             </div>
             <span className="font-bold text-slate-700">Blitz &amp; Rapide</span>
           </Link>
+        </div>
+      </section>
+
+      {/* Bannière de Rentrée - Temporaire */}
+      <section className="container mx-auto px-4 mb-16 relative z-10">
+        <div className="bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl shadow-xl p-6 border border-orange-400 text-center max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="text-left text-white">
+            <h2 className="text-2xl font-bold mb-2 flex items-center gap-2">
+              <Zap className="w-6 h-6" />
+              Reprise des cours à partir du Lundi 7 septembre !
+            </h2>
+            <p className="text-orange-50 font-medium">
+              Attention, les dates de rentrée varient selon les cours. Vérifiez le planning pour connaître la date exacte de votre créneau.
+            </p>
+          </div>
+          <Button asChild className="bg-white text-orange-600 hover:bg-orange-50 font-bold px-6 py-6 rounded-xl shadow-md transition-transform hover:scale-105">
+            <Link href="/activites">Voir le planning</Link>
+          </Button>
         </div>
       </section>
 
