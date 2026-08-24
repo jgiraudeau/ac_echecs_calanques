@@ -41,8 +41,8 @@ export const LOCATION_ENTRIES: LocationEntry[] = [
     source: "Ministère de l'Éducation nationale",
   },
   {
-    id: "club-coq-carnoux",
-    name: "Club au COQ",
+    id: "club-coc-carnoux",
+    name: "Club au COC",
     type: "club",
     city: "Carnoux-en-Provence",
     address: "Av. Paul Cézanne, 13470 Carnoux-en-Provence",

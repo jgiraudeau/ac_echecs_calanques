@@ -45,6 +45,7 @@ export default function ActivitesPage() {
                                     <th className="p-4 font-bold">Jour</th>
                                     <th className="p-4 font-bold">Lieu(x)</th>
                                     <th className="p-4 font-bold">Horaires &amp; Infos</th>
+                                    <th className="p-4 font-bold text-orange-600 bg-orange-50/50">Date de reprise</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100 text-slate-700">
@@ -73,6 +74,18 @@ export default function ActivitesPage() {
                                         <div className="text-emerald-700 font-medium">16h30 à 18h30 <span className="text-slate-500 text-sm font-normal">La Ciotat</span></div>
                                         <div className="text-emerald-700 font-medium">16h30 à 18h30 <span className="text-slate-500 text-sm font-normal">Carnoux</span></div>
                                     </td>
+                                    <td className="p-4 align-top">
+                                        <div className="flex flex-col gap-2">
+                                            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 bg-orange-100/50 px-2.5 py-1 rounded-md border border-orange-200/50 whitespace-nowrap">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                                                La Ciotat : 7 Sept.
+                                            </span>
+                                            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 bg-orange-100/50 px-2.5 py-1 rounded-md border border-orange-200/50 whitespace-nowrap">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                                                Carnoux : 7 Sept.
+                                            </span>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-4 font-semibold text-slate-900">Mardi</td>
@@ -96,6 +109,18 @@ export default function ActivitesPage() {
                                         </a>
                                     </td>
                                     <td className="p-4 text-emerald-700 font-medium">16h30 à 18h30</td>
+                                    <td className="p-4 align-top">
+                                        <div className="flex flex-col gap-2">
+                                            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 bg-orange-100/50 px-2.5 py-1 rounded-md border border-orange-200/50 whitespace-nowrap">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                                                Marseille : 29 Sept.
+                                            </span>
+                                            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 bg-orange-100/50 px-2.5 py-1 rounded-md border border-orange-200/50 whitespace-nowrap">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                                                Ceyreste : 8 Sept.
+                                            </span>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-4 font-semibold text-slate-900">Mercredi</td>
@@ -121,6 +146,18 @@ export default function ActivitesPage() {
                                     <td className="p-4">
                                         <div className="text-emerald-700 font-medium">15h à 18h <span className="text-slate-500 text-sm font-normal">Cassis</span></div>
                                         <div className="text-emerald-700 font-medium">15h à 16h30 <span className="text-slate-500 text-sm font-normal">Ceyreste</span></div>
+                                    </td>
+                                    <td className="p-4 align-top">
+                                        <div className="flex flex-col gap-2">
+                                            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 bg-orange-100/50 px-2.5 py-1 rounded-md border border-orange-200/50 whitespace-nowrap">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                                                Cassis : 9 Sept.
+                                            </span>
+                                            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-200/50 whitespace-nowrap">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+                                                Ceyreste : À confirmer
+                                            </span>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr className="hover:bg-slate-50">
@@ -148,6 +185,18 @@ export default function ActivitesPage() {
                                         <div className="text-emerald-700 font-medium">16h30 à 18h30</div>
                                         <div className="text-blue-600 font-medium mt-1">19h à 20h <span className="text-slate-500 text-sm font-normal">(Cours Élite Cassis &amp; Visio)</span></div>
                                     </td>
+                                    <td className="p-4 align-top">
+                                        <div className="flex flex-col gap-2">
+                                            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 bg-orange-100/50 px-2.5 py-1 rounded-md border border-orange-200/50 whitespace-nowrap">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                                                Cassis : 10 Sept.
+                                            </span>
+                                            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 bg-orange-100/50 px-2.5 py-1 rounded-md border border-orange-200/50 whitespace-nowrap">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                                                Carnoux : 10 Sept.
+                                            </span>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-4 font-semibold text-slate-900">Vendredi</td>
@@ -163,6 +212,14 @@ export default function ActivitesPage() {
                                     <td className="p-4">
                                         <div className="text-emerald-700 font-medium">16h30 à 18h30</div>
                                         <div className="text-blue-600 font-medium mt-1">19h à 20h <span className="text-slate-500 text-sm font-normal">(Cours Élite &amp; En ligne)</span></div>
+                                    </td>
+                                    <td className="p-4 align-top">
+                                        <div className="flex flex-col gap-2">
+                                            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 bg-orange-100/50 px-2.5 py-1 rounded-md border border-orange-200/50 whitespace-nowrap">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                                                Cassis : 11 Sept.
+                                            </span>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
