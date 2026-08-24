@@ -17,7 +17,14 @@ const LOCATIONS_LIST = Object.entries(
         acc[location.city] = [...current, location];
         return acc;
     }, {}),
-).map(([city, places]) => ({ city, places }));
+).map(([city, places]) => {
+    const sortedPlaces = [...places].sort((a, b) => {
+        if (a.type === "club" && b.type !== "club") return -1;
+        if (a.type !== "club" && b.type === "club") return 1;
+        return 0;
+    });
+    return { city, places: sortedPlaces };
+});
 
 export default function ActivitesPage() {
     return (
