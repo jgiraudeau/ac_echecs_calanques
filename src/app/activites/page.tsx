@@ -184,7 +184,7 @@ export default function ActivitesPage() {
                                             href="#lieux-liste"
                                             className="text-blue-600 hover:text-accent font-semibold hover:underline inline-flex items-center gap-1 mt-1"
                                         >
-                                            Carnoux
+                                            La Ciotat
                                             <MapPin className="w-3.5 h-3.5" />
                                         </a>
                                     </td>
@@ -200,7 +200,7 @@ export default function ActivitesPage() {
                                             </span>
                                             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 bg-orange-100/50 px-2.5 py-1 rounded-md border border-orange-200/50 whitespace-nowrap">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
-                                                Carnoux : 10 Sept.
+                                                La Ciotat : 10 Sept.
                                             </span>
                                         </div>
                                     </td>
