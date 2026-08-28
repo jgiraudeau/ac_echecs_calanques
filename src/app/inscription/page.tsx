@@ -30,13 +30,9 @@ export default function InscriptionPage() {
               Accède à l&apos;inscription club via HelloAsso.
             </p>
             <Button asChild className="w-full bg-accent hover:bg-accent/90 text-white font-bold">
-              <a
-                href={resolveHelloAssoLink(HELLO_ASSO_LINKS.club)}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Aller vers HelloAsso <ExternalLink className="w-4 h-4" />
-              </a>
+              <Link href="/inscription/club">
+                S'inscrire en ligne
+              </Link>
             </Button>
           </div>
 
