@@ -18,12 +18,6 @@ const SCHOOL_OPTIONS = [
     href: resolveHelloAssoLink(HELLO_ASSO_LINKS.schools.sainteTriniteMarseille),
   },
   {
-    key: "sainteClaireCassis",
-    name: "Sainte Claire",
-    city: "Cassis",
-    href: resolveHelloAssoLink(HELLO_ASSO_LINKS.schools.sainteClaireCassis),
-  },
-  {
     key: "donBoscoSaintCyrSurMer",
     name: "Don Bosco",
     city: "Saint-Cyr-sur-Mer",
