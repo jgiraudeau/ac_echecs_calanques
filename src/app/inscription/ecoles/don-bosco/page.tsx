@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
+import { HelloAssoWidget } from "@/components/HelloAssoWidget";
 
 export default function InscriptionDonBoscoPage() {
   return (
@@ -16,12 +17,7 @@ export default function InscriptionDonBoscoPage() {
       </section>
 
       <section className="container mx-auto px-4 py-14 max-w-5xl">
-        <div 
-          className="w-full overflow-hidden rounded-xl bg-white shadow-sm"
-          dangerouslySetInnerHTML={{
-            __html: `<iframe id="haWidget" allowtransparency="true" scrolling="auto" src="https://www.helloasso.com/associations/echecs-cassis/evenements/club-d-echecs-don-bosco/widget" style="width: 100%; height: 750px; border: none;" onload="window.addEventListener('message', function(e) { const dataHeight = e.data.height; const haWidgetElement = document.getElementById('haWidget'); if (dataHeight > parseFloat(haWidgetElement.height || 0)) { haWidgetElement.height = dataHeight + 'px';}})"></iframe>`
-          }}
-        />
+        <HelloAssoWidget url="https://www.helloasso.com/associations/echecs-cassis/evenements/club-d-echecs-don-bosco/widget" />
       </section>
     </div>
   );
