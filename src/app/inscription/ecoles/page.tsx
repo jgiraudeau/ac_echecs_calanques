@@ -9,19 +9,19 @@ const SCHOOL_OPTIONS = [
     key: "saintAugustinCarnoux",
     name: "Saint Augustin",
     city: "Carnoux",
-    href: resolveHelloAssoLink(HELLO_ASSO_LINKS.schools.saintAugustinCarnoux),
+    href: "/inscription/ecoles/saint-augustin",
   },
   {
     key: "sainteTriniteMarseille",
     name: "Sainte Trinité",
     city: "Marseille",
-    href: resolveHelloAssoLink(HELLO_ASSO_LINKS.schools.sainteTriniteMarseille),
+    href: "/inscription/ecoles/sainte-trinite",
   },
   {
     key: "donBoscoSaintCyrSurMer",
     name: "Don Bosco",
     city: "Saint-Cyr-sur-Mer",
-    href: resolveHelloAssoLink(HELLO_ASSO_LINKS.schools.donBoscoSaintCyrSurMer),
+    href: "/inscription/ecoles/don-bosco",
   },
 ] as const;
 
@@ -59,9 +59,9 @@ export default function InscriptionsEcolesPage() {
               <h2 className="text-2xl font-extrabold text-slate-800">{school.name}</h2>
               <p className="text-slate-500 font-medium mb-6">{school.city}</p>
               <Button asChild className="mt-auto bg-accent hover:bg-accent/90 text-white font-bold">
-                <a href={school.href} target="_blank" rel="noreferrer">
-                  S&apos;inscrire <ExternalLink className="w-4 h-4" />
-                </a>
+                <Link href={school.href}>
+                  S'inscrire en ligne
+                </Link>
               </Button>
             </div>
           ))}
