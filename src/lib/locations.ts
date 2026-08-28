@@ -48,7 +48,6 @@ export const LOCATION_ENTRIES: LocationEntry[] = [
     address: "Av. Paul Cézanne, 13470 Carnoux-en-Provence",
     verification: "verified",
     source: "Club Échecs",
-    note: "Club (le jeudi de 16h30 à 18h30)",
   },
   {
     id: "institution-sainte-trinite-marseille",
@@ -68,7 +67,7 @@ export const LOCATION_ENTRIES: LocationEntry[] = [
     address: "327 avenue de St Jean, 13600 La Ciotat",
     verification: "verified",
     source: "Club Échecs",
-    note: "Club (le lundi de 16h30 à 18h30)",
+    note: "Club (le lundi et le jeudi de 16h30 à 18h30)",
   },
   {
     id: "salle-culture-ceyreste",

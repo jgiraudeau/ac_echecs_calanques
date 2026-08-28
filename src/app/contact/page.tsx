@@ -44,7 +44,7 @@ function buildMailtoLink(form: ContactFormState): string {
     form.message.trim(),
   ].join("\n");
 
-  return `mailto:cassisechecs@hotmail.fr?subject=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(body)}`;
+  return `mailto:communication@echecs-calanques.fr?subject=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(body)}`;
 }
 
 export default function ContactPage() {
@@ -102,18 +102,18 @@ export default function ContactPage() {
                 </div>
                 <p className="text-xs uppercase tracking-wider text-slate-300 font-semibold mb-1">Contact principal</p>
                 <h2 className="text-2xl font-extrabold">Quentin Massardo</h2>
-                <p className="text-orange-300 font-semibold mt-1">Président du club</p>
+                <p className="text-orange-300 font-semibold mt-1">Directeur</p>
               </div>
 
               <div className="p-6 space-y-4">
                 <a
-                  href="mailto:cassisechecs@hotmail.fr"
+                  href="mailto:communication@echecs-calanques.fr"
                   className="flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 hover:border-primary/40 hover:bg-blue-50 transition-colors"
                 >
                   <Mail className="w-5 h-5 text-primary" />
                   <div>
                     <p className="text-xs uppercase tracking-wider text-slate-500 font-semibold">Email</p>
-                    <p className="text-slate-800 font-medium">cassisechecs@hotmail.fr</p>
+                    <p className="text-slate-800 font-medium">communication@echecs-calanques.fr</p>
                   </div>
                 </a>
 
@@ -121,7 +121,7 @@ export default function ContactPage() {
                   <Phone className="w-5 h-5 text-slate-500" />
                   <div>
                     <p className="text-xs uppercase tracking-wider text-slate-500 font-semibold">Téléphone</p>
-                    <p className="text-slate-700 font-medium">À définir</p>
+                    <p className="text-slate-700 font-medium">06.37.60.22.53</p>
                   </div>
                 </div>
 
@@ -161,7 +161,9 @@ export default function ContactPage() {
               <div className="flex items-start gap-3 text-slate-700">
                 <MapPin className="w-5 h-5 text-primary mt-0.5" />
                 <p>
-                  Maison des Associations
+                  Siège social du club
+                  <br />
+                  20 Avenue du maréchal foch
                   <br />
                   13260 Cassis
                 </p>
