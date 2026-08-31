@@ -126,7 +126,7 @@ export default function ActivitesPage() {
                                         <div className="flex flex-col gap-2">
                                             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 bg-orange-100/50 px-2.5 py-1 rounded-md border border-orange-200/50 whitespace-nowrap">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
-                                                Marseille : 29 Sept.
+                                                Marseille : 6 Oct.
                                             </span>
                                             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 bg-orange-100/50 px-2.5 py-1 rounded-md border border-orange-200/50 whitespace-nowrap">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
@@ -327,15 +327,12 @@ export default function ActivitesPage() {
                         {/* Lien HelloAsso */}
                         <div className="flex justify-center pt-2">
                             <Button asChild className="bg-accent hover:bg-accent/90 text-white font-bold py-6 px-8 rounded-xl shadow-lg transition-transform hover:scale-[1.02]">
-                                <a
-                                    href="https://www.helloasso.com/associations/echecs-cassis/adhesions/cotisations-et-adhesion-club-d-echecs-2025-2026"
-                                    target="_blank"
-                                    rel="noreferrer"
+                                <Link
+                                    href="/inscription"
                                     className="flex items-center gap-2"
                                 >
-                                    S&apos;inscrire et régler sa cotisation en ligne (HelloAsso)
-                                    <ExternalLink className="w-4 h-4" />
-                                </a>
+                                    S&apos;inscrire et régler sa cotisation en ligne
+                                </Link>
                             </Button>
                         </div>
                     </div>
