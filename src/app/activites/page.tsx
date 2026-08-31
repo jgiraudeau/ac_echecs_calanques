@@ -101,7 +101,7 @@ export default function ActivitesPage() {
                                             href="#lieux-liste"
                                             className="text-blue-600 hover:text-accent font-semibold hover:underline inline-flex items-center gap-1"
                                         >
-                                            Club Marseille (Printemps)
+                                            Club Marseille (9e)
                                             <MapPin className="w-3.5 h-3.5" />
                                         </a>
                                         <br/>
