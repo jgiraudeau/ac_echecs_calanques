@@ -54,7 +54,7 @@ export const LOCATION_ENTRIES: LocationEntry[] = [
     name: "Institution Sainte Trinité",
     type: "ecole",
     city: "Marseille",
-    address: "55 avenue de Lattre de Tassigny, 13009 Marseille",
+    address: "2 rue du printemps 13009 Marseille",
     verification: "verified",
     source: "Ministère de l'Éducation nationale",
     note: "École mais aussi club ouvert à tous (le Mardi de 16h30 à 18h30)",
