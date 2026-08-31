@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Clock, MapPin, Euro, Star, ExternalLink, School, Building2 } from "lucide-react";
+import { Clock, MapPin, Euro, Star, ExternalLink, School, Building2, Info } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import LocationsMap from "@/components/map/LocationsMap";
@@ -44,6 +44,12 @@ export default function ActivitesPage() {
                             <Clock className="w-5 h-5" />
                             Planning Hebdomadaire
                         </h2>
+                    </div>
+                    <div className="bg-blue-50/50 px-6 py-4 border-b border-blue-100 flex items-start gap-3 text-sm text-slate-700">
+                        <Info className="w-5 h-5 text-[#0F4C81] shrink-0 mt-0.5" />
+                        <p className="leading-relaxed">
+                            <strong className="font-semibold text-[#0F4C81]">Note sur les horaires :</strong> L&apos;heure affichée correspond à l&apos;ouverture de nos salles en présence de nos intervenants. Afin de permettre à chacun d&apos;arriver à son rythme, <strong>les cours débutent 45 minutes à 1 heure après l&apos;ouverture</strong>.
+                        </p>
                     </div>
                     <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse">

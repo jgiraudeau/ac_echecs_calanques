@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Analytics from "../components/Analytics";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -160,6 +161,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
         />
+        <Analytics />
         {children}
       </body>
     </html>
