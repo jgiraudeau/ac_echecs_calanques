@@ -233,24 +233,24 @@ export default function AgendaPage() {
 
                         {/* Secondary (PACA & France) */}
                         <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-slate-100">
-                            <div className="bg-slate-50 p-5 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden hover:border-slate-300 transition-colors">
-                                <div className="absolute top-0 right-0 bg-slate-200 text-slate-600 text-[10px] font-bold px-2 py-1 rounded-bl-lg uppercase tracking-widest flex items-center gap-1">
+                            <div className="bg-orange-50/50 p-5 rounded-xl border border-orange-100 shadow-sm relative overflow-hidden hover:border-orange-200 transition-colors">
+                                <div className="absolute top-0 right-0 bg-orange-100 text-orange-700 text-[10px] font-bold px-2 py-1 rounded-bl-lg uppercase tracking-widest flex items-center gap-1">
                                     <AlertCircle className="w-3 h-3" /> Qualification requise
                                 </div>
-                                <h4 className="font-bold text-slate-700 text-lg mb-3">Championnat PACA</h4>
-                                <div className="text-slate-600 text-sm space-y-2 font-medium">
-                                    <p className="flex items-center gap-2"><CalendarIcon className="w-4 h-4 text-slate-400"/> Du 2 au 5 Mars</p>
-                                    <p className="flex items-center gap-2"><MapPin className="w-4 h-4 text-slate-400"/> Lieu inconnu</p>
+                                <h4 className="font-bold text-orange-900 text-lg mb-3">Championnat PACA</h4>
+                                <div className="text-orange-700/80 text-sm space-y-2 font-medium">
+                                    <p className="flex items-center gap-2"><CalendarIcon className="w-4 h-4"/> Du 2 au 5 Mars</p>
+                                    <p className="flex items-center gap-2"><MapPin className="w-4 h-4"/> Lieu inconnu</p>
                                 </div>
                             </div>
-                            <div className="bg-slate-50 p-5 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden hover:border-slate-300 transition-colors">
-                                <div className="absolute top-0 right-0 bg-slate-200 text-slate-600 text-[10px] font-bold px-2 py-1 rounded-bl-lg uppercase tracking-widest flex items-center gap-1">
+                            <div className="bg-purple-50/50 p-5 rounded-xl border border-purple-100 shadow-sm relative overflow-hidden hover:border-purple-200 transition-colors">
+                                <div className="absolute top-0 right-0 bg-purple-100 text-purple-700 text-[10px] font-bold px-2 py-1 rounded-bl-lg uppercase tracking-widest flex items-center gap-1">
                                     <AlertCircle className="w-3 h-3" /> Qualification requise
                                 </div>
-                                <h4 className="font-bold text-slate-700 text-lg mb-3">Championnat de France Jeunes</h4>
-                                <div className="text-slate-600 text-sm space-y-2 font-medium">
-                                    <p className="flex items-center gap-2"><CalendarIcon className="w-4 h-4 text-slate-400"/> Du 18 au 25 Avril</p>
-                                    <p className="flex items-center gap-2"><MapPin className="w-4 h-4 text-slate-400"/> Vichy</p>
+                                <h4 className="font-bold text-purple-900 text-lg mb-3">Championnat de France Jeunes</h4>
+                                <div className="text-purple-700/80 text-sm space-y-2 font-medium">
+                                    <p className="flex items-center gap-2"><CalendarIcon className="w-4 h-4"/> Du 18 au 25 Avril</p>
+                                    <p className="flex items-center gap-2"><MapPin className="w-4 h-4"/> Vichy</p>
                                 </div>
                             </div>
                         </div>
@@ -260,7 +260,7 @@ export default function AgendaPage() {
                     <Accordion type="single" collapsible className="w-full space-y-4">
                         
                         <AccordionItem value="interclub-adultes" className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden px-6">
-                            <AccordionTrigger className="text-xl font-bold text-slate-800 hover:no-underline hover:text-blue-600 py-6">
+                            <AccordionTrigger className="text-xl font-bold text-slate-800 hover:no-underline hover:text-orange-600 py-6">
                                 Interclubs Adultes
                             </AccordionTrigger>
                             <AccordionContent className="pt-2 pb-6">
@@ -312,7 +312,7 @@ export default function AgendaPage() {
                         </AccordionItem>
 
                         <AccordionItem value="rapide-region" className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden px-6">
-                            <AccordionTrigger className="text-xl font-bold text-slate-800 hover:no-underline hover:text-blue-600 py-6">
+                            <AccordionTrigger className="text-xl font-bold text-slate-800 hover:no-underline hover:text-purple-600 py-6">
                                 Rapide de la région
                             </AccordionTrigger>
                             <AccordionContent className="pt-2 pb-6">
@@ -323,7 +323,7 @@ export default function AgendaPage() {
                         </AccordionItem>
 
                         <AccordionItem value="open-region" className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden px-6">
-                            <AccordionTrigger className="text-xl font-bold text-slate-800 hover:no-underline hover:text-blue-600 py-6">
+                            <AccordionTrigger className="text-xl font-bold text-slate-800 hover:no-underline hover:text-purple-600 py-6">
                                 Open lent de la région
                             </AccordionTrigger>
                             <AccordionContent className="pt-2 pb-6">
@@ -343,7 +343,7 @@ export default function AgendaPage() {
                             </Button>
                         </Link>
                         <Link href="/blitz-rapide" className="block">
-                            <Button variant="outline" className="w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-bold py-8 text-xl rounded-xl shadow-sm h-auto">
+                            <Button variant="outline" className="w-full border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-bold py-8 text-xl rounded-xl shadow-sm h-auto">
                                 Circuit des calanques blitz
                             </Button>
                         </Link>
@@ -354,14 +354,14 @@ export default function AgendaPage() {
 
             {/* Info Banner */}
             <section className="container mx-auto px-4 mb-20">
-                <div className="bg-blue-900 rounded-2xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+                <div className="bg-gradient-to-r from-blue-900 to-purple-900 rounded-2xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
                     <div className="relative z-10 text-white">
                         <h3 className="text-2xl md:text-3xl font-bold mb-2">Vous souhaitez organiser un événement ?</h3>
-                        <p className="text-blue-200">Contactez-nous pour proposer un tournoi ou une activité au sein du club.</p>
+                        <p className="text-blue-100">Contactez-nous pour proposer un tournoi ou une activité au sein du club.</p>
                     </div>
                     <div className="relative z-10">
-                        <Button size="lg" className="bg-white text-blue-900 hover:bg-blue-50 font-bold border-none">
+                        <Button size="lg" className="bg-white text-purple-900 hover:bg-purple-50 font-bold border-none">
                             Nous Contacter
                         </Button>
                     </div>

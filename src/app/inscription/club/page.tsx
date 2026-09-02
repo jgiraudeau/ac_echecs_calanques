@@ -26,7 +26,7 @@ export default function InscriptionClubPage() {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70 drop-shadow-sm">
-            Inscription au club
+            Inscriptions au club
           </h1>
           
           <p className="text-xl md:text-2xl text-blue-200/80 max-w-2xl mx-auto font-light leading-relaxed">

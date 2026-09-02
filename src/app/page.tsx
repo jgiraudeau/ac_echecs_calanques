@@ -282,7 +282,7 @@ export default function Home() {
             <MapPin className="w-8 h-8" />
           </div>
           <div className="text-left">
-            <h2 className="text-xl font-bold text-slate-800 mb-2">Vous cherchez un club de sport, un stage ou une activité pour enfants dès 6 ans proche de chez vous ?</h2>
+            <h2 className="text-xl font-bold text-slate-800 mb-2">Vous cherchez un club d'échecs, un stage ou une activité pour enfants dès 6 ans proche de chez vous ?</h2>
             <p className="text-slate-600 leading-relaxed">
               L&apos;Académie d&apos;Échecs des Calanques est un véritable <strong>club d&apos;échecs</strong> dynamique proposant des <strong>stages pour enfants</strong> et des <strong>activités dès 6 ans</strong>. 
               Que vous habitiez Marseille, Cassis, La Ciotat, Carnoux-en-Provence ou Ceyreste, rejoignez notre communauté 
