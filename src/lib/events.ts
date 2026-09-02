@@ -14,7 +14,7 @@ export const UPCOMING_EVENTS: ClubEvent[] = [
     id: "1",
     title: "Rapide de Cassis",
     type: "Tournoi",
-    date: "2026-06-12",
+    date: "2026-10-12",
     time: "14:00 - 18:00",
     location: "Centre Culturel, Cassis",
     color: "orange"
@@ -23,7 +23,7 @@ export const UPCOMING_EVENTS: ClubEvent[] = [
     id: "2",
     title: "Perfectionnement Tactique",
     type: "Stage",
-    date: "2026-06-16",
+    date: "2026-10-16",
     time: "10:00 - 16:00",
     location: "Salle du Club, La Ciotat",
     color: "purple"
@@ -32,7 +32,7 @@ export const UPCOMING_EVENTS: ClubEvent[] = [
     id: "3",
     title: "Assemblée Générale",
     type: "Vie du Club",
-    date: "2026-06-24",
+    date: "2026-10-24",
     time: "18:00 - 20:00",
     location: "Salle Polyvalente, Carnoux",
     color: "blue"

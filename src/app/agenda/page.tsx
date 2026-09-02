@@ -1,9 +1,22 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
-import { Calendar as CalendarIcon, MapPin, Clock } from "lucide-react";
+import { Calendar as CalendarIcon, MapPin, Clock, Trophy, AlertCircle } from "lucide-react";
 import { UPCOMING_EVENTS, ClubEvent } from "@/lib/events";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import Link from "next/link";
 
 export default function AgendaPage() {
+    // Obtenir les événements futurs uniquement
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const filteredEvents = UPCOMING_EVENTS.filter(event => {
+        const eventDate = new Date(event.date);
+        return eventDate >= today;
+    })
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+    .slice(0, 3);
+
     // Formater la date en français pour l'affichage (ex: "Sam" et "16")
     const getEventDateParts = (dateString: string) => {
         const date = new Date(dateString);
@@ -92,7 +105,7 @@ export default function AgendaPage() {
                             </h2>
                         </div>
 
-                        {UPCOMING_EVENTS.map((event) => {
+                        {filteredEvents.map((event) => {
                             const { dayName, dayNum } = getEventDateParts(event.date);
                             const colors = getColorClasses(event.color);
                             return (
@@ -131,7 +144,7 @@ export default function AgendaPage() {
                             );
                         })}
 
-                        {UPCOMING_EVENTS.length === 0 && (
+                        {filteredEvents.length === 0 && (
                             <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-8 text-center text-slate-500">
                                 Aucun événement majeur à venir pour le moment.
                             </div>
@@ -155,6 +168,185 @@ export default function AgendaPage() {
                                 title="Google Calendar Académie d'échecs des calanques"
                             ></iframe>
                         </div>
+                    </div>
+
+                </div>
+            </section>
+
+            {/* Categories Section */}
+            <section className="container mx-auto px-4 py-12 border-t border-slate-200">
+                <h2 className="text-3xl font-bold text-slate-800 text-center mb-2">Catégories</h2>
+                <p className="text-center text-slate-500 mb-8 font-medium">Cliquez sur une catégorie pour afficher les dates et informations.</p>
+                
+                <div className="max-w-4xl mx-auto space-y-8">
+                    
+                    {/* Championnats (Moved to top, separate, not accordions) */}
+                    <div className="space-y-6">
+                        <h3 className="text-2xl font-black text-red-700 uppercase tracking-wider mb-2 border-b-2 border-red-100 pb-2">Les Événements Majeurs : Championnats</h3>
+                        
+                        {/* Highlights (Departemental & Scolaire) */}
+                        <div className="grid grid-cols-1 gap-6">
+                            <div className="bg-gradient-to-br from-red-500 to-red-600 p-1 rounded-2xl shadow-lg transform transition-transform hover:scale-[1.01]">
+                                <div className="bg-white p-6 md:p-8 rounded-xl h-full flex flex-col md:flex-row items-start gap-6">
+                                    <div className="bg-red-100 p-4 rounded-full text-red-600 shrink-0">
+                                        <Trophy className="w-10 h-10" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-black text-slate-800 text-2xl mb-2">Championnat Départemental Jeunes</h4>
+                                        <p className="text-red-600 font-bold mb-4 text-lg">Le tournoi le plus important pour les jeunes de l'académie. On vous y attend nombreux !</p>
+                                        <div className="flex flex-col sm:flex-row gap-4 text-slate-700 font-medium">
+                                            <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
+                                                <CalendarIcon className="w-5 h-5 text-red-500" />
+                                                Du 28 au 31 Octobre
+                                            </div>
+                                            <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
+                                                <MapPin className="w-5 h-5 text-red-500" />
+                                                Berre
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-1 rounded-2xl shadow-lg transform transition-transform hover:scale-[1.01]">
+                                <div className="bg-white p-6 md:p-8 rounded-xl h-full flex flex-col md:flex-row items-start gap-6">
+                                    <div className="bg-blue-100 p-4 rounded-full text-blue-600 shrink-0">
+                                        <Trophy className="w-10 h-10" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-black text-slate-800 text-2xl mb-2">Championnat Bouches-du-Rhône Scolaire</h4>
+                                        <p className="text-blue-600 font-bold mb-4 text-lg">Phase départementale incontournable pour les établissements.</p>
+                                        <div className="flex flex-col sm:flex-row gap-4 text-slate-700 font-medium">
+                                            <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
+                                                <CalendarIcon className="w-5 h-5 text-blue-500" />
+                                                13 Jan (Écoles) / 20 Jan (Collèges)
+                                            </div>
+                                            <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
+                                                <MapPin className="w-5 h-5 text-blue-500" />
+                                                Aubagne
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Secondary (PACA & France) */}
+                        <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-slate-100">
+                            <div className="bg-slate-50 p-5 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden hover:border-slate-300 transition-colors">
+                                <div className="absolute top-0 right-0 bg-slate-200 text-slate-600 text-[10px] font-bold px-2 py-1 rounded-bl-lg uppercase tracking-widest flex items-center gap-1">
+                                    <AlertCircle className="w-3 h-3" /> Qualification requise
+                                </div>
+                                <h4 className="font-bold text-slate-700 text-lg mb-3">Championnat PACA</h4>
+                                <div className="text-slate-600 text-sm space-y-2 font-medium">
+                                    <p className="flex items-center gap-2"><CalendarIcon className="w-4 h-4 text-slate-400"/> Du 2 au 5 Mars</p>
+                                    <p className="flex items-center gap-2"><MapPin className="w-4 h-4 text-slate-400"/> Lieu inconnu</p>
+                                </div>
+                            </div>
+                            <div className="bg-slate-50 p-5 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden hover:border-slate-300 transition-colors">
+                                <div className="absolute top-0 right-0 bg-slate-200 text-slate-600 text-[10px] font-bold px-2 py-1 rounded-bl-lg uppercase tracking-widest flex items-center gap-1">
+                                    <AlertCircle className="w-3 h-3" /> Qualification requise
+                                </div>
+                                <h4 className="font-bold text-slate-700 text-lg mb-3">Championnat de France Jeunes</h4>
+                                <div className="text-slate-600 text-sm space-y-2 font-medium">
+                                    <p className="flex items-center gap-2"><CalendarIcon className="w-4 h-4 text-slate-400"/> Du 18 au 25 Avril</p>
+                                    <p className="flex items-center gap-2"><MapPin className="w-4 h-4 text-slate-400"/> Vichy</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Accordion for other categories (Interclubs, Region) */}
+                    <Accordion type="single" collapsible className="w-full space-y-4">
+                        
+                        <AccordionItem value="interclub-adultes" className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden px-6">
+                            <AccordionTrigger className="text-xl font-bold text-slate-800 hover:no-underline hover:text-blue-600 py-6">
+                                Interclubs Adultes
+                            </AccordionTrigger>
+                            <AccordionContent className="pt-2 pb-6">
+                                <div className="grid sm:grid-cols-2 gap-4">
+                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                        <h5 className="font-bold text-slate-800">Cassis 1 N3</h5>
+                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
+                                    </div>
+                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                        <h5 className="font-bold text-slate-800">Cassis 2 N5</h5>
+                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
+                                    </div>
+                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                        <h5 className="font-bold text-slate-800">Cassis 3 N5</h5>
+                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
+                                    </div>
+                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                        <h5 className="font-bold text-slate-800">Cassis 4 N6</h5>
+                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
+                                    </div>
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+
+                        <AccordionItem value="interclub-jeunes" className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden px-6">
+                            <AccordionTrigger className="text-xl font-bold text-slate-800 hover:no-underline hover:text-blue-600 py-6">
+                                Interclubs Jeunes
+                            </AccordionTrigger>
+                            <AccordionContent className="pt-2 pb-6">
+                                <div className="grid sm:grid-cols-2 gap-4">
+                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                        <h5 className="font-bold text-slate-800">Cassis 1 N2</h5>
+                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
+                                    </div>
+                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                        <h5 className="font-bold text-slate-800">Cassis 2 N3</h5>
+                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
+                                    </div>
+                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                        <h5 className="font-bold text-slate-800">Cassis 3 N3</h5>
+                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
+                                    </div>
+                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                        <h5 className="font-bold text-slate-800">Cassis 4 N4</h5>
+                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
+                                    </div>
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+
+                        <AccordionItem value="rapide-region" className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden px-6">
+                            <AccordionTrigger className="text-xl font-bold text-slate-800 hover:no-underline hover:text-blue-600 py-6">
+                                Rapide de la région
+                            </AccordionTrigger>
+                            <AccordionContent className="pt-2 pb-6">
+                                <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                    <p className="text-slate-600">Dates à venir...</p>
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+
+                        <AccordionItem value="open-region" className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden px-6">
+                            <AccordionTrigger className="text-xl font-bold text-slate-800 hover:no-underline hover:text-blue-600 py-6">
+                                Open lent de la région
+                            </AccordionTrigger>
+                            <AccordionContent className="pt-2 pb-6">
+                                <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                    <p className="text-slate-600">Dates à venir...</p>
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+
+                    </Accordion>
+
+                    {/* Quick Links / Big Buttons */}
+                    <div className="grid sm:grid-cols-2 gap-4 pt-4">
+                        <Link href="/blitz-rapide" className="block">
+                            <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-8 text-xl rounded-xl shadow-sm h-auto">
+                                Rapide Cassis Chess Day
+                            </Button>
+                        </Link>
+                        <Link href="/blitz-rapide" className="block">
+                            <Button variant="outline" className="w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-bold py-8 text-xl rounded-xl shadow-sm h-auto">
+                                Circuit des calanques blitz
+                            </Button>
+                        </Link>
                     </div>
 
                 </div>
