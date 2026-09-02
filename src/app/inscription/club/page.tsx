@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { HelloAssoWidget } from "@/components/HelloAssoWidget";
+import { Trophy, Calendar as CalendarIcon, MapPin } from "lucide-react";
 
 export default function InscriptionClubPage() {
   return (
@@ -38,7 +39,28 @@ export default function InscriptionClubPage() {
         <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
       </section>
 
-      <section className="container mx-auto px-4 py-14 max-w-5xl">
+      <section className="container mx-auto px-4 py-14 max-w-5xl space-y-12">
+        {/* Reminder Banner */}
+        <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl shadow-lg p-6 md:p-8 text-white flex flex-col md:flex-row items-center gap-6 border border-orange-400">
+          <div className="bg-white/20 p-4 rounded-full shrink-0">
+            <Trophy className="w-10 h-10 text-white" />
+          </div>
+          <div className="flex-1">
+            <h3 className="text-2xl font-black mb-2 tracking-wide">Pensez à réserver pour le Championnat Départemental Jeunes !</h3>
+            <p className="text-orange-50 font-medium mb-4">Le tournoi phare de l'année approche à grands pas pour tous nos jeunes compétiteurs.</p>
+            <div className="flex flex-col sm:flex-row gap-4 font-semibold">
+              <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                <CalendarIcon className="w-5 h-5" />
+                Du 28 au 31 Octobre
+              </div>
+              <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                <MapPin className="w-5 h-5" />
+                Berre
+              </div>
+            </div>
+          </div>
+        </div>
+
         <HelloAssoWidget url="https://www.helloasso.com/associations/echecs-cassis/adhesions/cotisations-et-adhesion-club-d-echecs-2026-2027/widget" />
       </section>
     </div>

@@ -182,25 +182,25 @@ export default function AgendaPage() {
                     
                     {/* Championnats (Moved to top, separate, not accordions) */}
                     <div className="space-y-6">
-                        <h3 className="text-2xl font-black text-red-700 uppercase tracking-wider mb-2 border-b-2 border-red-100 pb-2">Les Événements Majeurs : Championnats</h3>
+                        <h3 className="text-2xl font-black text-orange-700 uppercase tracking-wider mb-2 border-b-2 border-orange-100 pb-2">Les Événements Majeurs : Championnats</h3>
                         
                         {/* Highlights (Departemental & Scolaire) */}
                         <div className="grid grid-cols-1 gap-6">
-                            <div className="bg-gradient-to-br from-red-500 to-red-600 p-1 rounded-2xl shadow-lg transform transition-transform hover:scale-[1.01]">
+                            <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-1 rounded-2xl shadow-lg transform transition-transform hover:scale-[1.01]">
                                 <div className="bg-white p-6 md:p-8 rounded-xl h-full flex flex-col md:flex-row items-start gap-6">
-                                    <div className="bg-red-100 p-4 rounded-full text-red-600 shrink-0">
+                                    <div className="bg-orange-100 p-4 rounded-full text-orange-600 shrink-0">
                                         <Trophy className="w-10 h-10" />
                                     </div>
                                     <div>
                                         <h4 className="font-black text-slate-800 text-2xl mb-2">Championnat Départemental Jeunes</h4>
-                                        <p className="text-red-600 font-bold mb-4 text-lg">Le tournoi le plus important pour les jeunes de l'académie. On vous y attend nombreux !</p>
+                                        <p className="text-orange-600 font-bold mb-4 text-lg">Le tournoi le plus important pour les jeunes de l'académie. On vous y attend nombreux !</p>
                                         <div className="flex flex-col sm:flex-row gap-4 text-slate-700 font-medium">
                                             <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
-                                                <CalendarIcon className="w-5 h-5 text-red-500" />
+                                                <CalendarIcon className="w-5 h-5 text-orange-500" />
                                                 Du 28 au 31 Octobre
                                             </div>
                                             <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
-                                                <MapPin className="w-5 h-5 text-red-500" />
+                                                <MapPin className="w-5 h-5 text-orange-500" />
                                                 Berre
                                             </div>
                                         </div>
