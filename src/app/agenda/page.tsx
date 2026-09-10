@@ -316,8 +316,15 @@ export default function AgendaPage() {
                                 Rapide de la région
                             </AccordionTrigger>
                             <AccordionContent className="pt-2 pb-6">
-                                <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
-                                    <p className="text-slate-600">Dates à venir...</p>
+                                <div className="grid sm:grid-cols-2 gap-4">
+                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                        <h5 className="font-bold text-slate-800">Rapide de l'Echiquier Brignolais</h5>
+                                        <p className="text-slate-600 text-sm mt-1">Samedi 19 septembre 2026<br/>Brignoles</p>
+                                    </div>
+                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                        <h5 className="font-bold text-slate-800">5ème Open de Cotignac</h5>
+                                        <p className="text-slate-600 text-sm mt-1">Dimanche 18 octobre 2026<br/>Cotignac</p>
+                                    </div>
                                 </div>
                             </AccordionContent>
                         </AccordionItem>
