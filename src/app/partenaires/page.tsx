@@ -89,24 +89,40 @@ export default function PartenairesPage() {
     <div className="min-h-screen bg-slate-50 font-sans">
       <Navbar />
 
-      <div className="bg-gradient-to-r from-slate-900 to-slate-800 pt-20 pb-24 text-white text-center px-4">
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-6">Devenez Partenaire</h1>
-        <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-          Associez votre image à un projet éducatif et sportif en pleine croissance sur le territoire des Calanques.
-        </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <span className="inline-flex items-center px-4 py-2 rounded-full bg-orange-500/20 text-orange-300 border border-orange-400/60 font-bold text-sm">
-            <Star className="w-4 h-4 mr-2" /> 66% déductible d&apos;impôts
-          </span>
-          <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-slate-100 border border-white/20 font-semibold text-sm">
-            200+ licenciés
-          </span>
-          <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-slate-100 border border-white/20 font-semibold text-sm">
-            5000 visiteurs/an
-          </span>
-          <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-slate-100 border border-white/20 font-semibold text-sm">
-            1500+ abonnés réseaux sociaux
-          </span>
+      <div className="bg-gradient-to-r from-slate-900 to-slate-800 pt-20 pb-24 text-white px-4">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-10 text-center md:text-left">
+          
+          {/* Logos à gauche */}
+          <div className="flex md:flex-col gap-6 items-center shrink-0">
+             <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/20 shadow-lg">
+               <Image src="/sponsors/cultura-aubagne.png" alt="Cultura Aubagne" width={140} height={60} className="object-contain" />
+             </div>
+             <div className="bg-slate-900 p-4 rounded-2xl border border-slate-700 shadow-xl">
+               <Image src="/sponsors/appart-hotel-saint-esteve.png" alt="Appart Hôtel Saint Estève" width={140} height={60} className="object-contain brightness-110" />
+             </div>
+          </div>
+
+          <div className="flex-1 max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-6">Devenez Partenaire</h1>
+            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed mx-auto md:mx-0">
+              Associez votre image à un projet éducatif et sportif en pleine croissance sur le territoire des Calanques.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-3">
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-orange-500/20 text-orange-300 border border-orange-400/60 font-bold text-sm">
+                <Star className="w-4 h-4 mr-2" /> 66% déductible d&apos;impôts
+              </span>
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-slate-100 border border-white/20 font-semibold text-sm">
+                200+ licenciés
+              </span>
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-slate-100 border border-white/20 font-semibold text-sm">
+                5000 visiteurs/an
+              </span>
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-slate-100 border border-white/20 font-semibold text-sm">
+                1500+ abonnés réseaux sociaux
+              </span>
+            </div>
+          </div>
+
         </div>
       </div>
 
