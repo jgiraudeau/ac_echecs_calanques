@@ -1,7 +1,8 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
-import { Calendar as CalendarIcon, MapPin, Clock, Trophy, AlertCircle } from "lucide-react";
+import { Calendar as CalendarIcon, MapPin, Clock, Trophy, AlertCircle, Download } from "lucide-react";
 import { UPCOMING_EVENTS, ClubEvent } from "@/lib/events";
+import { INTERCLUBS_ADULTES, generateICS } from "@/lib/interclubs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Link from "next/link";
 
@@ -264,23 +265,61 @@ export default function AgendaPage() {
                                 Interclubs Adultes
                             </AccordionTrigger>
                             <AccordionContent className="pt-2 pb-6">
-                                <div className="grid sm:grid-cols-2 gap-4">
-                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
-                                        <h5 className="font-bold text-slate-800">Cassis 1 N3</h5>
-                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
-                                    </div>
-                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
-                                        <h5 className="font-bold text-slate-800">Cassis 2 N5</h5>
-                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
-                                    </div>
-                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
-                                        <h5 className="font-bold text-slate-800">Cassis 3 N5</h5>
-                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
-                                    </div>
-                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
-                                        <h5 className="font-bold text-slate-800">Cassis 4 N6</h5>
-                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
-                                    </div>
+                                <div className="space-y-8">
+                                    {INTERCLUBS_ADULTES.map((team, idx) => {
+                                        const icsContent = "data:text/calendar;charset=utf8," + encodeURIComponent(generateICS(team));
+                                        return (
+                                            <div key={idx} className="bg-slate-50 rounded-xl border border-slate-100 p-4 sm:p-6 shadow-sm">
+                                                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+                                                    <div>
+                                                        <h4 className="text-xl font-bold text-slate-800 mb-1">{team.teamName}</h4>
+                                                        <span className="inline-block bg-orange-100 text-orange-700 text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">
+                                                            {team.division}
+                                                        </span>
+                                                    </div>
+                                                    <a href={icsContent} download={`calendrier_${team.teamName.replace(/\s+/g, '_')}.ics`}>
+                                                        <Button variant="outline" size="sm" className="w-full sm:w-auto border-orange-200 text-orange-700 hover:bg-orange-50 hover:text-orange-800 font-medium">
+                                                            <Download className="w-4 h-4 mr-2" />
+                                                            Télécharger Agenda
+                                                        </Button>
+                                                    </a>
+                                                </div>
+
+                                                <div className="grid grid-cols-1 gap-3">
+                                                    {team.matches.map((match, mIdx) => {
+                                                        const matchDate = new Date(match.date);
+                                                        const dateStr = matchDate.toLocaleDateString("fr-FR", { weekday: "short", day: "numeric", month: "long", year: "numeric" });
+                                                        return (
+                                                            <div key={mIdx} className="bg-white rounded-lg p-4 border border-slate-200 flex flex-col md:flex-row md:items-center gap-4 hover:border-orange-200 transition-colors">
+                                                                <div className="flex items-center gap-3 md:w-1/4">
+                                                                    <div className="bg-slate-100 p-2 rounded text-slate-600">
+                                                                        <CalendarIcon className="w-5 h-5" />
+                                                                    </div>
+                                                                    <div>
+                                                                        <div className="font-bold text-slate-700 capitalize">{dateStr}</div>
+                                                                        <div className="text-sm text-slate-500 flex items-center gap-1">
+                                                                            <Clock className="w-3 h-3" /> {match.time}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div className="md:w-1/2 flex flex-col justify-center font-semibold text-slate-800">
+                                                                    <div className="flex items-center justify-between w-full">
+                                                                        <span className="w-[45%] text-right truncate" title={match.white}>{match.white}</span>
+                                                                        <span className="w-[10%] text-center text-slate-400 text-sm font-normal">vs</span>
+                                                                        <span className="w-[45%] text-left truncate" title={match.black}>{match.black}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div className="md:w-1/4 flex items-center gap-2 text-slate-600 font-medium md:justify-end">
+                                                                    <MapPin className="w-4 h-4 text-orange-500" />
+                                                                    {match.location}
+                                                                </div>
+                                                            </div>
+                                                        );
+                                                    })}
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </AccordionContent>
                         </AccordionItem>
