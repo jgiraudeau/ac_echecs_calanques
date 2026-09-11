@@ -10,6 +10,7 @@ import { SocialHub } from "@/components/social/SocialHub";
 import { clubSponsors } from "@/lib/sponsors";
 import { cn } from "@/lib/utils";
 import { type FfeRecentResult, type FfeSelectedTeam, type FfeTeamsApiResponse } from "@/lib/ffe-teams";
+import { INTERCLUBS_ADULTES } from "@/lib/interclubs";
 
 type HomeFfeResult = {
   id: string;
@@ -171,6 +172,16 @@ export default function Home() {
   const activeFfeResult = ffeResults[activeFfeResultIndex] ?? null;
   const latestFfeResultsPreview = ffeResults.slice(0, 3);
 
+  // Matchs à venir (Interclubs)
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const upcomingInterclubs = INTERCLUBS_ADULTES.flatMap(team => 
+    team.matches.map(m => ({ ...m, teamName: team.teamName, division: team.division }))
+  )
+    .filter(m => new Date(m.date) >= today)
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+    .slice(0, 3);
+
   return (
     <div className="min-h-screen flex flex-col font-sans bg-slate-50">
       <Navbar />
@@ -309,10 +320,10 @@ export default function Home() {
           <div className="lg:w-1/3">
             <h2 className="text-3xl font-bold text-slate-800 flex items-center gap-3 mb-8">
               <Trophy className="text-accent w-8 h-8" />
-              Derniers Résultats
+              Résultats & Matchs à venir
             </h2>
-            <div className="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-accent h-[500px] flex flex-col">
-              <div className="space-y-4 flex-1 overflow-y-auto">
+            <div className="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-accent h-[600px] flex flex-col">
+              <div className="space-y-4 flex-1 overflow-y-auto pr-2">
                 {ffeResultsLoading ? (
                   <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-slate-600 flex items-center gap-2">
                     <Loader2 className="w-4 h-4 animate-spin" />
@@ -381,6 +392,32 @@ export default function Home() {
                     {ffeResults.length > 1 ? (
                       <p className="text-xs text-slate-400 mt-2">Affichage aléatoire, priorité aux résultats les plus récents.</p>
                     ) : null}
+                  </div>
+                ) : null}
+
+                {upcomingInterclubs.length > 0 ? (
+                  <div className="rounded-xl border border-slate-200 bg-white p-3 mt-4">
+                    <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Prochains Matchs Interclubs</p>
+                    <div className="mt-2 space-y-2">
+                      {upcomingInterclubs.map((match, index) => {
+                         const mDate = new Date(match.date);
+                         const dateStr = mDate.toLocaleDateString("fr-FR", { weekday: "short", day: "numeric", month: "short" });
+                         return (
+                          <div key={index} className="rounded-lg border border-slate-100 px-3 py-2 bg-slate-50">
+                            <div className="flex justify-between items-center mb-1">
+                              <p className="text-sm font-bold text-slate-700">{match.teamName} <span className="text-xs font-normal text-slate-500">({match.division})</span></p>
+                              <span className="text-[10px] font-bold text-orange-600 bg-orange-100 px-2 py-0.5 rounded capitalize">{dateStr}</span>
+                            </div>
+                            <p className="text-xs text-slate-600">
+                              <span className="font-semibold">{match.white}</span> vs <span className="font-semibold">{match.black}</span>
+                            </p>
+                            <p className="text-xs text-slate-500 mt-1 flex items-center gap-1">
+                              <MapPin className="w-3 h-3" /> {match.location} - {match.time}
+                            </p>
+                          </div>
+                         );
+                      })}
+                    </div>
                   </div>
                 ) : null}
 
