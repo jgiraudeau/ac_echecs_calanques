@@ -93,9 +93,12 @@ export default function PartenairesPage() {
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-10 text-center md:text-left">
           
           {/* Logos à gauche */}
-          <div className="flex md:flex-col gap-6 items-center shrink-0">
-             <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/20 shadow-lg">
+           <div className="flex md:flex-col gap-6 items-center shrink-0">
+             <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/20 shadow-lg relative flex flex-col items-center">
                <Image src="/sponsors/cultura-aubagne.png" alt="Cultura Aubagne" width={140} height={60} className="object-contain" />
+               <span className="absolute -bottom-2 -right-2 rotate-[-5deg] bg-white text-[#00338d] px-2 py-0.5 text-[10px] font-black uppercase tracking-widest rounded shadow-md border border-[#00338d]/20">
+                 Aubagne
+               </span>
              </div>
              <div className="bg-slate-900 p-4 rounded-2xl border border-slate-700 shadow-xl">
                <Image src="/sponsors/appart-hotel-saint-esteve.png" alt="Appart Hôtel Saint Estève" width={140} height={60} className="object-contain brightness-110" />
@@ -190,7 +193,7 @@ export default function PartenairesPage() {
                     <span className="inline-flex rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-slate-600">
                       {sponsorCategoryLabel[sponsor.category]}
                     </span>
-                    <div className="mt-3 h-16 flex items-center justify-center">
+                    <div className="mt-3 h-16 flex items-center justify-center relative">
                       <Image
                         src={sponsor.logoSrc}
                         alt={`Logo ${sponsor.name}`}
@@ -198,6 +201,11 @@ export default function PartenairesPage() {
                         height={80}
                         className={cn("h-auto max-h-[58px] w-auto object-contain", sponsor.logoClassName)}
                       />
+                      {sponsor.logoText ? (
+                        <span className="absolute -bottom-1 -right-2 rotate-[-5deg] bg-[#00338d] text-white px-2 py-0.5 text-[9px] font-black uppercase tracking-widest rounded shadow-sm border border-white">
+                          {sponsor.logoText}
+                        </span>
+                      ) : null}
                     </div>
                     <div className="mt-3 flex items-start justify-between gap-2">
                       <div>
@@ -237,7 +245,7 @@ export default function PartenairesPage() {
                     <span className="inline-flex rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-slate-600">
                       {sponsorCategoryLabel[sponsor.category]}
                     </span>
-                    <div className="mt-3 h-16 flex items-center justify-center">
+                    <div className="mt-3 h-16 flex items-center justify-center relative">
                       <Image
                         src={sponsor.logoSrc}
                         alt={`Logo ${sponsor.name}`}
@@ -245,6 +253,11 @@ export default function PartenairesPage() {
                         height={80}
                         className={cn("h-auto max-h-[58px] w-auto object-contain", sponsor.logoClassName)}
                       />
+                      {sponsor.logoText ? (
+                        <span className="absolute -bottom-1 -right-2 rotate-[-5deg] bg-[#00338d] text-white px-2 py-0.5 text-[9px] font-black uppercase tracking-widest rounded shadow-sm border border-white">
+                          {sponsor.logoText}
+                        </span>
+                      ) : null}
                     </div>
                     <div className="mt-3 flex items-start justify-between gap-2">
                       <div>

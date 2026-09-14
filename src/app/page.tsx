@@ -503,6 +503,11 @@ export default function Home() {
                         height={70}
                         className={cn("h-auto max-h-[56px] w-auto object-contain", sponsor.logoClassName)}
                       />
+                      {sponsor.logoText ? (
+                        <span className="absolute -bottom-1 -right-2 rotate-[-5deg] bg-[#00338d] text-white px-2 py-0.5 text-[9px] font-black uppercase tracking-widest rounded shadow-sm border border-white">
+                          {sponsor.logoText}
+                        </span>
+                      ) : null}
                     </div>
 
                     <div className="space-y-0.5 text-center leading-tight">

@@ -11,6 +11,7 @@ export type Sponsor = {
   logoClassName?: string;
   cardClassName?: string;
   textClassName?: string;
+  logoText?: string;
 };
 
 export const sponsorCategoryLabel: Record<SponsorCategory, string> = {
@@ -75,6 +76,7 @@ export const clubSponsors: Sponsor[] = [
     isNew: true,
     cardClassName: "border-[#00338d]/35 bg-[#00338d]/5",
     logoClassName: "max-h-[50px]",
+    logoText: "Aubagne",
   },
   {
     id: "ville-de-carnoux",
