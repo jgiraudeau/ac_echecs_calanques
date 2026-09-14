@@ -21,7 +21,7 @@ export const UPCOMING_EVENTS: ClubEvent[] = [
   },
   {
     id: "2",
-    title: "Circuit Blitz des calanques",
+    title: "1er Cassis Chess Day",
     type: "Tournoi",
     date: "2026-09-26",
     time: "Toute la journée",

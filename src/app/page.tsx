@@ -11,6 +11,7 @@ import { clubSponsors } from "@/lib/sponsors";
 import { cn } from "@/lib/utils";
 import { type FfeRecentResult, type FfeSelectedTeam, type FfeTeamsApiResponse } from "@/lib/ffe-teams";
 import { INTERCLUBS_ADULTES } from "@/lib/interclubs";
+import { UPCOMING_EVENTS } from "@/lib/events";
 
 type HomeFfeResult = {
   id: string;
@@ -179,6 +180,10 @@ export default function Home() {
     team.matches.map(m => ({ ...m, teamName: team.teamName, division: team.division }))
   )
     .filter(m => new Date(m.date) >= today)
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+    .slice(0, 3);
+
+  const upcomingTournaments = UPCOMING_EVENTS.filter(e => e.type === "Tournoi" && new Date(e.date) >= today)
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     .slice(0, 3);
 
@@ -413,6 +418,29 @@ export default function Home() {
                             </p>
                             <p className="text-xs text-slate-500 mt-1 flex items-center gap-1">
                               <MapPin className="w-3 h-3" /> {match.location} - {match.time}
+                            </p>
+                          </div>
+                         );
+                      })}
+                    </div>
+                  </div>
+                ) : null}
+
+                {upcomingTournaments.length > 0 ? (
+                  <div className="rounded-xl border border-slate-200 bg-white p-3 mt-4">
+                    <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Prochains Tournois</p>
+                    <div className="mt-2 space-y-2">
+                      {upcomingTournaments.map((tournoi, index) => {
+                         const mDate = new Date(tournoi.date);
+                         const dateStr = mDate.toLocaleDateString("fr-FR", { weekday: "short", day: "numeric", month: "short" });
+                         return (
+                          <div key={index} className="rounded-lg border border-slate-100 px-3 py-2 bg-purple-50/50">
+                            <div className="flex justify-between items-center mb-1">
+                              <p className="text-sm font-bold text-slate-700">{tournoi.title}</p>
+                              <span className="text-[10px] font-bold text-purple-600 bg-purple-100 px-2 py-0.5 rounded capitalize">{dateStr}</span>
+                            </div>
+                            <p className="text-xs text-slate-500 mt-1 flex items-center gap-1">
+                              <MapPin className="w-3 h-3" /> {tournoi.location}
                             </p>
                           </div>
                          );
