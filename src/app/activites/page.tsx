@@ -183,16 +183,6 @@ export default function ActivitesPage() {
                                             Cassis
                                             <MapPin className="w-3.5 h-3.5" />
                                         </a>
-                                        <br/>
-                                        <span className="text-sm text-slate-500">et</span>
-                                        <br/>
-                                        <a 
-                                            href="#lieux-liste"
-                                            className="text-blue-600 hover:text-accent font-semibold hover:underline inline-flex items-center gap-1 mt-1"
-                                        >
-                                            La Ciotat
-                                            <MapPin className="w-3.5 h-3.5" />
-                                        </a>
                                     </td>
                                     <td className="p-4">
                                         <div className="text-emerald-700 font-medium">16h30 à 18h30</div>
@@ -203,10 +193,6 @@ export default function ActivitesPage() {
                                             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 bg-orange-100/50 px-2.5 py-1 rounded-md border border-orange-200/50 whitespace-nowrap">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
                                                 Cassis : 10 Sept.
-                                            </span>
-                                            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 bg-orange-100/50 px-2.5 py-1 rounded-md border border-orange-200/50 whitespace-nowrap">
-                                                <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
-                                                La Ciotat : 10 Sept.
                                             </span>
                                         </div>
                                     </td>
