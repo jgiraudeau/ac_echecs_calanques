@@ -252,7 +252,7 @@ export default function BlitzRapidePage() {
                   <CalendarDays className="w-4 h-4" />
                   Horaires
                 </div>
-                <p className="text-slate-700 text-sm">Pointage jusqu&apos;à <strong>9h30</strong><br />Départ Rapide : <strong>15h30</strong></p>
+                <p className="text-slate-700 text-sm">Pointage jusqu&apos;à <strong>9h30</strong><br />Remise des prix : <strong>15h30</strong></p>
               </div>
               <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm">
                 <div className="flex items-center gap-2 text-[#0F4C81] font-bold mb-1">
