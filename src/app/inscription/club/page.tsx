@@ -41,25 +41,38 @@ export default function InscriptionClubPage() {
 
       <section className="container mx-auto px-4 py-14 max-w-5xl space-y-12">
         {/* Reminder Banner */}
-        <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl shadow-lg p-6 md:p-8 text-white flex flex-col md:flex-row items-center gap-6 border border-orange-400">
-          <div className="bg-white/20 p-4 rounded-full shrink-0">
-            <Trophy className="w-10 h-10 text-white" />
-          </div>
-          <div className="flex-1">
-            <h3 className="text-2xl font-black mb-2 tracking-wide">Pensez à réserver pour le Championnat Départemental Jeunes !</h3>
-            <p className="text-orange-50 font-medium mb-4">Le tournoi phare de l'année approche à grands pas pour tous nos jeunes compétiteurs.</p>
-            <div className="flex flex-col sm:flex-row gap-4 font-semibold">
-              <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
-                <CalendarIcon className="w-5 h-5" />
-                Du 28 au 31 Octobre
+        <a href="/pdf/championnat-bdr-jeunes-2026.pdf" target="_blank" rel="noopener noreferrer" className="block transition-transform hover:scale-[1.01]">
+          <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl shadow-lg p-6 md:p-8 text-white flex flex-col md:flex-row items-start md:items-center gap-6 border border-orange-400">
+            <div className="bg-white/20 p-4 rounded-full shrink-0 hidden md:block">
+              <Trophy className="w-10 h-10 text-white" />
+            </div>
+            <div className="flex-1 w-full">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                <h3 className="text-2xl font-black tracking-wide">Championnat Départemental Jeunes</h3>
+                <span className="text-xs bg-white/20 px-3 py-1 rounded-full font-semibold border border-white/30 whitespace-nowrap">Ouvrir l'affiche PDF</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
-                <MapPin className="w-5 h-5" />
-                Berre
+              <p className="text-orange-50 font-medium mb-4">Pensez à réserver ! Le tournoi phare de l'année approche à grands pas pour tous nos jeunes.</p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5 text-sm bg-black/10 rounded-xl p-4 border border-white/10">
+                <div><strong className="text-white">U8 (2019 et après) :</strong> Samedi 31 oct.</div>
+                <div><strong className="text-white">U10 (2017 - 2018) :</strong> Vendredi 30 oct.</div>
+                <div><strong className="text-white">U12 à U16 (2011 - 2016) :</strong> Mer. 28 & Jeu. 29 oct.</div>
+                <div><strong className="text-white">U18 & U20 (2007 - 2010) :</strong> Jeudi 29 oct.</div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 font-semibold">
+                <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm border border-white/10 shadow-sm">
+                  <CalendarIcon className="w-5 h-5" />
+                  Du 28 au 31 Octobre
+                </div>
+                <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm border border-white/10 shadow-sm">
+                  <MapPin className="w-5 h-5 shrink-0" />
+                  Salle Polyvalente, Berre-l'Étang
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </a>
 
         <HelloAssoWidget url="https://www.helloasso.com/associations/echecs-cassis/adhesions/cotisations-et-adhesion-club-d-echecs-2026-2027/widget" />
       </section>

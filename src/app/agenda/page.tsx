@@ -187,27 +187,40 @@ export default function AgendaPage() {
                         
                         {/* Highlights (Departemental & Scolaire) */}
                         <div className="grid grid-cols-1 gap-6">
-                            <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-1 rounded-2xl shadow-lg transform transition-transform hover:scale-[1.01]">
-                                <div className="bg-white p-6 md:p-8 rounded-xl h-full flex flex-col md:flex-row items-start gap-6">
-                                    <div className="bg-orange-100 p-4 rounded-full text-orange-600 shrink-0">
-                                        <Trophy className="w-10 h-10" />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-black text-slate-800 text-2xl mb-2">Championnat Départemental Jeunes</h4>
-                                        <p className="text-orange-600 font-bold mb-4 text-lg">Le tournoi le plus important pour les jeunes de l'académie. On vous y attend nombreux !</p>
-                                        <div className="flex flex-col sm:flex-row gap-4 text-slate-700 font-medium">
-                                            <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
-                                                <CalendarIcon className="w-5 h-5 text-orange-500" />
-                                                Du 28 au 31 Octobre
+                            <a href="/pdf/championnat-bdr-jeunes-2026.pdf" target="_blank" rel="noopener noreferrer" className="block group">
+                                <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-1 rounded-2xl shadow-lg transform transition-transform group-hover:scale-[1.01]">
+                                    <div className="bg-white p-6 md:p-8 rounded-xl h-full flex flex-col md:flex-row items-start gap-6">
+                                        <div className="bg-orange-100 p-4 rounded-full text-orange-600 shrink-0">
+                                            <Trophy className="w-10 h-10" />
+                                        </div>
+                                        <div className="w-full">
+                                            <div className="flex justify-between items-start mb-2">
+                                                <h4 className="font-black text-slate-800 text-2xl">Championnat Départemental Jeunes</h4>
+                                                <span className="text-xs font-bold bg-orange-100 text-orange-600 px-2 py-1 rounded hidden sm:block">Affiche PDF</span>
                                             </div>
-                                            <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
-                                                <MapPin className="w-5 h-5 text-orange-500" />
-                                                Berre
+                                            <p className="text-orange-600 font-bold mb-4 text-lg">Le tournoi le plus important pour les jeunes de l'académie. On vous y attend nombreux !</p>
+                                            
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6 text-sm bg-orange-50 rounded-xl p-4 border border-orange-100 text-slate-700">
+                                                <div><strong>U8 (2019 et après) :</strong> Samedi 31 octobre</div>
+                                                <div><strong>U10 (2017 - 2018) :</strong> Vendredi 30 octobre</div>
+                                                <div><strong>U12 à U16 (2011 - 2016) :</strong> Mer. 28 & Jeu. 29 oct.</div>
+                                                <div><strong>U18 & U20 (2007 - 2010) :</strong> Jeudi 29 octobre</div>
+                                            </div>
+
+                                            <div className="flex flex-col sm:flex-row gap-4 text-slate-700 font-medium">
+                                                <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
+                                                    <CalendarIcon className="w-5 h-5 text-orange-500" />
+                                                    Du 28 au 31 Octobre
+                                                </div>
+                                                <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
+                                                    <MapPin className="w-5 h-5 text-orange-500" />
+                                                    Salle Polyvalente, Berre-l'Étang
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
 
                             <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-1 rounded-2xl shadow-lg transform transition-transform hover:scale-[1.01]">
                                 <div className="bg-white p-6 md:p-8 rounded-xl h-full flex flex-col md:flex-row items-start gap-6">
