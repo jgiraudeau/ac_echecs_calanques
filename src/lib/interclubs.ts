@@ -53,6 +53,39 @@ export const INTERCLUBS_ADULTES: TeamCalendar[] = [
             { white: "Ae des Calanques 3", black: "Marseille Echecs 9", date: "2027-01-31", time: "14:15", location: "Cassis" },
             { white: "La Ciotat Echecs 1", black: "Ae des Calanques 3", date: "2027-03-14", time: "14:15", location: "La Ciotat" }
         ]
+    },
+    {
+        teamName: "AE des Calanques 4",
+        division: "Départementale 13 Duo",
+        matches: [
+            { white: "Cassis 4", black: "Echecs Academy 2", date: "2026-10-11", time: "14:15", location: "Cassis" },
+            { white: "Cassis 4", black: "Cassis 5", date: "2026-11-08", time: "14:15", location: "Cassis" },
+            { white: "Cassis 4", black: "Marseille Passion 4", date: "2026-11-29", time: "14:15", location: "Cassis" },
+            { white: "Cassis 6", black: "Cassis 4", date: "2026-12-13", time: "14:15", location: "Cassis" },
+            { white: "Marseille Passion 3", black: "Cassis 4", date: "2027-01-17", time: "14:15", location: "Marseille" }
+        ]
+    },
+    {
+        teamName: "AE des Calanques 5",
+        division: "Départementale 13 Duo",
+        matches: [
+            { white: "Cassis 5", black: "Cassis 6", date: "2026-10-11", time: "14:15", location: "Cassis" },
+            { white: "Cassis 4", black: "Cassis 5", date: "2026-11-08", time: "14:15", location: "Cassis" },
+            { white: "Echecs Academy 2", black: "Cassis 5", date: "2026-11-29", time: "14:15", location: "Marseille Academy" },
+            { white: "Marseille Passion 3", black: "Cassis 5", date: "2026-12-13", time: "14:15", location: "Marseille" },
+            { white: "Cassis 5", black: "Marseille Passion 4", date: "2027-01-17", time: "14:15", location: "Cassis" }
+        ]
+    },
+    {
+        teamName: "AE des Calanques 6",
+        division: "Départementale 13 Duo",
+        matches: [
+            { white: "Cassis 5", black: "Cassis 6", date: "2026-10-11", time: "14:15", location: "Cassis" },
+            { white: "Marseille Passion 4", black: "Cassis 6", date: "2026-11-08", time: "14:15", location: "Marseille" },
+            { white: "Cassis 6", black: "Marseille Passion 3", date: "2026-11-29", time: "14:15", location: "Cassis" },
+            { white: "Cassis 6", black: "Cassis 4", date: "2026-12-13", time: "14:15", location: "Cassis" },
+            { white: "Cassis 6", black: "Echecs Academy 2", date: "2027-01-17", time: "14:15", location: "Cassis" }
+        ]
     }
 ];
 
