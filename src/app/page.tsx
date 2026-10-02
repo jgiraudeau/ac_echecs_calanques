@@ -273,20 +273,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Bannière de Rentrée - Temporaire */}
+      {/* Bannière Livres d'exercices */}
       <section className="container mx-auto px-4 mb-16 relative z-10">
-        <div className="bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl shadow-xl p-6 border border-orange-400 text-center max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl shadow-xl p-6 border border-blue-400 text-center max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-left text-white">
             <h2 className="text-2xl font-bold mb-2 flex items-center gap-2">
-              <Zap className="w-6 h-6" />
-              Reprise des cours à partir du Lundi 7 septembre !
+              <BookOpen className="w-6 h-6" />
+              Commandes des livres d'exercices
             </h2>
-            <p className="text-orange-50 font-medium">
-              Attention, les dates de rentrée varient selon les cours. Vérifiez le planning pour connaître la date exacte de votre créneau.
+            <p className="text-blue-50 font-medium">
+              Vous avez jusqu'au 9 octobre pour commander les livres d'exercices. Rendez-vous sur la boutique.
             </p>
           </div>
-          <Button asChild className="bg-white text-orange-600 hover:bg-orange-50 font-bold px-6 py-6 rounded-xl shadow-md transition-transform hover:scale-105">
-            <Link href="/activites">Voir le planning</Link>
+          <Button asChild className="bg-white text-blue-700 hover:bg-blue-50 font-bold px-6 py-6 rounded-xl shadow-md transition-transform hover:scale-105">
+            <Link href="/produits-derives">Voir la boutique</Link>
           </Button>
         </div>
       </section>

@@ -1,7 +1,7 @@
 "use client";
 
 import { Navbar } from "@/components/layout/Navbar";
-import { ShoppingBag, Heart, ExternalLink } from "lucide-react";
+import { ShoppingBag, Heart, ExternalLink, Info } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 export default function BoutiqueClubPage() {
@@ -55,6 +55,26 @@ export default function BoutiqueClubPage() {
           <div className="mt-6 inline-flex items-center gap-2 bg-orange-500/20 border border-orange-400/40 text-orange-300 text-sm font-semibold px-4 py-2 rounded-full">
             <Heart className="w-4 h-4 fill-orange-400 text-orange-400" />
             Paiement sécurisé via HelloAsso
+          </div>
+        </div>
+      </section>
+
+      {/* Informations Livres d'exercices */}
+      <section className="container mx-auto px-4 mt-12 -mb-4">
+        <div className="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-r-xl shadow-sm">
+          <div className="flex items-start">
+            <div className="flex-shrink-0 mt-0.5">
+              <Info className="h-5 w-5 text-blue-600" aria-hidden="true" />
+            </div>
+            <div className="ml-3">
+              <h3 className="text-sm font-bold text-blue-900">Choix des livres d'exercices (Étapes)</h3>
+              <div className="mt-1 text-sm text-blue-800 leading-relaxed">
+                <p>
+                  Dans la description de chaque livre "Étape", vous trouverez une petite explication détaillée de son contenu pour vous aider à faire le bon choix pour votre enfant.
+                  Si vous avez le moindre doute, n'hésitez surtout pas à envoyer un message à l'un des professeurs de l'académie !
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
