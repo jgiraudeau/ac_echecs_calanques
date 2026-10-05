@@ -181,7 +181,7 @@ export default function Home() {
   )
     .filter(m => new Date(m.date) >= today)
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-    .slice(0, 3);
+    .slice(0, 6);
 
   const upcomingTournaments = UPCOMING_EVENTS.filter(e => e.type === "Tournoi" && new Date(e.date) >= today)
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())

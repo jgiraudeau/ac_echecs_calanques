@@ -53,16 +53,24 @@ export function SocialHub() {
                     </a>
                 </div>
 
-                <div className="flex-1 bg-slate-50 relative">
-                    <iframe
-                        src="https://www.instagram.com/p/DRhQ349Dvp3/embed"
-                        title="Dernière publication Instagram"
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        scrolling="yes"
-                        className="absolute inset-0 w-full h-full"
-                    ></iframe>
+                <div className="flex-1 bg-slate-50 flex items-center justify-center p-8 text-center">
+                    <div>
+                        <div className="bg-gradient-to-tr from-[#f58529] via-[#dd2a7b] to-[#8134af] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white shadow-lg hover:scale-110 transition-transform">
+                            <Instagram className="w-8 h-8" />
+                        </div>
+                        <h4 className="text-xl font-bold text-slate-800 mb-2">Suivez-nous sur Instagram !</h4>
+                        <p className="text-slate-500 mb-6">
+                            Découvrez nos dernières photos, vidéos et stories directement sur notre page officielle.
+                        </p>
+                        <a
+                            href="https://www.instagram.com/echecscalanques/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-slate-800 transition-colors shadow-md"
+                        >
+                            S'abonner à @echecscalanques
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

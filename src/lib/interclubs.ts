@@ -56,7 +56,7 @@ export const INTERCLUBS_ADULTES: TeamCalendar[] = [
     },
     {
         teamName: "AE des Calanques 4",
-        division: "Départementale 13 Duo",
+        division: "N6 Duo",
         matches: [
             { white: "Cassis 4", black: "Echecs Academy 2", date: "2026-10-11", time: "14:15", location: "Cassis" },
             { white: "Cassis 4", black: "Cassis 5", date: "2026-11-08", time: "14:15", location: "Cassis" },
@@ -67,7 +67,7 @@ export const INTERCLUBS_ADULTES: TeamCalendar[] = [
     },
     {
         teamName: "AE des Calanques 5",
-        division: "Départementale 13 Duo",
+        division: "N6 Duo",
         matches: [
             { white: "Cassis 5", black: "Cassis 6", date: "2026-10-11", time: "14:15", location: "Cassis" },
             { white: "Cassis 4", black: "Cassis 5", date: "2026-11-08", time: "14:15", location: "Cassis" },
@@ -78,7 +78,7 @@ export const INTERCLUBS_ADULTES: TeamCalendar[] = [
     },
     {
         teamName: "AE des Calanques 6",
-        division: "Départementale 13 Duo",
+        division: "N6 Duo",
         matches: [
             { white: "Cassis 5", black: "Cassis 6", date: "2026-10-11", time: "14:15", location: "Cassis" },
             { white: "Marseille Passion 4", black: "Cassis 6", date: "2026-11-08", time: "14:15", location: "Marseille" },
