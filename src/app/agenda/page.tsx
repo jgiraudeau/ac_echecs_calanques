@@ -95,10 +95,10 @@ export default function AgendaPage() {
 
             {/* Main Content */}
             <section className="container mx-auto px-4 py-12">
-                <div className="grid lg:grid-cols-3 gap-8">
+                <div className="max-w-4xl mx-auto">
 
                     {/* Calendar List (Upcoming) */}
-                    <div className="lg:col-span-1 space-y-6">
+                    <div className="space-y-6">
                         <div className="flex items-center justify-between">
                             <h2 className="text-2xl font-bold text-slate-800 flex items-center gap-2">
                                 <CalendarIcon className="w-6 h-6 text-accent" />
@@ -151,26 +151,6 @@ export default function AgendaPage() {
                             </div>
                         )}
                     </div>
-
-                    {/* Google Calendar Embed */}
-                    <div className="lg:col-span-2">
-                        <div className="bg-white rounded-2xl shadow-lg border border-slate-100 p-1 h-[600px] md:h-full min-h-[600px] relative">
-                            <div className="absolute inset-x-0 -top-3 flex justify-center">
-                                <span className="bg-white px-4 text-sm font-bold text-slate-400 uppercase tracking-widest border border-slate-100 rounded-full shadow-sm">Calendrier Interactif</span>
-                            </div>
-                            <iframe
-                                src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FParis&src=Y18xMzFhZjAwOTU4MGFhODZkZjEwMDg3NmI2Y2I2MjJhYWE1NGIzYTk1ZGVjYzhkZGRmMTZlZDJhMzQzN2NjYjQ5QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZnIuZnJlbmNoI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=bzRvamkwOHRqbnYxcXN0cDJkaG9ubmRvZjFsOWozYjZAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%237986cb&color=%230b8043&color=%23f09300&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&showTz=1&bgcolor=%23ffffff"
-                                style={{ border: 0 }}
-                                width="100%"
-                                height="100%"
-                                frameBorder="0"
-                                scrolling="no"
-                                className="rounded-xl w-full h-full"
-                                title="Google Calendar Académie d'échecs des calanques"
-                            ></iframe>
-                        </div>
-                    </div>
-
                 </div>
             </section>
 
