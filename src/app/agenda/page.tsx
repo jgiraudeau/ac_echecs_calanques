@@ -93,66 +93,7 @@ export default function AgendaPage() {
                 </div>
             </section>
 
-            {/* Main Content */}
-            <section className="container mx-auto px-4 py-12">
-                <div className="max-w-4xl mx-auto">
 
-                    {/* Calendar List (Upcoming) */}
-                    <div className="space-y-6">
-                        <div className="flex items-center justify-between">
-                            <h2 className="text-2xl font-bold text-slate-800 flex items-center gap-2">
-                                <CalendarIcon className="w-6 h-6 text-accent" />
-                                À la Une
-                            </h2>
-                        </div>
-
-                        {filteredEvents.map((event) => {
-                            const { dayName, dayNum } = getEventDateParts(event.date);
-                            const colors = getColorClasses(event.color);
-                            return (
-                                <div 
-                                    key={event.id}
-                                    className="bg-white rounded-xl shadow-sm border border-slate-100 p-6 transition-all hover:shadow-md hover:border-blue-200 group cursor-pointer relative overflow-hidden"
-                                >
-                                    <div className={`absolute left-0 top-0 bottom-0 w-1 ${colors.bgSide} rounded-l-xl`} />
-                                    <div className="flex gap-4 items-start">
-                                        <div className={`flex flex-col items-center ${colors.bgIcon} rounded-xl p-3 min-w-[70px]`}>
-                                            <span className="text-xs font-bold uppercase tracking-wide">{dayName}</span>
-                                            <span className="text-3xl font-extrabold leading-none">{dayNum}</span>
-                                        </div>
-                                        <div className="w-full">
-                                            <div className="flex gap-2 mb-2">
-                                                <span className={`px-2 py-0.5 rounded-full ${colors.bgBadge} text-[10px] font-bold uppercase tracking-wider`}>
-                                                    {event.type}
-                                                </span>
-                                            </div>
-                                            <h3 className="font-bold text-lg text-slate-800 group-hover:text-primary transition-colors leading-tight">
-                                                {event.title}
-                                            </h3>
-                                            <div className="text-slate-500 text-sm mt-3 space-y-1.5">
-                                                <div className="flex items-center gap-2">
-                                                    <Clock className="w-4 h-4 text-slate-400" /> 
-                                                    {event.time}
-                                                </div>
-                                                <div className="flex items-center gap-2">
-                                                    <MapPin className="w-4 h-4 text-slate-400" /> 
-                                                    {event.location}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            );
-                        })}
-
-                        {filteredEvents.length === 0 && (
-                            <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-8 text-center text-slate-500">
-                                Aucun événement majeur à venir pour le moment.
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </section>
 
             {/* Categories Section */}
             <section className="container mx-auto px-4 py-12 border-t border-slate-200">
