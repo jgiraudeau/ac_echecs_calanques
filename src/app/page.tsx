@@ -273,20 +273,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Bannière Livres d'exercices */}
+      {/* Bannière Prochain Rapide des Calanques */}
       <section className="container mx-auto px-4 mb-16 relative z-10">
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl shadow-xl p-6 border border-blue-400 text-center max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-gradient-to-r from-[#0F4C81] to-[#1a6bb5] rounded-2xl shadow-xl p-6 border border-blue-400 text-center max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-left text-white">
             <h2 className="text-2xl font-bold mb-2 flex items-center gap-2">
-              <BookOpen className="w-6 h-6" />
-              Commandes des livres d'exercices
+              <Zap className="w-6 h-6 text-orange-400" />
+              Prochain Rapide des Calanques — 19 décembre
             </h2>
             <p className="text-blue-50 font-medium">
-              Vous avez jusqu'au 9 octobre pour commander les livres d'exercices. Rendez-vous sur la boutique.
+              Rendez-vous le samedi 19 décembre au Centre Culturel de Cassis. Les inscriptions sont ouvertes !
             </p>
           </div>
-          <Button asChild className="bg-white text-blue-700 hover:bg-blue-50 font-bold px-6 py-6 rounded-xl shadow-md transition-transform hover:scale-105">
-            <Link href="/produits-derives">Voir la boutique</Link>
+          <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-6 rounded-xl shadow-md transition-transform hover:scale-105 shrink-0">
+            <a
+              href="https://events.sharly-chess.com/fr/events/rapides-des-calanques"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              S&apos;inscrire en ligne
+            </a>
           </Button>
         </div>
       </section>

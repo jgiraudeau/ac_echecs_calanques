@@ -11,15 +11,15 @@ export const metadata: Metadata = {
     "Participez au Circuit Blitz et aux Rapides des Calanques. Tournois ouverts à tous niveaux, adultes et jeunes, avec le Challenge Crevette pour les écoles partenaires.",
 };
 
-const blitzDates = [
+const blitzDates: { date: string; lieu: string; salle: string; status?: "ANNULÉ" | "COMPLET" }[] = [
   { date: "28 Septembre", lieu: "Cassis", salle: "Centre Culturel" },
-  { date: "14 Novembre", lieu: "La Ciotat", salle: "CIQ Saint Jean" },
+  { date: "14 Novembre", lieu: "La Ciotat", salle: "CIQ Saint Jean", status: "ANNULÉ" },
   { date: "13 Février", lieu: "Ceyreste", salle: "Salle Polyvalente" },
   { date: "29 Mai", lieu: "Cassis", salle: "Centre Culturel" },
 ];
 
-const rapideDates = [
-  { date: "17 Octobre", lieu: "Cassis", salle: "Centre Culturel" },
+const rapideDates: { date: string; lieu: string; salle: string; status?: "ANNULÉ" | "COMPLET" }[] = [
+  { date: "17 Octobre", lieu: "Cassis", salle: "Centre Culturel", status: "COMPLET" },
   { date: "19 Décembre", lieu: "Cassis", salle: "Centre Culturel" },
   { date: "27 Mars", lieu: "Cassis", salle: "Centre Culturel" },
   { date: "10 Avril", lieu: "Cassis", salle: "Centre Culturel" },
@@ -153,9 +153,22 @@ export default function BlitzRapidePage() {
                 {blitzDates.map((d) => (
                   <div
                     key={d.date}
-                    className="bg-white border border-orange-200 rounded-xl p-3 hover:border-orange-400 hover:shadow-md transition-all"
+                    className={`bg-white border rounded-xl p-3 transition-all ${
+                      d.status === "ANNULÉ"
+                        ? "border-red-300 bg-red-50/40"
+                        : "border-orange-200 hover:border-orange-400 hover:shadow-md"
+                    }`}
                   >
-                    <p className="font-extrabold text-orange-500 text-sm">{d.date}</p>
+                    <div className="flex items-center justify-between gap-2">
+                      <p className={`font-extrabold text-sm ${d.status === "ANNULÉ" ? "text-slate-400 line-through" : "text-orange-500"}`}>
+                        {d.date}
+                      </p>
+                      {d.status === "ANNULÉ" && (
+                        <span className="bg-red-600 text-white text-xs font-black uppercase px-2.5 py-0.5 rounded-md tracking-wider shadow-sm">
+                          ANNULÉ
+                        </span>
+                      )}
+                    </div>
                     <p className="font-semibold text-slate-800 text-sm">{d.lieu}</p>
                     <p className="text-xs text-slate-500 flex items-center gap-1 mt-0.5">
                       <MapPin className="w-3 h-3" />
@@ -284,7 +297,14 @@ export default function BlitzRapidePage() {
                     key={d.date}
                     className="bg-white border border-blue-200 rounded-xl p-3 hover:border-blue-400 hover:shadow-md transition-all"
                   >
-                    <p className="font-extrabold text-[#0F4C81] text-sm">{d.date}</p>
+                    <div className="flex items-center justify-between gap-2">
+                      <p className="font-extrabold text-[#0F4C81] text-sm">{d.date}</p>
+                      {d.status === "COMPLET" && (
+                        <span className="bg-amber-500 text-white text-xs font-black uppercase px-2.5 py-0.5 rounded-md tracking-wider shadow-sm">
+                          COMPLET
+                        </span>
+                      )}
+                    </div>
                     <p className="font-semibold text-slate-800 text-sm">{d.lieu}</p>
                     <p className="text-xs text-slate-500 flex items-center gap-1 mt-0.5">
                       <MapPin className="w-3 h-3" />
