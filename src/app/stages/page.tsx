@@ -26,9 +26,9 @@ const trainers = [
 ];
 
 const holidayStages = [
-  { name: "Toussaint", period: "Octobre / Novembre", link: "#haWidget", badge: "Inscriptions Ouvertes" },
+  { name: "Toussaint", period: "Octobre / Novembre", badge: "Terminé" },
   { name: "Noël", period: "Pas de stage", badge: "Repos" },
-  { name: "Hiver", period: "Février / Mars", link: "/stages/hiver", badge: "Aperçu" },
+  { name: "Hiver", period: "Février / Mars", link: "#haWidget", badge: "Inscriptions Ouvertes" },
   { name: "Printemps", period: "Avril" },
   { name: "Été", period: "Juillet / Août", badge: "Sport & Échecs" },
 ];
@@ -104,38 +104,26 @@ export default function StagesPage() {
         </div>
       </section>
 
-      {/* Stage Actuel : Toussaint 2026 */}
-      <section className="container mx-auto px-4 pt-16 pb-8">
-        <div className="bg-white rounded-3xl p-6 md:p-10 shadow-xl border border-orange-200 max-w-6xl mx-auto">
+      {/* Stage Actuel : Hiver / Février 2027 */}
+      <section id="haWidget" className="container mx-auto px-4 pt-16 pb-8">
+        <div className="bg-white rounded-3xl p-6 md:p-10 shadow-xl border border-orange-200 max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <span className="inline-flex items-center gap-2 bg-orange-500 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-4">
               À la Une
             </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-800">Stage de la Toussaint 2026</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-800">Stage de Février (Hiver 2027)</h2>
             <p className="text-slate-600 mt-4 text-lg max-w-2xl mx-auto">
-              Au Centre Culturel de Cassis. Les inscriptions sont ouvertes !
+              Les 01/03 et 02/03 au Centre Culturel de Cassis. Les inscriptions sont ouvertes !
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-10 items-start">
-            {/* Affiches */}
-            <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
-              <div className="relative aspect-[1/1.4] w-full rounded-2xl overflow-hidden shadow-lg border border-slate-200 group">
-                <Image src="/images/stage-toussaint-2026-recto.png" alt="Affiche Stage Toussaint 2026" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-              </div>
-              <div className="relative aspect-[1/1.4] w-full rounded-2xl overflow-hidden shadow-lg border border-slate-200 group">
-                <Image src="/images/stage-toussaint-2026-verso.png" alt="Informations Stage Toussaint 2026" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-              </div>
-            </div>
-
-            {/* Inscription Widget HelloAsso */}
-            <div className="lg:col-span-7 bg-slate-50 rounded-2xl p-4 md:p-6 shadow-inner border border-slate-200 sticky top-24">
-              <h3 className="text-xl font-bold text-[#0F4C81] mb-6 flex items-center justify-center gap-2">
-                <CalendarDays className="w-6 h-6" />
-                Formulaire d&apos;inscription
-              </h3>
-              <HelloAssoWidget url="https://www.helloasso.com/associations/echecs-cassis/evenements/stage-d-echecs-pour-enfant-toussaint-2026/widget" />
-            </div>
+          {/* Inscription Widget HelloAsso */}
+          <div className="bg-slate-50 rounded-2xl p-4 md:p-6 shadow-inner border border-slate-200">
+            <h3 className="text-xl font-bold text-[#0F4C81] mb-6 flex items-center justify-center gap-2">
+              <CalendarDays className="w-6 h-6" />
+              Formulaire d&apos;inscription
+            </h3>
+            <HelloAssoWidget url="https://www.helloasso.com/associations/echecs-cassis/evenements/stage-d-echecs-pour-enfant-hivers-2027/widget" />
           </div>
         </div>
       </section>
