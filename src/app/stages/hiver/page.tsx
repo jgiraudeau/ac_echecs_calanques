@@ -36,10 +36,10 @@ export default function HiverPage() {
             {/* Affiches */}
             <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
               <div className="relative aspect-[1/1.4] w-full rounded-2xl overflow-hidden shadow-lg border border-slate-200 group">
-                <Image src="/images/stage-hiver-2027-recto.jpg" alt="Affiche Stage Hiver 2027" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <Image src="/images/Stage Fevreier 2027.png" alt="Affiche Stage Hiver 2027" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="relative aspect-[1/1.4] w-full rounded-2xl overflow-hidden shadow-lg border border-slate-200 group">
-                <Image src="/images/stage-hiver-2027-verso.jpg" alt="Informations Stage Hiver 2027" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <Image src="/images/2 Stage Fevreier 2027.png" alt="Informations Stage Hiver 2027" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
             </div>
 
