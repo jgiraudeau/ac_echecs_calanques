@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
-import { Trophy, GraduationCap, Newspaper, Crown, Info, Zap, Loader2, Globe2, BookOpen, Clock, MapPin, Users, Heart, ArrowRight, Instagram, Facebook, Linkedin } from "lucide-react";
+import { Trophy, GraduationCap, Newspaper, Crown, Info, Zap, Loader2, Globe2, BookOpen, Clock, MapPin, Users, Heart, ArrowRight, Instagram, Facebook, Linkedin, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { SocialHub } from "@/components/social/SocialHub";
@@ -230,7 +230,7 @@ export default function Home() {
               <Link href="/inscription">Rejoindre le Club</Link>
             </Button>
             <Button asChild variant="outline" className="text-white bg-white/10 backdrop-blur-md border-white/60 hover:bg-white/20 px-8 py-7 text-lg rounded-xl font-semibold hover:scale-105 transition-all">
-              <Link href="/activites">Nos Cours &amp; Lieux</Link>
+              <Link href="/activites">Lieux et Tarifs</Link>
             </Button>
           </div>
         </div>
@@ -273,8 +273,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Bannière Prochain Rapide des Calanques */}
-      <section className="container mx-auto px-4 mb-16 relative z-10">
+      {/* Bannière Prochain Rapide des Calanques & Commande équipements */}
+      <section className="container mx-auto px-4 mb-16 relative z-10 space-y-6">
         <div className="bg-gradient-to-r from-[#0F4C81] to-[#1a6bb5] rounded-2xl shadow-xl p-6 border border-blue-400 text-center max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-left text-white">
             <h2 className="text-2xl font-bold mb-2 flex items-center gap-2">
@@ -293,6 +293,21 @@ export default function Home() {
             >
               S&apos;inscrire en ligne
             </a>
+          </Button>
+        </div>
+
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl shadow-xl p-6 border border-blue-400 text-center max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="text-left text-white">
+            <h2 className="text-2xl font-bold mb-2 flex items-center gap-2">
+              <ShoppingBag className="w-6 h-6 shrink-0" />
+              Une nouvelle commande est en cours !
+            </h2>
+            <p className="text-blue-50 font-medium">
+              Commandez vite vos équipements personnalisés aux couleurs du club sur notre boutique.
+            </p>
+          </div>
+          <Button asChild className="bg-white text-blue-700 hover:bg-blue-50 font-bold px-6 py-6 rounded-xl shadow-md transition-transform hover:scale-105 shrink-0">
+            <Link href="/produits-derives">Commander sur la boutique</Link>
           </Button>
         </div>
       </section>

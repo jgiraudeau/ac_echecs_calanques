@@ -15,7 +15,7 @@ export function Navbar() {
 
     const navLinks = [
         { href: "/club", label: "Le Club" },
-        { href: "/activites", label: "Cours & Lieux" },
+        { href: "/activites", label: "Lieux et Tarifs" },
         { href: "/stages", label: "Stages" },
         { href: "/blitz-rapide", label: "Blitz & Rapide" },
         { href: "/ffe", label: "Résultats FFE" },

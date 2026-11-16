@@ -7,7 +7,7 @@ import { LOCATION_ENTRIES } from "@/lib/locations";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Cours & Lieux de Pratique | Académie d'échecs des calanques",
+    title: "Lieux et Tarifs | Académie d'échecs des calanques",
     description: "Découvrez nos plannings de cours hebdomadaires d'échecs, nos tarifs d'adhésion, cotisations et nos différents lieux d'intervention à Cassis, La Ciotat, Carnoux, Ceyreste et Marseille.",
 };
 
@@ -32,9 +32,9 @@ export default function ActivitesPage() {
             <Navbar />
             
             <div className="container mx-auto px-4 py-12 text-center">
-                <h1 className="text-4xl md:text-5xl font-extrabold text-slate-800 mb-4">Cours &amp; Lieux de Pratique</h1>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-slate-800 mb-4">Lieux et Tarifs</h1>
                 <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10">
-                    Retrouvez le planning hebdomadaire de nos cours et tous nos lieux d&apos;intervention.
+                    Retrouvez le planning hebdomadaire de nos cours, nos tarifs et tous nos lieux d&apos;intervention.
                 </p>
 
                 {/* ── SECTION HAUT : COURS / PLANNING ── */}
