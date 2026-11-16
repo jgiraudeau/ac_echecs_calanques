@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { HelloAssoWidget } from "@/components/HelloAssoWidget";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, ExternalLink } from "lucide-react";
 
 export default function InscriptionClubPage() {
   return (
@@ -40,23 +40,33 @@ export default function InscriptionClubPage() {
       </section>
 
       <section className="container mx-auto px-4 py-14 max-w-5xl space-y-12">
-        <div className="bg-amber-50 border-2 border-amber-300 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col sm:flex-row items-start gap-4">
-          <div className="bg-amber-100 text-amber-700 p-3 rounded-xl shrink-0">
+        <div className="bg-orange-50 border-2 border-orange-300 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col sm:flex-row items-start gap-4">
+          <div className="bg-orange-100 text-orange-600 p-3 rounded-xl shrink-0">
             <AlertCircle className="w-6 h-6" />
           </div>
           <div className="space-y-2 text-slate-800">
-            <h2 className="text-lg md:text-xl font-extrabold text-amber-950">
+            <h2 className="text-lg md:text-xl font-extrabold text-orange-950">
               Information importante : carte d&apos;adhésion obligatoire selon le lieu de pratique
             </h2>
             <p className="text-sm md:text-base text-slate-700 leading-relaxed">
               En complément de votre inscription au club :
             </p>
-            <ul className="list-disc list-inside space-y-1.5 text-sm md:text-base text-slate-700">
+            <ul className="list-disc list-inside space-y-2 text-sm md:text-base text-slate-700">
               <li>
-                Les personnes se rendant au club de <strong>Cassis</strong> doivent <strong>impérativement prendre la carte du Centre Culturel</strong>.
+                Les personnes se rendant au club de <strong>Cassis</strong> doivent <strong>impérativement prendre la carte du Centre Culturel</strong> sur{" "}
+                <a
+                  href="https://centreculturelcassis.com/#/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-bold text-orange-700 hover:text-orange-800 underline"
+                >
+                  centreculturelcassis.com
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+                .
               </li>
               <li>
-                Les personnes se rendant au club de <strong>Carnoux</strong> doivent <strong>impérativement prendre la carte du COC</strong>.
+                Les personnes se rendant au club de <strong>Carnoux</strong> doivent <strong>impérativement prendre la carte du COC</strong> (rapprochez-vous directement du professeur sur place).
               </li>
             </ul>
           </div>

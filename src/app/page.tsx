@@ -296,17 +296,17 @@ export default function Home() {
           </Button>
         </div>
 
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl shadow-xl p-6 border border-blue-400 text-center max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl shadow-xl p-6 border border-orange-400 text-center max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-left text-white">
             <h2 className="text-2xl font-bold mb-2 flex items-center gap-2">
               <ShoppingBag className="w-6 h-6 shrink-0" />
               Une nouvelle commande est en cours !
             </h2>
-            <p className="text-blue-50 font-medium">
+            <p className="text-orange-50 font-medium">
               Commandez vite vos équipements personnalisés aux couleurs du club sur notre boutique.
             </p>
           </div>
-          <Button asChild className="bg-white text-blue-700 hover:bg-blue-50 font-bold px-6 py-6 rounded-xl shadow-md transition-transform hover:scale-105 shrink-0">
+          <Button asChild className="bg-white text-orange-600 hover:bg-orange-50 font-bold px-6 py-6 rounded-xl shadow-md transition-transform hover:scale-105 shrink-0">
             <Link href="/produits-derives">Commander sur la boutique</Link>
           </Button>
         </div>
