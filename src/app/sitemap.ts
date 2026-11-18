@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/festival",
     "/partenaires",
     "/blitz-rapide",
+    "/tournoi-scolaire",
     "/cafes-echecs",
     "/produits-derives",
   ];

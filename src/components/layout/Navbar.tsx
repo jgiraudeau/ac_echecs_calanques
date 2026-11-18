@@ -18,6 +18,7 @@ export function Navbar() {
         { href: "/activites", label: "Lieux et Tarifs" },
         { href: "/stages", label: "Stages" },
         { href: "/blitz-rapide", label: "Blitz & Rapide" },
+        { href: "/tournoi-scolaire", label: "Tournoi Scolaire" },
         { href: "/ffe", label: "Résultats FFE" },
         { href: "/partenaires", label: "Partenaires" },
         { href: "/produits-derives", label: "Boutique" },
@@ -39,20 +40,20 @@ export function Navbar() {
                         unoptimized
                         className="object-contain"
                     />
-                    <span className="text-sm sm:text-base lg:text-base xl:text-lg font-bold tracking-tight text-primary whitespace-nowrap">
+                    <span className="text-sm sm:text-base lg:text-xs xl:text-base 2xl:text-lg font-bold tracking-tight text-primary whitespace-nowrap">
                         Académie d&apos;échecs des calanques
                     </span>
                 </Link>
 
 
                 {/* Desktop Menu */}
-                <div className="hidden lg:flex items-center gap-3 xl:gap-5">
+                <div className="hidden lg:flex items-center gap-2 xl:gap-3.5 2xl:gap-5">
                     {navLinks.map((link) => (
                         <Link
                             key={link.href}
                             href={link.href}
                             className={cn(
-                                "text-xs xl:text-sm font-medium transition-colors relative py-1 whitespace-nowrap",
+                                "text-[11px] xl:text-xs 2xl:text-sm font-medium transition-colors relative py-1 whitespace-nowrap",
                                 isLinkActive(link.href)
                                     ? "text-primary font-bold"
                                     : "text-slate-600 hover:text-primary"
@@ -64,7 +65,7 @@ export function Navbar() {
                             )}
                         </Link>
                     ))}
-                    <Button asChild size="sm" className="bg-accent hover:bg-accent/90 text-white font-semibold shadow-lg shadow-accent/20 hover:scale-105 transition-transform text-xs xl:text-sm px-3 py-1.5 h-8">
+                    <Button asChild size="sm" className="bg-accent hover:bg-accent/90 text-white font-semibold shadow-lg shadow-accent/20 hover:scale-105 transition-transform text-[11px] xl:text-xs 2xl:text-sm px-2.5 xl:px-3 py-1.5 h-8">
                         <Link href="/inscription">S&apos;inscrire</Link>
                     </Button>
                 </div>
