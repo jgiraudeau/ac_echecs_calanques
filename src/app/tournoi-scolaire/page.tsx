@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 };
 
 const VENUE_ADDRESS = "20 avenue du Docteur Emmanuel Agostini, 13260 Cassis";
+const REGISTRATION_URL = "https://sharly-chess.com/fr/events/scolaire-canton-la-ciotat";
 
 export default function TournoiScolairePage() {
   return (
@@ -52,9 +53,18 @@ export default function TournoiScolairePage() {
           <p className="text-2xl md:text-3xl font-bold text-orange-200 mb-4">
             Viens jouer pour ton école !
           </p>
-          <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-8">
             Une matinée pour jouer, un défi pour ton école ! Un tournoi découverte en 5 parties individuelles, parfait pour débuter dans la bonne ambiance, sans pression, et tenter de qualifier son école pour la finale départementale à Aubagne.
           </p>
+          <a
+            href={REGISTRATION_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-xl transition-all hover:scale-105"
+          >
+            S&apos;inscrire en ligne (Gratuit)
+            <ExternalLink className="w-5 h-5" />
+          </a>
         </div>
         <div className="absolute -bottom-1 left-0 w-full overflow-hidden leading-[0] z-10">
           <svg
@@ -366,7 +376,7 @@ export default function TournoiScolairePage() {
                 Inscrire votre enfant ou votre école
               </h2>
               <p className="text-slate-600 leading-relaxed">
-                Contactez-nous pour inscrire gratuitement votre enfant ou obtenir des renseignements sur la constitution de l&apos;équipe de votre école.
+                Inscrivez votre enfant directement et gratuitement en ligne via Sharly-Chess, ou contactez-nous pour tout renseignement sur la constitution de l&apos;équipe de votre école.
               </p>
               <div className="pt-2 space-y-1.5 text-sm text-slate-700 font-medium">
                 <p className="font-bold text-slate-900">Quentin Massardo</p>
@@ -384,10 +394,19 @@ export default function TournoiScolairePage() {
               </div>
             </div>
 
-            <div className="shrink-0">
+            <div className="shrink-0 flex flex-col gap-3">
+              <a
+                href={REGISTRATION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all hover:scale-105"
+              >
+                S&apos;inscrire en ligne
+                <ExternalLink className="w-4 h-4" />
+              </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-[#0F4C81] hover:bg-[#0a3560] text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 bg-[#0F4C81] hover:bg-[#0a3560] text-white font-bold px-8 py-3.5 rounded-xl shadow-md transition-all hover:scale-105"
               >
                 Nous contacter
                 <ArrowRight className="w-4 h-4" />
