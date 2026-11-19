@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
+import { Button } from "@/components/ui/button";
 import { HelloAssoWidget } from "@/components/HelloAssoWidget";
 
 export default function InscriptionSaintAugustinPage() {
@@ -34,7 +36,12 @@ export default function InscriptionSaintAugustinPage() {
         <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
       </section>
 
-      <section className="container mx-auto px-4 py-14 max-w-5xl">
+      <section className="container mx-auto px-4 py-14 max-w-5xl space-y-8">
+        <div>
+          <Button asChild variant="ghost" className="text-primary hover:bg-blue-50">
+            <Link href="/inscription/ecoles">← Retour au choix d&apos;école</Link>
+          </Button>
+        </div>
         <HelloAssoWidget url="https://www.helloasso.com/associations/echecs-cassis/evenements/club-d-echecs-saint-augustin/widget" />
       </section>
     </div>

@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Sparkles, CalendarDays, Users, GraduationCap, Compass, HelpCircle, Phone, Mail, ArrowRight } from "lucide-react";
+import { Sparkles, CalendarDays, GraduationCap, Compass, HelpCircle, Phone, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { HelloAssoWidget } from "@/components/HelloAssoWidget";

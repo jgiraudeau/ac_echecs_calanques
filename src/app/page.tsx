@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
-import { Trophy, GraduationCap, Newspaper, Crown, Info, Zap, Loader2, Globe2, BookOpen, Clock, MapPin, Users, Heart, ArrowRight, Instagram, Facebook, Linkedin, ShoppingBag } from "lucide-react";
+import { Trophy, GraduationCap, Newspaper, Crown, Info, Zap, Loader2, MapPin, Instagram, Facebook, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { SocialHub } from "@/components/social/SocialHub";
@@ -574,24 +574,21 @@ export default function Home() {
               </p>
               <div className="flex gap-4">
                 {/* Social Icons */}
-                <a href="https://www.facebook.com/echecscalanques/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 hover:bg-primary transition-colors flex items-center justify-center text-white">
+                <a href="https://www.facebook.com/echecscalanques/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 rounded-full bg-slate-800 hover:bg-primary transition-colors flex items-center justify-center text-white">
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="https://www.instagram.com/echecscalanques/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 hover:bg-primary transition-colors flex items-center justify-center text-white">
+                <a href="https://www.instagram.com/echecscalanques/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-full bg-slate-800 hover:bg-primary transition-colors flex items-center justify-center text-white">
                   <Instagram className="w-5 h-5" />
-                </a>
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 hover:bg-primary transition-colors flex items-center justify-center text-white">
-                  <Linkedin className="w-5 h-5" />
                 </a>
               </div>
             </div>
             <div>
               <h4 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">Liens Rapides</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="hover:text-white transition-colors">Le Club</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Adhésions</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Planning</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Tournois</a></li>
+                <li><Link href="/club" className="hover:text-white transition-colors">Le Club</Link></li>
+                <li><Link href="/inscription" className="hover:text-white transition-colors">Adhésions</Link></li>
+                <li><Link href="/activites" className="hover:text-white transition-colors">Planning &amp; Tarifs</Link></li>
+                <li><Link href="/blitz-rapide" className="hover:text-white transition-colors">Tournois</Link></li>
               </ul>
             </div>
             <div>

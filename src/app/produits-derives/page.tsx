@@ -13,7 +13,7 @@ export default function BoutiqueClubPage() {
       if (typeof data === "string") {
         try {
           data = JSON.parse(data);
-        } catch (e) {
+        } catch {
           // not valid json
         }
       }

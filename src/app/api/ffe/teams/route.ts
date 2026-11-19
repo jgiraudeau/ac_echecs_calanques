@@ -180,9 +180,12 @@ function parseFfeTeamRows(html: string): ParsedFfeTeamRow[] {
 }
 
 function parseCalendarUrlFromGroupPage(html: string, groupUrl: string): string | null {
-  const match = html.match(/id="ctl00_ContentPlaceHolderMain_LinkCalendrier"[^>]*href="([^"]+)"/i);
-  if (match?.[1]) {
-    const decodedHref = decodeHtmlEntities(match[1].replace(/&amp;/g, "&"));
+  const match = html.match(
+    /id="ctl00_ContentPlaceHolderMain_LinkCalendrier"[^>]*href=(?:"([^"]+)"|'([^']+)'|([^\s>]+))/i,
+  );
+  const rawHref = match?.[1] ?? match?.[2] ?? match?.[3];
+  if (rawHref) {
+    const decodedHref = decodeHtmlEntities(rawHref.replace(/&amp;/g, "&"));
     return toAbsoluteFfeUrl(decodedHref);
   }
 
@@ -251,15 +254,24 @@ function rowMatchesTarget(row: ParsedFfeTeamRow, target: FfeTargetTeamConfig): b
   return toComparableFfeUrl(candidateUrl) === toComparableFfeUrl(target.matchUrl);
 }
 
-function buildUpcomingRounds(team: FfeSelectedTeam, calendarMatches: ParsedCalendarMatch[]): FfeUpcomingRound[] {
-  const now = new Date();
-  const nowMinusTolerance = now.getTime() - 6 * 60 * 60 * 1000;
-
-  const teamNames = new Set([
+function buildTeamNameCandidates(team: FfeSelectedTeam, aliases: readonly string[] = []): Set<string> {
+  return new Set([
     normalizeFfeTeamName(team.name),
     normalizeFfeTeamName(team.sourceName),
     normalizeFfeTeamName(team.targetLabel),
+    ...aliases.map((alias) => normalizeFfeTeamName(alias)),
   ]);
+}
+
+function buildUpcomingRounds(
+  team: FfeSelectedTeam,
+  calendarMatches: ParsedCalendarMatch[],
+  aliases: readonly string[] = [],
+): FfeUpcomingRound[] {
+  const now = new Date();
+  const nowMinusTolerance = now.getTime() - 6 * 60 * 60 * 1000;
+
+  const teamNames = buildTeamNameCandidates(team, aliases);
 
   const upcoming = calendarMatches.flatMap((match) => {
     const normalizedHome = normalizeFfeTeamName(match.homeTeam);
@@ -316,12 +328,12 @@ function buildUpcomingRounds(team: FfeSelectedTeam, calendarMatches: ParsedCalen
   return deduped.slice(0, 4);
 }
 
-function buildRecentResults(team: FfeSelectedTeam, calendarMatches: ParsedCalendarMatch[]): FfeRecentResult[] {
-  const teamNames = new Set([
-    normalizeFfeTeamName(team.name),
-    normalizeFfeTeamName(team.sourceName),
-    normalizeFfeTeamName(team.targetLabel),
-  ]);
+function buildRecentResults(
+  team: FfeSelectedTeam,
+  calendarMatches: ParsedCalendarMatch[],
+  aliases: readonly string[] = [],
+): FfeRecentResult[] {
+  const teamNames = buildTeamNameCandidates(team, aliases);
 
   const recent = calendarMatches.flatMap((match) => {
     if (!match.played) return [];
@@ -500,17 +512,22 @@ export async function GET() {
       }),
     );
 
+    const targetAliasesById = new Map<string, readonly string[]>(
+      FFE_TARGET_TEAMS.map((target) => [target.id, target.aliases ?? []]),
+    );
+
     const selectedTeamsWithUpcoming = selectedTeams.map((team) => {
       if (!team.groupUrl) return team;
 
       const groupCalendarData = calendarDataByGroup.get(team.groupUrl);
       if (!groupCalendarData) return team;
 
+      const aliases = targetAliasesById.get(team.targetId) ?? [];
       return {
         ...team,
         calendarUrl: groupCalendarData.calendarUrl,
-        upcomingRounds: buildUpcomingRounds(team, groupCalendarData.matches),
-        recentResults: buildRecentResults(team, groupCalendarData.matches),
+        upcomingRounds: buildUpcomingRounds(team, groupCalendarData.matches, aliases),
+        recentResults: buildRecentResults(team, groupCalendarData.matches, aliases),
       };
     });
 

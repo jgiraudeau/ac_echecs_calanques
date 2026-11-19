@@ -30,7 +30,7 @@ export const INTERCLUBS_ADULTES: TeamCalendar[] = [
     },
     {
         teamName: "AE des Calanques 2",
-        division: "Nationale 5",
+        division: "Provence-Alpes-Côte d'Azur I",
         matches: [
             { white: "La Garde 1", black: "Cassis 2", date: "2026-10-11", time: "14:15", location: "La Garde" },
             { white: "Hyeres 4", black: "Cassis 2", date: "2026-11-08", time: "14:15", location: "Hyères" },
@@ -43,7 +43,7 @@ export const INTERCLUBS_ADULTES: TeamCalendar[] = [
     },
     {
         teamName: "AE des Calanques 3",
-        division: "Nationale 5",
+        division: "Provence-Alpes-Côte d'Azur I",
         matches: [
             { white: "Ae des Calanques 3", black: "Sanary Echecs 3", date: "2026-10-11", time: "14:15", location: "Cassis" },
             { white: "Gemenos Echecs 1", black: "Ae des Calanques 3", date: "2026-11-08", time: "14:15", location: "Gémenos" },
@@ -118,5 +118,5 @@ export function generateICS(team: TeamCalendar): string {
     });
 
     lines.push("END:VCALENDAR");
-    return lines.join("\\r\\n");
+    return lines.join("\r\n");
 }

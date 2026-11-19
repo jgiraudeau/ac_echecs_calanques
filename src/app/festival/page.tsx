@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { CalendarDays, Trophy, Globe2, Users, MapPin, Mail, ArrowRight } from "lucide-react";
+import { CalendarDays, Trophy, Globe2, Users, MapPin, Mail } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 

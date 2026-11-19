@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Trophy, MapPin, Clock, Euro, Phone, Mail, Globe, Users, Zap, Star, CalendarDays, ChevronRight, ExternalLink } from "lucide-react";
+import { Trophy, MapPin, Clock, Euro, Phone, Mail, Users, Zap, Star, CalendarDays, ChevronRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -281,7 +281,7 @@ export default function BlitzRapidePage() {
               <MapPin className="w-5 h-5 text-[#0F4C81] flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-bold text-slate-800">Centre Culturel de Cassis</p>
-                <p className="text-slate-600 text-sm">20 avenue Emmanuel Agostini — 13260 Cassis</p>
+                <p className="text-slate-600 text-sm">20 avenue du Dr Emmanuel Agostini — 13260 Cassis</p>
               </div>
             </div>
 

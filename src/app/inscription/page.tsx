@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, School, UserPlus } from "lucide-react";
-import { HELLO_ASSO_LINKS, resolveHelloAssoLink } from "@/lib/inscription-links";
+import { School, UserPlus } from "lucide-react";
 
 export default function InscriptionPage() {
   return (

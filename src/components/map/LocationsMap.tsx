@@ -24,7 +24,7 @@ export default function LocationsMap() {
   );
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    const timer = window.setTimeout(() => {
       const params = new URLSearchParams(window.location.search);
       const idParam = params.get("id");
       if (idParam && LOCATION_ENTRIES.some((loc) => loc.id === idParam)) {
@@ -36,7 +36,9 @@ export default function LocationsMap() {
       if (hash && LOCATION_ENTRIES.some((loc) => loc.id === hash)) {
         setSelectedLocationId(hash);
       }
-    }
+    }, 0);
+
+    return () => window.clearTimeout(timer);
   }, []);
 
   const selectedLocation = useMemo(

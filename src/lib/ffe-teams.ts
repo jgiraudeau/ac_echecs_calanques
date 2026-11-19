@@ -9,18 +9,20 @@ export interface FfeTargetTeamConfig {
   category: FfeTeamCategory;
   label: string;
   sourceName: string;
+  aliases?: readonly string[];
   matchOn: "groupUrl" | "teamUrl";
   matchUrl: string;
 }
 
-export const FFE_TARGET_TEAMS = [
+export const FFE_TARGET_TEAMS: readonly FfeTargetTeamConfig[] = [
   {
     id: "interclub-cassis-1",
     category: "Interclub",
     label: "Cassis 1",
-    sourceName: "Cassis 1",
+    sourceName: "Academie d'Echecs des Calanques - Cassis",
+    aliases: ["Cassis", "Cassis 1"],
     matchOn: "groupUrl",
-    matchUrl: "https://www.echecs.asso.fr/Equipes.aspx?Groupe=890",
+    matchUrl: "https://www.echecs.asso.fr/Equipes.aspx?Groupe=37",
   },
   {
     id: "interclub-cassis-2",
@@ -28,15 +30,16 @@ export const FFE_TARGET_TEAMS = [
     label: "Cassis 2",
     sourceName: "Cassis 2",
     matchOn: "groupUrl",
-    matchUrl: "https://www.echecs.asso.fr/Equipes.aspx?Groupe=2272",
+    matchUrl: "https://www.echecs.asso.fr/Equipes.aspx?Groupe=1237",
   },
   {
     id: "interclub-cassis-3",
     category: "Interclub",
     label: "Cassis 3",
-    sourceName: "Cassis III",
+    sourceName: "Ae des Calanques 3",
+    aliases: ["Cassis 3", "Cassis III"],
     matchOn: "groupUrl",
-    matchUrl: "https://www.echecs.asso.fr/Equipes.aspx?Groupe=1237",
+    matchUrl: "https://www.echecs.asso.fr/Equipes.aspx?Groupe=2272",
   },
   {
     id: "interclub-cassis-4",
@@ -44,43 +47,45 @@ export const FFE_TARGET_TEAMS = [
     label: "Cassis 4",
     sourceName: "Cassis 4",
     matchOn: "groupUrl",
-    matchUrl: "https://www.echecs.asso.fr/Equipes.aspx?Groupe=1865",
+    matchUrl: "https://www.echecs.asso.fr/Equipes.aspx?Groupe=3598",
+  },
+  {
+    id: "interclub-cassis-5",
+    category: "Interclub",
+    label: "Cassis 5",
+    sourceName: "Cassis 5",
+    matchOn: "groupUrl",
+    matchUrl: "https://www.echecs.asso.fr/Equipes.aspx?Groupe=3598",
+  },
+  {
+    id: "interclub-cassis-6",
+    category: "Interclub",
+    label: "Cassis 6",
+    sourceName: "Cassis 6",
+    matchOn: "groupUrl",
+    matchUrl: "https://www.echecs.asso.fr/Equipes.aspx?Groupe=3598",
   },
   {
     id: "interclub-jeunes-cassis-1",
     category: "Interclub Jeunes",
     label: "Cassis 1",
-    sourceName: "Cassis Echecs",
+    sourceName: "A.E. des Calanques",
+    aliases: ["Cassis Echecs", "A.E. des Calanques - Cassis"],
     matchOn: "groupUrl",
-    matchUrl: "https://www.echecs.asso.fr/Equipes.aspx?Groupe=16",
+    matchUrl: "https://www.echecs.asso.fr/Equipes.aspx?Groupe=6",
   },
   {
     id: "interclub-jeunes-cassis-2",
     category: "Interclub Jeunes",
     label: "Cassis 2",
-    sourceName: "J Cassis Echecs 2",
+    sourceName: "J A.E. Calanques 2",
+    aliases: ["J Cassis Echecs 2"],
     matchOn: "groupUrl",
     matchUrl: "https://www.echecs.asso.fr/Equipes.aspx?Groupe=1605",
   },
-  {
-    id: "interclub-jeunes-cassis-3",
-    category: "Interclub Jeunes",
-    label: "Cassis 3",
-    sourceName: "J Cassis Echecs 3",
-    matchOn: "groupUrl",
-    matchUrl: "https://www.echecs.asso.fr/Equipes.aspx?Groupe=1605",
-  },
-  {
-    id: "interclub-jeunes-cassis-4",
-    category: "Interclub Jeunes",
-    label: "Cassis 4",
-    sourceName: "J Cassis 4",
-    matchOn: "teamUrl",
-    matchUrl: "https://www.echecs.asso.fr/ListeJoueurs.aspx?Action=EQUIPE&Equipe=3541",
-  },
-] as const satisfies readonly FfeTargetTeamConfig[];
+];
 
-export type FfeTargetTeamId = (typeof FFE_TARGET_TEAMS)[number]["id"];
+export type FfeTargetTeamId = string;
 
 export interface FfeUpcomingRound {
   roundLabel: string;

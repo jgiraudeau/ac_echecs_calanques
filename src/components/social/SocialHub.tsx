@@ -1,78 +1,121 @@
+"use client";
+
+import { useEffect, useRef, type ReactNode } from "react";
 import { Facebook, Instagram, ExternalLink } from "lucide-react";
 
-export function SocialHub() {
-    return (
-        <div className="grid md:grid-cols-2 gap-8">
-            {/* Facebook Feed */}
-            <div className="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden flex flex-col h-[500px]">
-                <div className="bg-[#1877F2] p-4 flex items-center justify-between text-white">
-                    <div className="flex items-center gap-2">
-                        <Facebook className="w-6 h-6" />
-                        <h3 className="font-bold">Actualités du Club</h3>
-                    </div>
-                    <a
-                        href="https://www.facebook.com/echecscalanques/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white/80 hover:text-white text-sm flex items-center gap-1"
-                    >
-                        Voir sur Facebook <ExternalLink className="w-3 h-3" />
-                    </a>
-                </div>
+interface CuratorFeedConfig {
+  id: string;
+  title: string;
+  headerClassName: string;
+  icon: ReactNode;
+  linkHref: string;
+  linkLabel: string;
+  containerId: string;
+  scriptSrc: string;
+}
 
-                <div className="flex-1 bg-slate-50 relative">
-                    <iframe
-                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fechecscalanques%2F&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-                        title="Facebook du Club"
-                        width="100%"
-                        height="100%"
-                        style={{ border: 'none', overflow: 'hidden' }}
-                        scrolling="yes"
-                        frameBorder="0"
-                        allowFullScreen={true}
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                        className="absolute inset-0 w-full h-full"
-                    ></iframe>
-                </div>
-            </div>
+const SOCIAL_FEEDS: readonly CuratorFeedConfig[] = [
+  {
+    id: "facebook",
+    title: "Actualités du Club",
+    headerClassName: "bg-[#1877F2]",
+    icon: <Facebook className="w-6 h-6" />,
+    linkHref: "https://www.facebook.com/echecscalanques/",
+    linkLabel: "Voir sur Facebook",
+    containerId: "curator-feed-default-feed-layout",
+    scriptSrc:
+      "https://cdn.curator.io/published/ea2b98b5-dc7d-4a42-95ca-c508c662485b.js",
+  },
+  {
+    id: "instagram",
+    title: "Instagram du Club",
+    headerClassName: "bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af]",
+    icon: <Instagram className="w-6 h-6" />,
+    linkHref: "https://www.instagram.com/echecscalanques/",
+    linkLabel: "Voir sur Instagram",
+    containerId: "curator-feed-insta-layout",
+    scriptSrc:
+      "https://cdn.curator.io/published/e40a8fa0-1547-4f3c-a6ff-790f925f3c53.js",
+  },
+];
 
-            {/* Instagram Feed */}
-            <div className="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden flex flex-col h-[500px]">
-                <div className="bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] p-4 flex items-center justify-between text-white">
-                    <div className="flex items-center gap-2">
-                        <Instagram className="w-6 h-6" />
-                        <h3 className="font-bold">Instagram du Club</h3>
-                    </div>
-                    <a
-                        href="https://www.instagram.com/echecscalanques/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white/80 hover:text-white text-sm flex items-center gap-1"
-                    >
-                        Voir sur Instagram <ExternalLink className="w-3 h-3" />
-                    </a>
-                </div>
+/**
+ * Renders a social feed card powered by a Curator.io embed script.
+ */
+function CuratorFeedCard({ feed }: { feed: CuratorFeedConfig }) {
+  const curatorRef = useRef<HTMLDivElement>(null);
 
-                <div className="flex-1 bg-slate-50 flex items-center justify-center p-8 text-center">
-                    <div>
-                        <div className="bg-gradient-to-tr from-[#f58529] via-[#dd2a7b] to-[#8134af] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white shadow-lg hover:scale-110 transition-transform">
-                            <Instagram className="w-8 h-8" />
-                        </div>
-                        <h4 className="text-xl font-bold text-slate-800 mb-2">Suivez-nous sur Instagram !</h4>
-                        <p className="text-slate-500 mb-6">
-                            Découvrez nos dernières photos, vidéos et stories directement sur notre page officielle.
-                        </p>
-                        <a
-                            href="https://www.instagram.com/echecscalanques/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-slate-800 transition-colors shadow-md"
-                        >
-                            S'abonner à @echecscalanques
-                        </a>
-                    </div>
-                </div>
-            </div>
+  useEffect(() => {
+    const scriptId = `curator-feed-script-${feed.id}`;
+    const timer = window.setTimeout(() => {
+      const container = curatorRef.current;
+      if (!container || container.querySelector(".crt-feed")) return;
+
+      const existingScript = document.getElementById(scriptId);
+      if (existingScript) {
+        existingScript.remove();
+      }
+
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.type = "text/javascript";
+      script.charset = "UTF-8";
+      script.async = true;
+      script.src = feed.scriptSrc;
+      document.body.appendChild(script);
+    }, 0);
+
+    return () => {
+      window.clearTimeout(timer);
+      const existingScript = document.getElementById(scriptId);
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, [feed.id, feed.scriptSrc]);
+
+  return (
+    <div className="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden flex flex-col">
+      <div className={`${feed.headerClassName} p-4 flex items-center justify-between text-white`}>
+        <div className="flex items-center gap-2">
+          {feed.icon}
+          <h3 className="font-bold">{feed.title}</h3>
         </div>
-    );
+        <a
+          href={feed.linkHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white/85 hover:text-white text-sm flex items-center gap-1"
+        >
+          {feed.linkLabel} <ExternalLink className="w-3 h-3" />
+        </a>
+      </div>
+
+      <div className="p-4 bg-white">
+        <div id={feed.containerId} ref={curatorRef}>
+          <a
+            href="https://curator.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="crt-logo crt-tag text-xs text-slate-400"
+          >
+            Powered by Curator.io
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Displays the club's Facebook and Instagram Curator.io widgets.
+ */
+export function SocialHub() {
+  return (
+    <div className="space-y-8">
+      {SOCIAL_FEEDS.map((feed) => (
+        <CuratorFeedCard key={feed.id} feed={feed} />
+      ))}
+    </div>
+  );
 }

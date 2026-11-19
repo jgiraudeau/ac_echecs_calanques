@@ -3,18 +3,23 @@
 import { useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
+interface WindowWithGtag extends Window {
+  gtag?: (...args: unknown[]) => void;
+}
+
 function AnalyticsLogic() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (pathname && typeof window !== 'undefined' && (window as any).gtag) {
+    const win = typeof window !== 'undefined' ? (window as WindowWithGtag) : null;
+    if (pathname && win?.gtag) {
       let url = pathname;
       if (searchParams && searchParams.toString()) {
         url += `?${searchParams.toString()}`;
       }
       
-      (window as any).gtag('config', 'G-XMJVYKG0YD', {
+      win.gtag('config', 'G-XMJVYKG0YD', {
         page_path: url,
       });
     }

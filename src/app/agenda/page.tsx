@@ -1,81 +1,11 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
 import { Calendar as CalendarIcon, MapPin, Clock, Trophy, AlertCircle, Download } from "lucide-react";
-import { UPCOMING_EVENTS, ClubEvent } from "@/lib/events";
 import { INTERCLUBS_ADULTES, generateICS } from "@/lib/interclubs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Link from "next/link";
 
 export default function AgendaPage() {
-    // Obtenir les événements futurs uniquement
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    const filteredEvents = UPCOMING_EVENTS.filter(event => {
-        const eventDate = new Date(event.date);
-        return eventDate >= today;
-    })
-    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-    .slice(0, 3);
-
-    // Formater la date en français pour l'affichage (ex: "Sam" et "16")
-    const getEventDateParts = (dateString: string) => {
-        const date = new Date(dateString);
-        if (isNaN(date.getTime())) {
-            return { dayName: "Évén.", dayNum: "??" };
-        }
-        // weekday: "short" -> "sam." ou "dim."
-        let dayName = date.toLocaleDateString("fr-FR", { weekday: "short" });
-        // Enlever le point à la fin si présent
-        dayName = dayName.replace(".", "");
-        // Capitaliser la première lettre
-        dayName = dayName.charAt(0).toUpperCase() + dayName.slice(1);
-        
-        const dayNum = date.toLocaleDateString("fr-FR", { day: "numeric" });
-        return { dayName, dayNum };
-    };
-
-    // Obtenir la couleur associée au type d'événement
-    const getColorClasses = (color: ClubEvent["color"]) => {
-        switch (color) {
-            case "orange":
-                return {
-                    border: "border-orange-500",
-                    bgSide: "bg-orange-500",
-                    bgBadge: "bg-orange-100 text-orange-700",
-                    bgIcon: "bg-orange-50 text-orange-700"
-                };
-            case "purple":
-                return {
-                    border: "border-purple-500",
-                    bgSide: "bg-purple-500",
-                    bgBadge: "bg-purple-100 text-purple-700",
-                    bgIcon: "bg-purple-50 text-purple-700"
-                };
-            case "blue":
-                return {
-                    border: "border-blue-500",
-                    bgSide: "bg-blue-500",
-                    bgBadge: "bg-blue-100 text-blue-700",
-                    bgIcon: "bg-blue-50 text-blue-700"
-                };
-            case "green":
-                return {
-                    border: "border-green-500",
-                    bgSide: "bg-green-500",
-                    bgBadge: "bg-green-100 text-green-700",
-                    bgIcon: "bg-green-50 text-green-700"
-                };
-            default:
-                return {
-                    border: "border-slate-500",
-                    bgSide: "bg-slate-500",
-                    bgBadge: "bg-slate-100 text-slate-700",
-                    bgIcon: "bg-slate-50 text-slate-700"
-                };
-        }
-    };
-
     return (
         <div className="min-h-screen bg-slate-50 font-sans">
             <Navbar />
@@ -108,6 +38,30 @@ export default function AgendaPage() {
                         
                         {/* Highlights (Scolaire) */}
                         <div className="grid grid-cols-1 gap-6">
+                            <Link href="/tournoi-scolaire" className="block group">
+                                <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-1 rounded-2xl shadow-lg transform transition-transform group-hover:scale-[1.01]">
+                                    <div className="bg-white p-6 md:p-8 rounded-xl h-full flex flex-col md:flex-row items-start gap-6">
+                                        <div className="bg-orange-100 p-4 rounded-full text-orange-600 shrink-0">
+                                            <Trophy className="w-10 h-10" />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-black text-slate-800 text-2xl mb-2">Tournoi Scolaire Zonal — Canton de La Ciotat</h4>
+                                            <p className="text-orange-600 font-bold mb-4 text-lg">Tournoi découverte gratuit (licence B offerte) qualificatif pour la finale à Aubagne.</p>
+                                            <div className="flex flex-col sm:flex-row gap-4 text-slate-700 font-medium">
+                                                <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
+                                                    <CalendarIcon className="w-5 h-5 text-orange-500" />
+                                                    Samedi 5 Décembre · 9h30 – 12h00
+                                                </div>
+                                                <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
+                                                    <MapPin className="w-5 h-5 text-orange-500" />
+                                                    Centre Culturel de Cassis
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link>
+
                             <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-1 rounded-2xl shadow-lg transform transition-transform hover:scale-[1.01]">
                                 <div className="bg-white p-6 md:p-8 rounded-xl h-full flex flex-col md:flex-row items-start gap-6">
                                     <div className="bg-blue-100 p-4 rounded-full text-blue-600 shrink-0">
@@ -232,25 +186,20 @@ export default function AgendaPage() {
                             <AccordionTrigger className="text-xl font-bold text-slate-800 hover:no-underline hover:text-blue-600 py-6">
                                 Interclubs Jeunes
                             </AccordionTrigger>
-                            <AccordionContent className="pt-2 pb-6">
+                            <AccordionContent className="pt-2 pb-6 space-y-4">
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
-                                        <h5 className="font-bold text-slate-800">Cassis 1 N2</h5>
-                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
+                                        <h5 className="font-bold text-slate-800">A.E. des Calanques — Nationale I</h5>
+                                        <p className="text-slate-600 text-sm mt-1">Groupe Sud</p>
                                     </div>
                                     <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
-                                        <h5 className="font-bold text-slate-800">Cassis 2 N3</h5>
-                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
-                                    </div>
-                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
-                                        <h5 className="font-bold text-slate-800">Cassis 3 N3</h5>
-                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
-                                    </div>
-                                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
-                                        <h5 className="font-bold text-slate-800">Cassis 4 N4</h5>
-                                        <p className="text-slate-600 text-sm mt-1">Dates à venir...</p>
+                                        <h5 className="font-bold text-slate-800">J A.E. Calanques 2 — Nationale III</h5>
+                                        <p className="text-slate-600 text-sm mt-1">Jeunes Provence · Bouches-du-Rhône</p>
                                     </div>
                                 </div>
+                                <Link href="/ffe" className="inline-flex text-sm font-bold text-blue-600 hover:underline">
+                                    Consulter le calendrier et les résultats en direct sur la page FFE →
+                                </Link>
                             </AccordionContent>
                         </AccordionItem>
 
@@ -311,8 +260,8 @@ export default function AgendaPage() {
                         <p className="text-blue-100">Contactez-nous pour proposer un tournoi ou une activité au sein du club.</p>
                     </div>
                     <div className="relative z-10">
-                        <Button size="lg" className="bg-white text-purple-900 hover:bg-purple-50 font-bold border-none">
-                            Nous Contacter
+                        <Button asChild size="lg" className="bg-white text-purple-900 hover:bg-purple-50 font-bold border-none">
+                            <Link href="/contact">Nous Contacter</Link>
                         </Button>
                     </div>
                 </div>

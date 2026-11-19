@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Award, Users, MapPin, TrendingUp, Target, School, Heart, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ClubPage() {
     return (
@@ -9,7 +10,7 @@ export default function ClubPage() {
 
             {/* Hero Header */}
             <div className="bg-primary pt-20 pb-24 text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/images/pattern-chess.png')] opacity-5"></div>
+                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
                 <div className="container mx-auto px-4 relative z-10 text-center">
                     <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
                         L'Excellence au cœur des Calanques
@@ -96,7 +97,7 @@ export default function ClubPage() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Users className="w-5 h-5 text-purple-500 shrink-0 mt-1" />
-                                    <span><strong>Compétition par équipe :</strong> Équipes fanions en Nationale 2 Jeunes et Nationale 4 Adultes.</span>
+                                    <span><strong>Compétition par équipe :</strong> Équipes fanions en Nationale I Jeunes et Nationale 3 Adultes.</span>
                                 </li>
                             </ul>
                             <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 text-blue-800 text-sm">
@@ -122,7 +123,7 @@ export default function ClubPage() {
                                     <Award className="w-8 h-8 text-orange-500 mb-3" />
                                     <h4 className="font-bold text-lg mb-2">Elite Jeunes</h4>
                                     <p className="text-slate-600 text-sm">
-                                        Objectif : Remporter la <strong>Nationale 2 Jeunes</strong> et atteindre le Top 16 Jeunes (élite française) d'ici 2030.
+                                        Objectif : Maintien et podium en <strong>Nationale I Jeunes</strong> et viser le Top 16 Jeunes (élite française) d&apos;ici 2030.
                                     </p>
                                 </div>
                                 <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
@@ -393,9 +394,12 @@ export default function ClubPage() {
                             <p className="text-slate-700 text-sm mb-4">
                                 Associez l'image de votre entreprise à l'excellence et bénéficiez de 66% de déduction fiscale.
                             </p>
-                            <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-colors shadow-lg shadow-orange-200">
+                            <Link
+                                href="/partenaires"
+                                className="block text-center w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-colors shadow-lg shadow-orange-200"
+                            >
                                 Découvrir les offres
-                            </button>
+                            </Link>
                         </div>
 
                     </div>

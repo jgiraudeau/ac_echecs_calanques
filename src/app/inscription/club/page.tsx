@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
+import { Button } from "@/components/ui/button";
 import { HelloAssoWidget } from "@/components/HelloAssoWidget";
 import { AlertCircle, ExternalLink } from "lucide-react";
 
@@ -40,6 +42,12 @@ export default function InscriptionClubPage() {
       </section>
 
       <section className="container mx-auto px-4 py-14 max-w-5xl space-y-12">
+        <div>
+          <Button asChild variant="ghost" className="text-primary hover:bg-blue-50">
+            <Link href="/inscription">← Retour au choix d&apos;inscription</Link>
+          </Button>
+        </div>
+
         <div className="bg-orange-50 border-2 border-orange-300 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col sm:flex-row items-start gap-4">
           <div className="bg-orange-100 text-orange-600 p-3 rounded-xl shrink-0">
             <AlertCircle className="w-6 h-6" />
