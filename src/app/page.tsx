@@ -456,10 +456,15 @@ export default function Home() {
                          const dateStr = mDate.toLocaleDateString("fr-FR", { weekday: "short", day: "numeric", month: "short" });
                          return (
                           <div key={index} className="rounded-lg border border-slate-100 px-3 py-2 bg-purple-50/50">
-                            <div className="flex justify-between items-center mb-1">
+                            <div className="flex justify-between items-center mb-1 gap-2">
                               <p className="text-sm font-bold text-slate-700">{tournoi.title}</p>
-                              <span className="text-[10px] font-bold text-purple-600 bg-purple-100 px-2 py-0.5 rounded capitalize">{dateStr}</span>
+                              <span className="text-[10px] font-bold text-purple-600 bg-purple-100 px-2 py-0.5 rounded capitalize shrink-0">{dateStr}</span>
                             </div>
+                            {tournoi.note ? (
+                              <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-orange-700 bg-orange-100 px-2 py-0.5 rounded mb-1">
+                                {tournoi.note}
+                              </span>
+                            ) : null}
                             <p className="text-xs text-slate-500 mt-1 flex items-center gap-1">
                               <MapPin className="w-3 h-3" /> {tournoi.location}
                             </p>

@@ -24,7 +24,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Tournoi Scolaire d'Échecs — Canton de La Ciotat | Académie d'échecs des calanques",
   description:
-    "Tournoi Scolaire d'Échecs le samedi 5 décembre 2026 au Centre Culturel de Cassis (pointage jusqu'à 9h30, remise des prix vers 12h). Inscription gratuite, licence B offerte (3 €), 5 parties individuelles, médailles pour tous et qualification pour la finale à Aubagne le 13 janvier.",
+    "Tournoi Scolaire d'Échecs (réservé aux écoles) le samedi 5 décembre 2026 au Centre Culturel de Cassis (pointage jusqu'à 9h30, remise des prix vers 12h). Inscription gratuite, licence B offerte (3 €), 5 parties individuelles, médailles pour tous et qualification pour la finale à Aubagne le 13 janvier.",
 };
 
 const VENUE_ADDRESS = "20 avenue du Docteur Emmanuel Agostini, 13260 Cassis";
@@ -44,7 +44,7 @@ export default function TournoiScolairePage() {
         <div className="container mx-auto px-4 relative z-10 text-center">
           <span className="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-400/40 text-orange-300 text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
             <Sparkles className="w-4 h-4" />
-            Tournoi Découverte · Inscription Gratuite
+            Réservé aux écoles · Tournoi Découverte · Inscription Gratuite
           </span>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4 drop-shadow-lg leading-tight">
             Tournoi Scolaire d&apos;Échecs<br />
@@ -54,7 +54,7 @@ export default function TournoiScolairePage() {
             Viens jouer pour ton école !
           </p>
           <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-8">
-            Une matinée pour jouer, un défi pour ton école ! Un tournoi découverte en 5 parties individuelles, parfait pour débuter dans la bonne ambiance, sans pression, et tenter de qualifier son école pour la finale départementale à Aubagne.
+            Tournoi réservé aux écoles : une matinée pour jouer, un défi pour ton école ! Un tournoi découverte en 5 parties individuelles, parfait pour débuter dans la bonne ambiance, sans pression, et tenter de qualifier son école pour la finale départementale à Aubagne.
           </p>
           <a
             href={REGISTRATION_URL}
@@ -142,7 +142,7 @@ export default function TournoiScolairePage() {
                 5 parties individuelles pour découvrir et s&apos;amuser !
               </h2>
               <p className="text-slate-600 leading-relaxed mb-4">
-                Chaque enfant <strong>s&apos;inscrit individuellement</strong> et joue <strong>5 parties</strong> contre des élèves d&apos;autres écoles du secteur.
+                Tournoi <strong>réservé aux écoles</strong> : chaque élève <strong>s&apos;inscrit individuellement</strong> et joue <strong>5 parties</strong> contre des élèves d&apos;autres écoles du secteur.
               </p>
               <p className="text-slate-600 leading-relaxed">
                 C&apos;est un <strong>tournoi découverte parfait pour débuter</strong> : aucune grosse pression, uniquement le plaisir de jouer dans une ambiance chaleureuse, bienveillante et festive !
@@ -241,7 +241,7 @@ export default function TournoiScolairePage() {
               Tes résultats comptent pour ton école !
             </h2>
             <p className="text-slate-600 mt-3 text-lg">
-              Ce championnat scolaire zonal est qualificatif pour la phase finale départementale qui réunira les meilleures écoles des Bouches-du-Rhône.
+              Ce championnat scolaire zonal, réservé aux écoles, est qualificatif pour la phase finale départementale qui réunira les meilleures écoles des Bouches-du-Rhône.
             </p>
           </div>
 
@@ -348,6 +348,9 @@ export default function TournoiScolairePage() {
               <p className="text-sm text-slate-600">{VENUE_ADDRESS}</p>
             </div>
             <div className="text-sm text-slate-700 space-y-1 pt-2 border-t border-blue-200/70">
+              <p>
+                <strong>Public :</strong> réservé aux écoles
+              </p>
               <p>
                 <strong>Pointage :</strong> jusqu&apos;à 9h30
               </p>

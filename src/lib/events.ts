@@ -6,6 +6,7 @@ export interface ClubEvent {
   time: string; // ex: "14:00 - 18:00"
   location: string;
   color: "orange" | "purple" | "blue" | "green";
+  note?: string;
 }
 
 // Liste des événements à la une pour la promotion
@@ -18,6 +19,7 @@ export const UPCOMING_EVENTS: ClubEvent[] = [
     time: "09:30 - 12:00",
     location: "Centre Culturel, Cassis",
     color: "orange",
+    note: "Réservé aux écoles",
   },
   {
     id: "2",

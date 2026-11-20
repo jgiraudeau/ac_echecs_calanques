@@ -45,8 +45,11 @@ export default function AgendaPage() {
                                             <Trophy className="w-10 h-10" />
                                         </div>
                                         <div>
+                                            <span className="inline-block bg-orange-100 text-orange-700 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-2">
+                                                Réservé aux écoles
+                                            </span>
                                             <h4 className="font-black text-slate-800 text-2xl mb-2">Tournoi Scolaire Zonal — Canton de La Ciotat</h4>
-                                            <p className="text-orange-600 font-bold mb-4 text-lg">Tournoi découverte gratuit (licence B offerte) qualificatif pour la finale à Aubagne.</p>
+                                            <p className="text-orange-600 font-bold mb-4 text-lg">Tournoi découverte gratuit (licence B offerte), réservé aux écoles et qualificatif pour la finale à Aubagne.</p>
                                             <div className="flex flex-col sm:flex-row gap-4 text-slate-700 font-medium">
                                                 <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
                                                     <CalendarIcon className="w-5 h-5 text-orange-500" />
